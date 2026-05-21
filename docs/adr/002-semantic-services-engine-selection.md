@@ -3,7 +3,7 @@
 - **Status**: Proposed
 - **Date**: 2026-05-21 (extracted from the original [ADR-001](001-triplestore-stack-selection.md) which addressed both L1 and L2)
 - **Layer / Purpose**: L2 Semantic Services — *selection*
-- **Context**: vocabulary_hub SHACL validation engine, reasoning engine, and runtime IRI-dereferencing strategy
+- **Context**: eona_vocabulary_services SHACL validation engine, reasoning engine, and runtime IRI-dereferencing strategy
 - **Binding constraints from [ADR-000](000-adr-process-and-constraints.md)**: OSI-licensed only.
 - **Depends on**: [ADR-001](001-triplestore-stack-selection.md) — triplestore is Apache Jena Fuseki
 

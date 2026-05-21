@@ -1,4 +1,4 @@
-# ADR-003: Re-selecting L1–L3 Components — Oxigraph, Maplib, Chrontext
+# ADR-004: Re-selecting L1–L3 Components — Oxigraph, Maplib, Chrontext
 
 - **Status**: Proposed
 - **Date**: 2026-05-21

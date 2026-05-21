@@ -2,11 +2,11 @@
 
 - **Status**: Accepted
 - **Date**: 2026-05-21
-- **Context**: vocabulary_hub project — establishing the decision-record process and the cross-cutting constraints that bind every subsequent ADR
+- **Context**: eona_vocabulary_services project — establishing the decision-record process and the cross-cutting constraints that bind every subsequent ADR
 
 ## Context
 
-The vocabulary_hub project implements an IDS-RAM 4.0 Vocabulary Hub. The reference vision is set out in David, Ivanov & Alexiev, *Raising the Role of Vocabulary Hubs for Semantic Data Interoperability in Dataspaces* (2024), which describes a hub built on GraphDB + PoolParty with an ONTOP-based Semantic Layer.
+The eona_vocabulary_services project implements an IDS-RAM 4.0 Vocabulary Hub. The reference vision is set out in David, Ivanov & Alexiev, *Raising the Role of Vocabulary Hubs for Semantic Data Interoperability in Dataspaces* (2024), which describes a hub built on GraphDB + PoolParty with an ONTOP-based Semantic Layer.
 
 We treat that paper as **architectural guidance**: the roles, services, and layering it identifies (Vocabulary Hub core, Semantic Layer, mapping languages, KG-NLP, crosswalks, IDS conformance) are the target capabilities. We do not, however, adopt its specific product choices.
 

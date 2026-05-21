@@ -3,7 +3,7 @@
 - **Status**: Proposed (revised 2026-05-18 — IDS Vocabulary Hub conformance added as a hard requirement; revised 2026-05-21 — re-scoped under [ADR-000](000-adr-process-and-constraints.md) and split: semantic-services concerns extracted to [ADR-002](002-semantic-services-engine-selection.md))
 - **Date**: 2026-05-11
 - **Layer / Purpose**: L1 Storage — *selection*
-- **Context**: vocabulary_hub persistent RDF store and SPARQL 1.1 endpoint
+- **Context**: eona_vocabulary_services persistent RDF store and SPARQL 1.1 endpoint
 - **Binding constraints from [ADR-000](000-adr-process-and-constraints.md)**: OSI-licensed building blocks only; the David/Ivanov/Alexiev (2024) paper is a guide for *roles and architecture*, not for *product choices*. GraphDB and PoolParty are therefore not candidates here.
 - **Related**: [ADR-002](002-semantic-services-engine-selection.md) decides the SHACL/reasoning/IRI-dereferencing engines that sit on top of the store selected here.
 

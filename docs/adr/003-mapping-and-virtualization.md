@@ -3,7 +3,7 @@
 - **Status**: Proposed
 - **Date**: 2026-05-21
 - **Layer / Purpose**: L3 Mapping / Virtualization — *selection*
-- **Context**: vocabulary_hub Semantic Layer — binding heterogeneous source data (relational, tabular, document) to vocabularies managed by the hub
+- **Context**: eona_vocabulary_services Semantic Layer — binding heterogeneous source data (relational, tabular, document) to vocabularies managed by the hub
 - **Binding constraints from [ADR-000](000-adr-process-and-constraints.md)**: OSI-licensed only. Paper (David/Ivanov/Alexiev 2024) treated as guidance; its choice of ONTOP for OBDA is a hint to evaluate, not to adopt by default.
 - **Depends on**: [ADR-001](001-triplestore-stack-selection.md) — triplestore is Apache Jena Fuseki
 

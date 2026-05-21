@@ -1,4 +1,4 @@
-# Vocabulary Hub
+# Eona Vocabulary Services
 
 An open source **Vocabulary Hub** for publishing, governing, and consuming
 shared vocabularies (ontologies, schemas, reference data) across organizations
@@ -67,7 +67,7 @@ data producers and consumers share the same semantics by construction.
 ```bash
 # Clone and run
 git clone <this-repo>
-cd vocabulary_hub
+cd eona_vocabulary_services
 ```
 
 ## Documentation
@@ -101,7 +101,7 @@ changes before submitting a pull request.
 
 ## License
 
-Copyright the Vocabulary Hub contributors.
+Copyright the Eona Vocabulary Services contributors.
 
 Licensed under the Apache License, Version 2.0 (the "License"); you may not
 use this project except in compliance with the License. You may obtain a

@@ -1,4 +1,4 @@
-# Contributing to Vocabulary Hub
+# Contributing to Eona Vocabulary Services
 
 Thanks for your interest in contributing! This document describes how to
 propose changes — to the **code** of the Hub itself, or to the
