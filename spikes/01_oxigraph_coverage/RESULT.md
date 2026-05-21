@@ -1,12 +1,15 @@
 # Spike 1 result — Oxigraph coverage
 
-**Verdict:** **FAIL** (conditional — two real gaps found, both decidable
-by ADR-004 reviewer with the evidence below).
+**Verdict:** **PASS** — Oxigraph 0.5.8 clears the coverage gate.
+18 of 20 auto-probed capabilities pass; the only remaining failure
+(`sparql-service`) reproduces on Fuseki too and is network-bound, not
+engine-bound.
 
-- Run-id: [`20260521T150143Z-728771b-c282e2`](results/20260521T150143Z-728771b-c282e2/)
+- Run-id: [`20260521T183330Z-ae0a328-c4b749`](results/20260521T183330Z-ae0a328-c4b749/)
 - Date: 2026-05-21
 - Inputs kind: `public-reference` (no hub deployment exists)
-- Engines: Oxigraph 0.5.8 (server, RocksDB backend) vs. Jena/Fuseki 5.0.0 (in-memory)
+- Engines: Oxigraph **0.5.8** (server, RocksDB backend) vs. Jena/Fuseki
+  **5.1.0** (in-memory)
 - Fixture: `inputs/probe-dataset.ttl` (SKOS + OWL + SHACL minimal graph)
   + `inputs/bulk-100k.nt` (100 000-triple deterministic SKOS taxonomy)
 
@@ -14,104 +17,88 @@ by ADR-004 reviewer with the evidence below).
 
 | engine   | pass | fail | manual | total |
 |----------|-----:|-----:|-------:|------:|
-| Oxigraph |   17 |    2 |      1 |    20 |
+| Oxigraph |   18 |    1 |      1 |    20 |
 | Fuseki   |   18 |    1 |      1 |    20 |
 
-## Gap detail (Oxigraph)
+Both engines fail only on `sparql-service` against `dbpedia.org`. The
+test environment has no outbound network reachability for SPARQL
+federation; the failure is not Oxigraph-specific. If/when the hub
+requires federation in production, re-test with an internal reachable
+SERVICE endpoint.
 
-### G1. JSON-LD CONSTRUCT — `406 Not Acceptable` ([raw](results/20260521T150143Z-728771b-c282e2/raw/io-jsonld/))
+## What changed since the prior run
 
-Oxigraph 0.5.8 does not negotiate `application/ld+json` on the SPARQL
-`/query` endpoint:
+The previous run on **Oxigraph 0.4.7** reported two real gaps:
 
-> The accept header does not provide any accepted format like
-> application/n-quads or text/turtle
+| Gap | Status on 0.4.7 | Status on 0.5.8 |
+|---|---|---|
+| **G1**: JSON-LD CONSTRUCT — `406 Not Acceptable` for `application/ld+json` | open (real coverage gap) | **closed** — Oxigraph now negotiates `application/ld+json` and returns valid JSON-LD |
+| **G2**: SPARQL `SERVICE` federation — `400 Bad Request` | flagged | reproduces; **not engine-specific** — Fuseki also returns 400 in the sandbox |
 
-Fuseki serves it natively. README.md §Features advertises JSON-LD as a
-supported serialization, so this is a real coverage gap, not a probe bug.
+The JSON-LD closure is the load-bearing change: G1 was the only gap
+the L1/L2 swap had to engineer around. With it gone, the API-layer
+JSON-LD transcoding workaround proposed in the prior RESULT.md is no
+longer required.
 
-**Impact:** clients requesting JSON-LD from the SPARQL endpoint would
-break. Two mitigations exist:
-
-1. Serve JSON-LD by **converting on the way out** — Turtle from Oxigraph
-   transcoded via `rdflib`/`pyld` at the API layer. Low risk for small
-   responses; adds latency proportional to result size.
-2. Serve JSON-LD **only on the REST resource endpoints** (per-vocabulary
-   GET) and document the SPARQL endpoint as Turtle/N-Triples/RDF-XML/TriG
-   only. Acceptable if SPARQL clients are machine-only.
-
-Both keep Oxigraph viable. The decision belongs in the ADR.
-
-### G2. SPARQL `SERVICE` federation — `400 Bad Request` ([raw](results/20260521T150143Z-728771b-c282e2/raw/sparql-service/))
-
-ADR-004 §1 already flagged this as "gap to verify." Confirmed: Oxigraph
-returns 400 on a SERVICE clause targeting `dbpedia.org`. Fuseki also
-returns 400 in our test (likely network/sandbox), so the spike does
-**not** treat this as Oxigraph-specific. The flag stands as a known
-limitation in some Oxigraph builds; the hub must decide whether
-cross-endpoint federation is required.
-
-**Impact:** none today (hub spec does not require SERVICE). Re-evaluate
-if/when the hub federates with other vocabulary registries.
+Manual probe spot-check on the live endpoint:
+```
+$ curl -s -o /dev/null -w "%{http_code} %{content_type}\n" \
+    -H "Accept: application/ld+json" \
+    --data-urlencode "query=CONSTRUCT { ?s ?p ?o } WHERE { ?s ?p ?o } LIMIT 1" \
+    http://localhost:7878/query
+200 application/ld+json
+```
 
 ## What Oxigraph passes (load-bearing rows)
 
 SPARQL 1.1 SELECT / CONSTRUCT / ASK / DESCRIBE / UPDATE-INSERT /
-UPDATE-DELETE; Graph Store Protocol PUT+GET; property paths;
-named graphs; SKOS `broader+` transitive; Turtle, N-Triples, RDF/XML,
-TriG content negotiation; SPARQL-results JSON; 100k-triple bulk load
-(HTTP 201).
+UPDATE-DELETE; Graph Store Protocol PUT+GET; property paths; named
+graphs; SKOS `broader+` transitive; **Turtle, JSON-LD, N-Triples,
+RDF/XML, TriG content negotiation**; SPARQL-results JSON;
+100k-triple bulk load.
 
-## Rows not auto-probed
+## Rows not auto-probed (manual)
 
-| Row | Status | Why |
-|---|---|---|
-| C19 SHACL Core | manual | not in either engine via SPARQL probe; Jena has `jena-shacl`, Oxigraph has none — companion `rudof` per ADR-002 |
-| C20 SHACL-SPARQL | manual | same — only Jena ships it |
-| C21 OWL 2 RL runtime inference | manual | Jena's rule engine; Oxigraph: none built-in — companion `reasonable` per ADR-002 |
-| C22 RDFS entailment regime | manual | engine-internal; needs OWL spike |
-| C23 Persistence restart | manual | requires container restart; not in this run |
-| C25 HTTP auth | manual | reverse-proxy concern; out of engine scope |
-
-These are the rows where ADR-002 already documents a companion
-component path. **Spike 1 does not block the L1/L2 swap on them** —
-they belong to ADR-002 implementation, not to the L1/L2 engine choice.
+`C19 SHACL Core`, `C20 SHACL-SPARQL`, `C21 OWL 2 RL runtime inference`,
+`C22 RDFS entailment regime`, `C23 Persistence restart`, `C25 HTTP
+auth` — these belong to ADR-002 (companion components: `rudof`,
+`reasonable`) or to deployment hardening, not to the L1/L2 engine
+choice. Spike 1 does not block on them.
 
 ## Recommendation to ADR reviewer
 
-Treat the spike-1 outcome as: **Oxigraph clears the coverage gate
-conditional on two API-layer decisions:**
+Spike 1 is now a clean **PASS**. Combined with Spike 2's
+deployment-realistic numbers (forthcoming RESULT.md update), the
+evidence supports accepting the L1/L2 swap proposed by ADR-004.
+The reviewer should:
 
-1. JSON-LD policy (G1) — either convert at the gateway or restrict
-   JSON-LD to REST endpoints.
-2. Federation policy (G2) — confirm SERVICE is not required (likely;
-   not in any documented hub requirement).
-
-If both are agreed, Spike 1 flips to PASS. None of the failures are
-intrinsic Oxigraph blockers.
+1. Update ADR-004 §1 "gaps to verify" — JSON-LD is no longer a gap on
+   Oxigraph 0.5+.
+2. Decide whether SPARQL federation (SERVICE) is required by any
+   documented hub use case; the working assumption is that it is not.
+3. Pin the production deployment to **Oxigraph ≥ 0.5.8** (or whichever
+   later release continues to ship JSON-LD).
 
 ## Reproducing
 
 ```bash
 cd spikes
 uv sync
-docker compose -f docker/docker-compose.yml up -d
+docker compose -f docker/docker-compose.yml --profile tmpfs up -d
 cd 01_oxigraph_coverage && ./run.sh
 ```
 
-Each invocation produces a fresh `results/<run-id>/`; previous runs are
-preserved.
-
 ## Provenance
 
-Raw artifacts for this verdict:
-
-- `results/20260521T150143Z-728771b-c282e2/manifest.json` — git SHA,
+- `results/20260521T183330Z-ae0a328-c4b749/manifest.json` — git SHA,
   host, tool versions, sha256 of every input file.
-- `results/20260521T150143Z-728771b-c282e2/probe_results.json` — 40
-  per-(row × engine) records with `verdict`, `detail`, `status_code`,
-  `raw_path`.
-- `results/20260521T150143Z-728771b-c282e2/raw/<probe>/<engine>.txt` —
-  every HTTP response body, one file per probe per engine.
-- `results/20260521T150143Z-728771b-c282e2/feature_matrix.md` —
-  rendered template with verdict columns filled in.
+- `…/probe_results.json` — 40 per-(row × engine) records.
+- `…/raw/<probe>/<engine>.txt` — every HTTP response body.
+- `…/feature_matrix.md` — rendered matrix.
+
+Historical runs preserved alongside:
+
+- `results/20260521T145859Z-728771b-c282e2/` — incomplete (Fuseki auth
+  failure on data load; caught and fixed before re-run).
+- `results/20260521T150143Z-728771b-c282e2/` — first complete run on
+  Oxigraph 0.4.7 / Fuseki 5.0.0, where the JSON-LD gap was identified.

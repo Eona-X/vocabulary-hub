@@ -1,0 +1,322 @@
+[
+  {
+    "row": "sparql-select",
+    "engine": "fuseki",
+    "verdict": "pass",
+    "detail": "3 bindings",
+    "status_code": 200,
+    "raw_path": "/home/nico/wspace/eona/eona_vocabulary_services/spikes/01_oxigraph_coverage/results/20260521T183330Z-ae0a328-c4b749/raw/sparql-select/fuseki.txt"
+  },
+  {
+    "row": "sparql-construct",
+    "engine": "fuseki",
+    "verdict": "pass",
+    "detail": "~6 lines, threshold 1",
+    "status_code": 200,
+    "raw_path": "/home/nico/wspace/eona/eona_vocabulary_services/spikes/01_oxigraph_coverage/results/20260521T183330Z-ae0a328-c4b749/raw/sparql-construct/fuseki.txt"
+  },
+  {
+    "row": "sparql-ask",
+    "engine": "fuseki",
+    "verdict": "pass",
+    "detail": "{'head': {}, 'boolean': True}",
+    "status_code": 200,
+    "raw_path": "/home/nico/wspace/eona/eona_vocabulary_services/spikes/01_oxigraph_coverage/results/20260521T183330Z-ae0a328-c4b749/raw/sparql-ask/fuseki.txt"
+  },
+  {
+    "row": "sparql-describe",
+    "engine": "fuseki",
+    "verdict": "pass",
+    "detail": "~2 lines, threshold 1",
+    "status_code": 200,
+    "raw_path": "/home/nico/wspace/eona/eona_vocabulary_services/spikes/01_oxigraph_coverage/results/20260521T183330Z-ae0a328-c4b749/raw/sparql-describe/fuseki.txt"
+  },
+  {
+    "row": "sparql-update-insert",
+    "engine": "fuseki",
+    "verdict": "pass",
+    "detail": "2xx",
+    "status_code": 200,
+    "raw_path": "/home/nico/wspace/eona/eona_vocabulary_services/spikes/01_oxigraph_coverage/results/20260521T183330Z-ae0a328-c4b749/raw/sparql-update-insert/fuseki.txt"
+  },
+  {
+    "row": "sparql-update-delete",
+    "engine": "fuseki",
+    "verdict": "pass",
+    "detail": "2xx",
+    "status_code": 200,
+    "raw_path": "/home/nico/wspace/eona/eona_vocabulary_services/spikes/01_oxigraph_coverage/results/20260521T183330Z-ae0a328-c4b749/raw/sparql-update-delete/fuseki.txt"
+  },
+  {
+    "row": "gsp-put-get",
+    "engine": "fuseki",
+    "verdict": "pass",
+    "detail": "PUT=201 GET=200",
+    "status_code": 200,
+    "raw_path": "/home/nico/wspace/eona/eona_vocabulary_services/spikes/01_oxigraph_coverage/results/20260521T183330Z-ae0a328-c4b749/raw/gsp-put-get/fuseki.txt"
+  },
+  {
+    "row": "sparql-service",
+    "engine": "fuseki",
+    "verdict": "fail",
+    "detail": "http 400",
+    "status_code": 400,
+    "raw_path": "/home/nico/wspace/eona/eona_vocabulary_services/spikes/01_oxigraph_coverage/results/20260521T183330Z-ae0a328-c4b749/raw/sparql-service/fuseki.txt"
+  },
+  {
+    "row": "sparql-paths",
+    "engine": "fuseki",
+    "verdict": "pass",
+    "detail": "2 bindings",
+    "status_code": 200,
+    "raw_path": "/home/nico/wspace/eona/eona_vocabulary_services/spikes/01_oxigraph_coverage/results/20260521T183330Z-ae0a328-c4b749/raw/sparql-paths/fuseki.txt"
+  },
+  {
+    "row": "named-graphs",
+    "engine": "fuseki",
+    "verdict": "pass",
+    "detail": "1 bindings",
+    "status_code": 200,
+    "raw_path": "/home/nico/wspace/eona/eona_vocabulary_services/spikes/01_oxigraph_coverage/results/20260521T183330Z-ae0a328-c4b749/raw/named-graphs/fuseki.txt"
+  },
+  {
+    "row": "io-turtle",
+    "engine": "fuseki",
+    "verdict": "pass",
+    "detail": "~2 lines, threshold 1",
+    "status_code": 200,
+    "raw_path": "/home/nico/wspace/eona/eona_vocabulary_services/spikes/01_oxigraph_coverage/results/20260521T183330Z-ae0a328-c4b749/raw/io-turtle/fuseki.txt"
+  },
+  {
+    "row": "io-jsonld",
+    "engine": "fuseki",
+    "verdict": "pass",
+    "detail": "2xx",
+    "status_code": 200,
+    "raw_path": "/home/nico/wspace/eona/eona_vocabulary_services/spikes/01_oxigraph_coverage/results/20260521T183330Z-ae0a328-c4b749/raw/io-jsonld/fuseki.txt"
+  },
+  {
+    "row": "io-ntriples",
+    "engine": "fuseki",
+    "verdict": "pass",
+    "detail": "~2 lines, threshold 1",
+    "status_code": 200,
+    "raw_path": "/home/nico/wspace/eona/eona_vocabulary_services/spikes/01_oxigraph_coverage/results/20260521T183330Z-ae0a328-c4b749/raw/io-ntriples/fuseki.txt"
+  },
+  {
+    "row": "io-rdfxml",
+    "engine": "fuseki",
+    "verdict": "pass",
+    "detail": "2xx",
+    "status_code": 200,
+    "raw_path": "/home/nico/wspace/eona/eona_vocabulary_services/spikes/01_oxigraph_coverage/results/20260521T183330Z-ae0a328-c4b749/raw/io-rdfxml/fuseki.txt"
+  },
+  {
+    "row": "io-trig",
+    "engine": "fuseki",
+    "verdict": "pass",
+    "detail": "2xx",
+    "status_code": 200,
+    "raw_path": "/home/nico/wspace/eona/eona_vocabulary_services/spikes/01_oxigraph_coverage/results/20260521T183330Z-ae0a328-c4b749/raw/io-trig/fuseki.txt"
+  },
+  {
+    "row": "conneg",
+    "engine": "fuseki",
+    "verdict": "pass",
+    "detail": "2xx + json",
+    "status_code": 200,
+    "raw_path": "/home/nico/wspace/eona/eona_vocabulary_services/spikes/01_oxigraph_coverage/results/20260521T183330Z-ae0a328-c4b749/raw/conneg/fuseki.txt"
+  },
+  {
+    "row": "skos-broader",
+    "engine": "fuseki",
+    "verdict": "pass",
+    "detail": "2 bindings",
+    "status_code": 200,
+    "raw_path": "/home/nico/wspace/eona/eona_vocabulary_services/spikes/01_oxigraph_coverage/results/20260521T183330Z-ae0a328-c4b749/raw/skos-broader/fuseki.txt"
+  },
+  {
+    "row": "text-search",
+    "engine": "fuseki",
+    "verdict": "pass",
+    "detail": "2xx",
+    "status_code": 200,
+    "raw_path": "/home/nico/wspace/eona/eona_vocabulary_services/spikes/01_oxigraph_coverage/results/20260521T183330Z-ae0a328-c4b749/raw/text-search/fuseki.txt"
+  },
+  {
+    "row": "persistence-restart",
+    "engine": "fuseki",
+    "verdict": "manual",
+    "detail": "Tested by probe.py only on Oxigraph: writes a sentinel triple via\nUPDATE, then restarts the oxigraph-server container (volume-backed)\nand confirms the triple is still queryable. Fuseki in-memory mode\nis intentionally not persistent in this harness; the persistence\ncheck is the Oxigraph claim under evaluation, not a comparison.\n",
+    "status_code": null,
+    "raw_path": null
+  },
+  {
+    "row": "bulk-load",
+    "engine": "fuseki",
+    "verdict": "pass",
+    "detail": "bulk load 200",
+    "status_code": 200,
+    "raw_path": "/home/nico/wspace/eona/eona_vocabulary_services/spikes/01_oxigraph_coverage/results/20260521T183330Z-ae0a328-c4b749/raw/bulk-load/fuseki.txt"
+  },
+  {
+    "row": "sparql-select",
+    "engine": "oxigraph",
+    "verdict": "pass",
+    "detail": "3 bindings",
+    "status_code": 200,
+    "raw_path": "/home/nico/wspace/eona/eona_vocabulary_services/spikes/01_oxigraph_coverage/results/20260521T183330Z-ae0a328-c4b749/raw/sparql-select/oxigraph.txt"
+  },
+  {
+    "row": "sparql-construct",
+    "engine": "oxigraph",
+    "verdict": "pass",
+    "detail": "~6 lines, threshold 1",
+    "status_code": 200,
+    "raw_path": "/home/nico/wspace/eona/eona_vocabulary_services/spikes/01_oxigraph_coverage/results/20260521T183330Z-ae0a328-c4b749/raw/sparql-construct/oxigraph.txt"
+  },
+  {
+    "row": "sparql-ask",
+    "engine": "oxigraph",
+    "verdict": "pass",
+    "detail": "{'head': {}, 'boolean': True}",
+    "status_code": 200,
+    "raw_path": "/home/nico/wspace/eona/eona_vocabulary_services/spikes/01_oxigraph_coverage/results/20260521T183330Z-ae0a328-c4b749/raw/sparql-ask/oxigraph.txt"
+  },
+  {
+    "row": "sparql-describe",
+    "engine": "oxigraph",
+    "verdict": "pass",
+    "detail": "~2 lines, threshold 1",
+    "status_code": 200,
+    "raw_path": "/home/nico/wspace/eona/eona_vocabulary_services/spikes/01_oxigraph_coverage/results/20260521T183330Z-ae0a328-c4b749/raw/sparql-describe/oxigraph.txt"
+  },
+  {
+    "row": "sparql-update-insert",
+    "engine": "oxigraph",
+    "verdict": "pass",
+    "detail": "2xx",
+    "status_code": 204,
+    "raw_path": "/home/nico/wspace/eona/eona_vocabulary_services/spikes/01_oxigraph_coverage/results/20260521T183330Z-ae0a328-c4b749/raw/sparql-update-insert/oxigraph.txt"
+  },
+  {
+    "row": "sparql-update-delete",
+    "engine": "oxigraph",
+    "verdict": "pass",
+    "detail": "2xx",
+    "status_code": 204,
+    "raw_path": "/home/nico/wspace/eona/eona_vocabulary_services/spikes/01_oxigraph_coverage/results/20260521T183330Z-ae0a328-c4b749/raw/sparql-update-delete/oxigraph.txt"
+  },
+  {
+    "row": "gsp-put-get",
+    "engine": "oxigraph",
+    "verdict": "pass",
+    "detail": "PUT=201 GET=200",
+    "status_code": 200,
+    "raw_path": "/home/nico/wspace/eona/eona_vocabulary_services/spikes/01_oxigraph_coverage/results/20260521T183330Z-ae0a328-c4b749/raw/gsp-put-get/oxigraph.txt"
+  },
+  {
+    "row": "sparql-service",
+    "engine": "oxigraph",
+    "verdict": "fail",
+    "detail": "http 400",
+    "status_code": 400,
+    "raw_path": "/home/nico/wspace/eona/eona_vocabulary_services/spikes/01_oxigraph_coverage/results/20260521T183330Z-ae0a328-c4b749/raw/sparql-service/oxigraph.txt"
+  },
+  {
+    "row": "sparql-paths",
+    "engine": "oxigraph",
+    "verdict": "pass",
+    "detail": "2 bindings",
+    "status_code": 200,
+    "raw_path": "/home/nico/wspace/eona/eona_vocabulary_services/spikes/01_oxigraph_coverage/results/20260521T183330Z-ae0a328-c4b749/raw/sparql-paths/oxigraph.txt"
+  },
+  {
+    "row": "named-graphs",
+    "engine": "oxigraph",
+    "verdict": "pass",
+    "detail": "1 bindings",
+    "status_code": 200,
+    "raw_path": "/home/nico/wspace/eona/eona_vocabulary_services/spikes/01_oxigraph_coverage/results/20260521T183330Z-ae0a328-c4b749/raw/named-graphs/oxigraph.txt"
+  },
+  {
+    "row": "io-turtle",
+    "engine": "oxigraph",
+    "verdict": "pass",
+    "detail": "~2 lines, threshold 1",
+    "status_code": 200,
+    "raw_path": "/home/nico/wspace/eona/eona_vocabulary_services/spikes/01_oxigraph_coverage/results/20260521T183330Z-ae0a328-c4b749/raw/io-turtle/oxigraph.txt"
+  },
+  {
+    "row": "io-jsonld",
+    "engine": "oxigraph",
+    "verdict": "pass",
+    "detail": "2xx",
+    "status_code": 200,
+    "raw_path": "/home/nico/wspace/eona/eona_vocabulary_services/spikes/01_oxigraph_coverage/results/20260521T183330Z-ae0a328-c4b749/raw/io-jsonld/oxigraph.txt"
+  },
+  {
+    "row": "io-ntriples",
+    "engine": "oxigraph",
+    "verdict": "pass",
+    "detail": "~2 lines, threshold 1",
+    "status_code": 200,
+    "raw_path": "/home/nico/wspace/eona/eona_vocabulary_services/spikes/01_oxigraph_coverage/results/20260521T183330Z-ae0a328-c4b749/raw/io-ntriples/oxigraph.txt"
+  },
+  {
+    "row": "io-rdfxml",
+    "engine": "oxigraph",
+    "verdict": "pass",
+    "detail": "2xx",
+    "status_code": 200,
+    "raw_path": "/home/nico/wspace/eona/eona_vocabulary_services/spikes/01_oxigraph_coverage/results/20260521T183330Z-ae0a328-c4b749/raw/io-rdfxml/oxigraph.txt"
+  },
+  {
+    "row": "io-trig",
+    "engine": "oxigraph",
+    "verdict": "pass",
+    "detail": "2xx",
+    "status_code": 200,
+    "raw_path": "/home/nico/wspace/eona/eona_vocabulary_services/spikes/01_oxigraph_coverage/results/20260521T183330Z-ae0a328-c4b749/raw/io-trig/oxigraph.txt"
+  },
+  {
+    "row": "conneg",
+    "engine": "oxigraph",
+    "verdict": "pass",
+    "detail": "2xx + json",
+    "status_code": 200,
+    "raw_path": "/home/nico/wspace/eona/eona_vocabulary_services/spikes/01_oxigraph_coverage/results/20260521T183330Z-ae0a328-c4b749/raw/conneg/oxigraph.txt"
+  },
+  {
+    "row": "skos-broader",
+    "engine": "oxigraph",
+    "verdict": "pass",
+    "detail": "2 bindings",
+    "status_code": 200,
+    "raw_path": "/home/nico/wspace/eona/eona_vocabulary_services/spikes/01_oxigraph_coverage/results/20260521T183330Z-ae0a328-c4b749/raw/skos-broader/oxigraph.txt"
+  },
+  {
+    "row": "text-search",
+    "engine": "oxigraph",
+    "verdict": "pass",
+    "detail": "2xx",
+    "status_code": 200,
+    "raw_path": "/home/nico/wspace/eona/eona_vocabulary_services/spikes/01_oxigraph_coverage/results/20260521T183330Z-ae0a328-c4b749/raw/text-search/oxigraph.txt"
+  },
+  {
+    "row": "persistence-restart",
+    "engine": "oxigraph",
+    "verdict": "manual",
+    "detail": "Tested by probe.py only on Oxigraph: writes a sentinel triple via\nUPDATE, then restarts the oxigraph-server container (volume-backed)\nand confirms the triple is still queryable. Fuseki in-memory mode\nis intentionally not persistent in this harness; the persistence\ncheck is the Oxigraph claim under evaluation, not a comparison.\n",
+    "status_code": null,
+    "raw_path": null
+  },
+  {
+    "row": "bulk-load",
+    "engine": "oxigraph",
+    "verdict": "pass",
+    "detail": "bulk load 201",
+    "status_code": 201,
+    "raw_path": "/home/nico/wspace/eona/eona_vocabulary_services/spikes/01_oxigraph_coverage/results/20260521T183330Z-ae0a328-c4b749/raw/bulk-load/oxigraph.txt"
+  }
+]

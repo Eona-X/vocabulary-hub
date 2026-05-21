@@ -1,0 +1,14 @@
+[
+  {
+    "engine": "fuseki",
+    "triples": 100000,
+    "seconds": 0.48113083839416504,
+    "throughput_tps": 207843.6716585506
+  },
+  {
+    "engine": "oxigraph",
+    "triples": 100000,
+    "seconds": 0.45218753814697266,
+    "throughput_tps": 221147.18244954688
+  }
+]

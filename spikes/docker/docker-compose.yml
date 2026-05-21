@@ -1,3 +1,10 @@
+# Pinned versions:
+#   - Oxigraph 0.5.8 — latest stable (https://github.com/oxigraph/oxigraph/releases)
+#   - Fuseki via stain/jena-fuseki:5.1.0 — latest available community image
+#     (last push 2024-07-31). Apache Jena itself is at 6.1.0 but Apache
+#     ships only a Dockerfile toolkit, not a built image. Switch to a
+#     locally-built jena-fuseki-docker image if 6.x is required.
+#
 # Two variants selected via Docker Compose profiles:
 #
 #   tmpfs  — engine-only: Fuseki --mem (in-memory) + Oxigraph on tmpfs
@@ -14,7 +21,7 @@ services:
   # ---- tmpfs profile ----------------------------------------------------
   fuseki-mem:
     profiles: ["tmpfs"]
-    image: stain/jena-fuseki:5.0.0
+    image: stain/jena-fuseki:5.1.0
     container_name: adr004-fuseki
     environment:
       ADMIN_PASSWORD: admin
@@ -25,7 +32,7 @@ services:
 
   oxigraph-tmpfs:
     profiles: ["tmpfs"]
-    image: ghcr.io/oxigraph/oxigraph:0.4.7
+    image: ghcr.io/oxigraph/oxigraph:0.5.8
     container_name: adr004-oxigraph
     ports:
       - "7878:7878"
@@ -36,7 +43,7 @@ services:
   # ---- disk profile -----------------------------------------------------
   fuseki-tdb2:
     profiles: ["disk"]
-    image: stain/jena-fuseki:5.0.0
+    image: stain/jena-fuseki:5.1.0
     container_name: adr004-fuseki
     environment:
       ADMIN_PASSWORD: admin
@@ -50,7 +57,7 @@ services:
 
   oxigraph-disk:
     profiles: ["disk"]
-    image: ghcr.io/oxigraph/oxigraph:0.4.7
+    image: ghcr.io/oxigraph/oxigraph:0.5.8
     container_name: adr004-oxigraph
     ports:
       - "7878:7878"
