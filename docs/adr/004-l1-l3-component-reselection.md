@@ -23,7 +23,7 @@ Scope: L1 (triplestore), L2 (SPARQL service), L3 (mapping / virtualization). **L
 |---|---|---|---|
 | L1 Storage | Apache Jena TDB2 (ADR-001) | Oxigraph (RocksDB backend) | §1 |
 | L2 SPARQL service | Fuseki (ADR-001) | `oxigraph-server` | §1 |
-| L3 ETL mapping | Morph-KGC (ADR-002) | Maplib | §2 |
+| L3 ETL mapping | Morph-KGC (ADR-002) | Maplib (**rejected — coverage**) | §2 |
 | L3 Virtualization | ONTOP (ADR-002) | Chrontext | §3 |
 
 Each candidate is evaluated against the ADR-000 ranking: **(1) coverage → (2) maturity → (3) memory → (4) performance**. A candidate that fails (1) or (2) is rejected regardless of how it scores on (3) and (4).
@@ -61,24 +61,57 @@ ADR-001 made co-location with the IDS adapter a driver because Jena `Model` obje
 
 ## §2. L3 ETL — Maplib vs. Morph-KGC
 
-### Coverage
-- RML / R2RML: supported via Maplib's mapping layer and the OTTR template system. **Required:** run the RML test suite and report pass rate vs. Morph-KGC's.
-- CSVW: verify.
-- Output formats and target stores: verify Arrow-to-RDF serialization paths match what the hub's downstream consumers expect.
+### Coverage — **fails the gate** (see Spike 3 + Spike 4)
+
+- **Maplib 0.20.18 does not ingest RML or R2RML.** Its only template
+  ingestion path is `Model.read_template`, which parses **stOTTR** — a
+  non-RML OTTR template dialect. Pointing it at any `mapping.ttl` from
+  the kg-construct RML test cases or from GTFS-Madrid-Bench fails at
+  parse time (`Template parsing error: error at L:C: expected IRI`).
+- **Spike 3 result (RML test suite, full kg-construct/rml-test-cases):**
+  Morph-KGC 87 / 324 pass (26.9%, 62% of testable cases),
+  RMLMapper-Java 84 / 324 pass (25.9%), Maplib **0 / 324 pass.** Maplib
+  errors on every test for the same root cause (stOTTR ≠ RML).
+- **Spike 4 result (GTFS-Madrid-Bench mapping, synthetic-fallback on
+  this host):** Morph-KGC materialises in 1.79 s / 254.9 MB RSS; Maplib
+  fails before producing any triples. Output hashes diverge by
+  construction (`maplib` triples = 0), so the speedup is not defined.
+
+This is a **coverage-gate failure under the ADR-000 ranking** —
+coverage outranks memory and performance. The speedup numbers below
+are recorded only to show why they don't unblock the decision.
 
 ### Maturity
 - Single-vendor (DataTreehouse). Smaller contributor base than the RMLio ecosystem behind Morph-KGC.
 - Release cadence and issue-response times to be reported at acceptance.
-- MappingLoom-RS, referenced in earlier drafts, is dropped from this ADR until its status is verifiable.
+- MappingLoom-RS, referenced in earlier drafts, was re-evaluated during
+  Spike 3 and found to be a mapping-algebra translator (emits `.dot`
+  plans, no RDF output) rather than a materialisation engine. Out of
+  scope for L3.
 
 ### Memory
-- Arrow columnar representation typically lower than row-oriented Python pipelines, but quantify on the hub's largest expected mapping job.
+- Not measurable while Maplib cannot run the workload. Spike 4 records
+  Morph-KGC's peak RSS (254.9 MB on the synthetic mapping at scale 1)
+  so the harness is in place to compare against any future RML-capable
+  candidate.
 
 ### Performance
-- Published claim: "47x–182x faster than Morph-KGC" on GTFS-Madrid-Bench. **One benchmark, one domain, vendor-published.** Treat as a hint, not evidence. Required before acceptance: reproduce on the hub's own mapping workload.
+- The "47×–182× faster than Morph-KGC" claim from the vendor's
+  GTFS-Madrid-Bench writeup **cannot be reproduced** by Spike 4. There
+  is no like-for-like comparison to make while Maplib refuses the
+  mapping. Treat the published figure as unverifiable in this context
+  until Maplib gains an RML ingestion path.
 
 ### Verdict
-**Conditional candidate.** Coverage spike (RML test suite) is the gating step; performance numbers come second.
+**Rejected for the L3 swap.** Maplib stays out of scope for ADR-004 §2.
+
+- **Decision:** Keep Morph-KGC at L3. RMLMapper-Java is also a viable
+  alternative if a JVM dependency is acceptable (within 1 pp of
+  Morph-KGC on conformance, see Spike 3).
+- **Re-open condition:** Maplib (or a successor) ships an RML→OTTR
+  transpiler or a native RML reader that round-trips at least the
+  kg-construct suite cases the hub depends on. At that point, re-run
+  Spike 3 and Spike 4 unchanged; the harness is engine-agnostic.
 
 ---
 
@@ -102,28 +135,39 @@ ADR-001 made co-location with the IDS adapter a driver because Jena `Model` obje
 Conditional on the spikes listed below passing:
 
 1. **L1/L2:** Replace Jena/Fuseki with Oxigraph, contingent on the coverage-matrix spike.
-2. **L3 ETL:** Replace Morph-KGC with Maplib, contingent on RML test-suite pass-rate parity.
+2. **L3 ETL:** **Keep Morph-KGC.** Maplib is rejected at the coverage
+   gate — it cannot ingest RML (Spikes 3 and 4). RMLMapper-Java is a
+   recorded viable alternative if a JVM L3 dependency becomes desirable.
 3. **L3 Virtualization:** **Keep ONTOP.** Chrontext is a different product, not a replacement.
 
 If any spike fails, the corresponding incumbent stays.
 
 ## Consequences
 
-- **Positive (if spikes pass):**
+- **Positive (if remaining L1/L2 spikes pass):**
   - Lower memory footprint at L1/L2 (magnitude TBD by benchmark, not assumed).
-  - Faster ETL materialization at L3 (magnitude TBD by benchmark).
-  - Fewer runtime dependencies in the container image.
+  - Fewer runtime dependencies in the container image at L1/L2.
+- **At L3, no change to the operational picture:** Morph-KGC stays; the
+  expected "faster ETL materialization" benefit at L3 does not
+  materialise from this ADR.
 - **Negative:**
-  - Smaller upstream communities than Jena / RMLio. Higher bus-factor risk.
-  - In-house expertise required for the new components; document operational runbooks before cutover.
-  - ADR-001 and ADR-002 are partially superseded; update their status lines on acceptance.
+  - Smaller upstream community than Jena at L1/L2. Higher bus-factor risk.
+  - In-house expertise required for the new L1/L2 components; document
+    operational runbooks before cutover.
+  - ADR-001 is partially superseded on acceptance of L1/L2 only; ADR-002
+    is **not** superseded — Morph-KGC remains the L3 ETL.
 
 ## Validation plan (must complete before status moves to Accepted)
 
 1. **Oxigraph coverage spike:** enumerate Jena features in use; check each against Oxigraph. Output: feature-matrix table.
 2. **Oxigraph benchmark:** bulk-load and query-mix benchmark on a representative dataset. Output: RSS, p50/p95 latency, load throughput vs. Jena/Fuseki.
-3. **Maplib RML conformance:** run the RML test suite. Output: pass-rate vs. Morph-KGC.
-4. **Maplib benchmark:** materialize the hub's largest mapping on both engines. Output: wall time, peak RSS.
+3. **Maplib RML conformance:** ✅ **Done — Spike 3.** Maplib 0 / 324
+   (no RML ingestion path); Morph-KGC 87 / 324, RMLMapper-Java 84 / 324.
+   Coverage gate: fail.
+4. **Maplib benchmark:** ✅ **Done — Spike 4.** Maplib fails on the
+   GTFS-Madrid-Bench mapping for the same coverage reason; no
+   like-for-like time/RSS comparison is possible. Morph-KGC baseline
+   recorded for future RML-capable candidates.
 5. **Scope decision on virtualization:** product owner confirms whether general SQL virtualization is in scope. If no, run Chrontext through the same gate; if yes, ONTOP stays and Chrontext is closed out.
 
 ## References
