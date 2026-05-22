@@ -47,6 +47,8 @@ Full per-test rossete-pp results: `results/20260521T224014Z-994f575-eb50a7/`.
 
 - **Morph-KGC** (Python, the current L3 ETL incumbent)
 - **Maplib** (Rust, the ADR-004 candidate)
+- **RMLMapper-Java** v8.1.0 (the reference RML.io implementation; the
+  bar Morph-KGC's own conformance numbers are measured against)
 
 ## How it runs
 
@@ -56,18 +58,21 @@ Full per-test rossete-pp results: `results/20260521T224014Z-994f575-eb50a7/`.
    `inputs/rml-test-cases/` (commit SHA recorded in the manifest, so a
    re-run with a different upstream snapshot is a different
    `inputs.files[].sha256` and therefore a different `run-id`).
-2. For each test case (each has `mapping.ttl`, source data files, and an
+2. Fetches a pinned release of `rmlmapper-java` (fat jar) into
+   `inputs/rmlmapper-<version>-<build>-all.jar`.
+3. For each test case (each has `mapping.ttl`, source data files, and an
    expected `output.nq` / `output.nt`):
    1. Runs Morph-KGC.
    2. Runs Maplib.
-   3. Canonicalises each engine's output (sorted N-Quads after rdflib
+   3. Runs RMLMapper-Java.
+   4. Canonicalises each engine's output (sorted N-Quads after rdflib
       isomorphism normalisation).
-   4. Diffs against the canonicalised expected output.
-3. Writes:
+   5. Diffs against the canonicalised expected output.
+4. Writes:
    - `results/<run-id>/verdicts.json` — per-test `{engine, test, verdict,
      diff_path}` records.
-   - `results/<run-id>/raw/<test-id>/{morph,maplib}.nq` — actual output.
-   - `results/<run-id>/raw/<test-id>/{morph,maplib}.diff` — line diff
+   - `results/<run-id>/raw/<test-id>/{morph,maplib,rmlmapper}.nt` — actual output.
+   - `results/<run-id>/raw/<test-id>/{morph,maplib,rmlmapper}.diff` — line diff
      against the expected canonical output (empty file ⇒ pass).
    - `results/<run-id>/summary.md` — pass-rate per engine, list of tests
      where the two engines diverge.
@@ -82,6 +87,8 @@ without re-running the spike.
 ## Re-running
 
 ```bash
-./run.sh                # fetches the test suite once, then runs both engines
+./run.sh                # fetches the test suite + rmlmapper jar once, then runs all engines
 ./run.sh --refresh-tests   # re-clone the test suite at the latest commit
 ```
+
+Override pinned versions via env: `SUITE_COMMIT=<sha> RMLMAPPER_VERSION=8.1.0 RMLMAPPER_BUILD=r380 ./run.sh`.
