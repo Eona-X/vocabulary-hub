@@ -107,18 +107,22 @@ def bench_morph(mapping: Path, wd: Path, out: Path, scale: str, run_dir: Path) -
 
 
 def bench_maplib(mapping: Path, wd: Path, out: Path, scale: str, run_dir: Path) -> BenchResult:
+    """Maplib 0.20.x renamed `Mapping` → `Model`, and its only template
+    ingestion path is stOTTR (read_template), not RML. So pointing it at
+    a GTFS-Madrid-Bench RML mapping fails at parse time. That failure IS
+    the spike's finding for ADR-004 §2: there is no like-for-like speed
+    comparison to make with Morph-KGC because Maplib cannot ingest RML."""
     t0 = time.time()
     try:
         # Maplib is in-process; sample the current PID + descendants.
         with RssSampler(os.getpid(), "maplib", interval_s=0.25) as s:
-            from maplib import Mapping  # type: ignore
-            m = Mapping()
+            from maplib import Model  # type: ignore
+            m = Model()
             old_cwd = os.getcwd()
             try:
                 os.chdir(wd)
                 m.read_template(str(mapping))
-                m.expand_default()
-                m.write_ntriples(str(out))
+                m.write(str(out), format="ntriples")
             finally:
                 os.chdir(old_cwd)
         dt = time.time() - t0

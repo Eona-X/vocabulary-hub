@@ -24,4 +24,7 @@ if [[ ! -f "$TARGET/mapping.ttl" ]]; then
   echo "GTFS-Madrid-Bench mapping not available at scale=$SCALE; falling back to synthetic." >&2
 fi
 
-exec env SCALE="$SCALE" python bench.py
+# Use the spike venv (psutil, rdflib, maplib live there) and put uv on
+# PATH for Morph-KGC's per-test `uv run --isolated`.
+export PATH="$(cd .. && pwd)/venv/bin:$PATH"
+exec env SCALE="$SCALE" ../.venv/bin/python bench.py

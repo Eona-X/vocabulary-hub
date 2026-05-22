@@ -32,6 +32,26 @@ If neither materialises (e.g. offline), the harness falls back to a
 minimal synthetic mapping in `inputs/synthetic/` and tags the manifest
 accordingly.
 
+> **Note on GTFS-1 data generation on this host.** The upstream
+> `oeg-upm/gtfs-bench` generator (`vig-1.8.1.jar`) requires a live MySQL
+> source — the documented path is `docker run … oegdataintegration/gtfs-bench`,
+> which is interactive (asks for scales / distributions) and writes a
+> `result.zip` to the cwd. Re-runs on a host with Docker should drop the
+> resulting `csvs/1/` and `gtfs-csv.rml.ttl` into
+> `inputs/gtfs-madrid-bench/scale-1/` to switch from the synthetic
+> fallback to the real benchmark.
+
+## Engine outcome (current ADR-004 finding)
+
+On the synthetic mapping (and equally on any RML mapping including the
+GTFS-Madrid-Bench one), Maplib 0.20.x's `read_template` rejects RML at
+parse time — its template language is stOTTR, not RML. So the
+"47×–182× faster than Morph-KGC" claim from ADR-004 §2 **cannot be
+reproduced** here: there is no like-for-like comparison while Maplib
+cannot ingest the same mapping Morph-KGC does. The recorded failure
+mode (`Template parsing error: error at L:C: expected IRI`) is the
+same finding spike 3 documents at suite scope.
+
 ## Metrics captured per (engine × scale)
 
 - `wall_time_s` — total materialisation time, from process start to
