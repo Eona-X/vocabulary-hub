@@ -12,6 +12,7 @@ rdflib graph isomorphism, and the diff against expected is saved.
 from __future__ import annotations
 
 import json
+import os
 import subprocess
 import sys
 import tempfile
@@ -29,7 +30,12 @@ TESTS_DIR = SPIKE_DIR / "inputs" / "rml-test-cases" / "test-cases"
 
 # Rossete-RDF was evaluated and discarded — see README "Engines considered
 # and rejected". Its runner and preprocessor live in git history.
-ENGINES = ("morph", "maplib")
+ENGINES = ("morph", "maplib", "rmlmapper")
+
+# kg-construct mappings declare `@base <http://example.com/base/>`. The
+# RMLMapper CLI doesn't honour the in-file @base for term-map IRI expansion
+# unless -b is set explicitly, so pass it through.
+RMLMAPPER_BASE_IRI = "http://example.com/base/"
 
 
 @dataclass
@@ -102,6 +108,32 @@ def run_maplib(test_dir: Path, out_file: Path) -> tuple[bool, str]:
         return True, ""
     except Exception as e:
         return False, f"{type(e).__name__}: {e}\n{traceback.format_exc()}"
+
+
+def run_rmlmapper(test_dir: Path, out_file: Path) -> tuple[bool, str]:
+    """RMLMapper-Java (the reference implementation maintained by RML.io).
+
+    Invoked as a fat-jar CLI per-test. The JVM startup tax is ~1s/test but
+    we eat it rather than spinning up a long-lived server, because the
+    point of the spike is per-test conformance, not throughput, and a
+    sub-process keeps test isolation simple."""
+    jar = os.environ.get("RMLMAPPER_JAR")
+    if not jar or not Path(jar).exists():
+        return False, "RMLMAPPER_JAR not set or jar missing; run run.sh"
+    try:
+        proc = subprocess.run(
+            ["java", "-jar", jar,
+             "-m", str(test_dir / "mapping.ttl"),
+             "-o", str(out_file),
+             "-s", "nquads",
+             "-b", RMLMAPPER_BASE_IRI],
+            cwd=test_dir, capture_output=True, text=True, timeout=300,
+        )
+        # RMLMapper exits 0 even when it writes nothing (e.g. empty source
+        # → empty graph). The diff stage is what determines pass/fail.
+        return proc.returncode == 0, (proc.stdout + proc.stderr)
+    except Exception as e:
+        return False, f"exception: {e}\n{traceback.format_exc()}"
 
 
 def load_graph(path: Path):
@@ -183,7 +215,7 @@ def run_one(test_dir: Path, run_dir: Path) -> list[Verdict]:
                                     "SQL-backed test; no live database in harness"))
         return verdicts
 
-    runners = (("morph", run_morph), ("maplib", run_maplib))
+    runners = (("morph", run_morph), ("maplib", run_maplib), ("rmlmapper", run_rmlmapper))
     for engine, runner in runners:
         out_file = raw_dir / f"{engine}.nt"
         t0 = time.perf_counter()
@@ -219,7 +251,7 @@ def main() -> int:
     run_dir, manifest = start_run(
         spike=SPIKE, spike_dir=SPIKE_DIR,
         inputs=[*TESTS_DIR.rglob("mapping.ttl")],
-        tools=["maplib", "morph-kgc", "rdflib"],
+        tools=["maplib", "morph-kgc", "rmlmapper-java", "rdflib"],
         args={"n_tests": len(tests)},
         inputs_kind="public-reference",
         notes="rml-test-cases pinned via run.sh; see manifest input hashes for commit.",
