@@ -1,0 +1,8 @@
+Exception in thread "main" java.lang.Error: Cannot find student2.csv
+	at be.ugent.rml.access.AccessFactory.getAccess(AccessFactory.java:285)
+	at be.ugent.rml.records.RecordsFactory.createRecords(RecordsFactory.java:62)
+	at be.ugent.rml.Executor.getRecords(Executor.java:359)
+	at be.ugent.rml.Executor.executeWithFunction(Executor.java:168)
+	at be.ugent.rml.Executor.execute(Executor.java:155)
+	at be.ugent.rml.cli.Main.run(Main.java:440)
+	at be.ugent.rml.cli.Main.main(Main.java:49)

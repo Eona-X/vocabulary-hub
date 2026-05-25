@@ -1,0 +1,8 @@
+<http://example.com/Venus> a <http://example.com/Student> .
+<http://example.com/Venus> <http://xmlns.com/foaf/0.1/name> "Venus"^^<http://www.w3.org/2001/XMLSchema#string> .
+
+
+<http://example.com/Tennis> a <http://example.com/Sport> .
+<http://example.com/Tennis> <http://xmlns.com/foaf/0.1/name> "Tennis"^^<http://www.w3.org/2001/XMLSchema#string> .
+
+

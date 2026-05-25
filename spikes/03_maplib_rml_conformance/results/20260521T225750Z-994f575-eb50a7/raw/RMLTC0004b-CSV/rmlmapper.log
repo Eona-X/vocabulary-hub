@@ -1,0 +1,10 @@
+java.lang.Exception: http://example.com/base/TriplesMap1 is a Literal Term Map. Accepted term types for Subject Maps are: IRI, Blank Node
+00:58:57.492 [main] ERROR be.ugent.rml.cli.Main               .run(478) - http://example.com/base/TriplesMap1 is a Literal Term Map. Accepted term types for Subject Maps are: IRI, Blank Node
+java.lang.Exception: http://example.com/base/TriplesMap1 is a Literal Term Map. Accepted term types for Subject Maps are: IRI, Blank Node
+	at be.ugent.rml.MappingFactory.parseSubjectMap(MappingFactory.java:99)
+	at be.ugent.rml.MappingFactory.createMapping(MappingFactory.java:74)
+	at be.ugent.rml.Initializer.extractMappings(Initializer.java:50)
+	at be.ugent.rml.Initializer.<init>(Initializer.java:45)
+	at be.ugent.rml.Executor.<init>(Executor.java:94)
+	at be.ugent.rml.cli.Main.run(Main.java:416)
+	at be.ugent.rml.cli.Main.main(Main.java:49)

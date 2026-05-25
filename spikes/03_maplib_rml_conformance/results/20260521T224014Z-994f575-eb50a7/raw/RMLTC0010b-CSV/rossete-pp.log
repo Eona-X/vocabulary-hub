@@ -1,0 +1,6 @@
+
+
+[2026-05-22][00:42:01] [INFO] Starting to Parse all the given mapping files.
+[2026-05-22][00:42:01] [INFO] Parsing File ID:  1 PATH: "/tmp/tmp88pal_ip/RMLTC0010b-CSV/mapping.ttl"
+[2026-05-22][00:42:01] [ERROR] There are no input fields in the following URI: "http://example.com/{Country. It must have one at least. LAST MAP: TriplesMap1
+[2026-05-22][00:42:01] [ERROR] Process Finished Due to an error. ERROR CODE: NoInputFieldURISubject

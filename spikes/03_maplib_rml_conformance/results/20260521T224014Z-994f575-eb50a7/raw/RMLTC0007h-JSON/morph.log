@@ -1,0 +1,23 @@
+Installed 52 packages in 39ms
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/home/nico/.cache/uv/archive-v0/33o8-rHEogHCw8a-/lib/python3.12/site-packages/morph_kgc/__main__.py", line 63, in <module>
+    rml_df, fnml_df, http_api_df = retrieve_mappings(config)
+                                   ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/nico/.cache/uv/archive-v0/33o8-rHEogHCw8a-/lib/python3.12/site-packages/morph_kgc/mapping/mapping_parser.py", line 25, in retrieve_mappings
+    rml_df, fnml_df, http_api_df = mappings_parser.parse_mappings()
+                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/nico/.cache/uv/archive-v0/33o8-rHEogHCw8a-/lib/python3.12/site-packages/morph_kgc/mapping/mapping_parser.py", line 505, in parse_mappings
+    self._get_from_r2_rml()
+  File "/home/nico/.cache/uv/archive-v0/33o8-rHEogHCw8a-/lib/python3.12/site-packages/morph_kgc/mapping/mapping_parser.py", line 536, in _get_from_r2_rml
+    data_source_rml_df, data_source_fnml_df, data_source_http_api_df = self._parse_data_source_mapping_files(section_name)
+                                                                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/nico/.cache/uv/archive-v0/33o8-rHEogHCw8a-/lib/python3.12/site-packages/morph_kgc/mapping/mapping_parser.py", line 613, in _parse_data_source_mapping_files
+    mapping_graph_validated = self._complete_and_validate_mapping(mapping_graph_normalized)
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/nico/.cache/uv/archive-v0/33o8-rHEogHCw8a-/lib/python3.12/site-packages/morph_kgc/mapping/mapping_parser.py", line 596, in _complete_and_validate_mapping
+    _validate_termtypes(mapping_graph)
+  File "/home/nico/.cache/uv/archive-v0/33o8-rHEogHCw8a-/lib/python3.12/site-packages/morph_kgc/mapping/mapping_parser.py", line 467, in _validate_termtypes
+    raise ValueError(f'Found an invalid graph termtype. Found values {graph_termtypes}. '
+ValueError: Found an invalid graph termtype. Found values {'http://w3id.org/rml/BlankNode'}. Graph maps must be http://w3id.org/rml/IRI.

@@ -1,0 +1,6 @@
+--- expected
++++ actual
+-- expected (1 lines) --
+_:Ne25bf4e0003a4a13abf0f45cb073ef5a <http://xmlns.com/foaf/0.1/name> "Venus" .
+-- actual (1 lines) --
+_:N6bc122b9b7954504b2a7367027dd38c9 <http://xmlns.com/foaf/0.1/name> "Venus" .

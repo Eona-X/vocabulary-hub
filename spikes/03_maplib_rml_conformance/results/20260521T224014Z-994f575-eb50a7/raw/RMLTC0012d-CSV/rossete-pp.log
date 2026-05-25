@@ -1,0 +1,7 @@
+
+
+[2026-05-22][00:42:19] [INFO] Starting to Parse all the given mapping files.
+[2026-05-22][00:42:19] [INFO] Parsing File ID:  1 PATH: "/tmp/tmphbfuddnt/RMLTC0012d-CSV/mapping.ttl"
+[2026-05-22][00:42:19] [WARNING] An unknown tokens has appeared in the objectMap parser, TOKEN: {lname}", NEXT TOKEN: rr:termType, LAST MAP: TriplesMap1
+[2026-05-22][00:42:19] [ERROR] Mapping: TriplesMap1. There is no subject map in the mapping or there are too many. Current Ammount: 2 Valid Ammount: 1
+[2026-05-22][00:42:19] [ERROR] Process Finished Due to an error. ERROR CODE: MissingSubjectMap

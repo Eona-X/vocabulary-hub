@@ -1,0 +1,12 @@
+--- expected
++++ actual
+-- expected (4 lines) --
+_:N60f433de39264a5d88deaa84885f491a <http://example.com/amount> "30" .
+_:N60f433de39264a5d88deaa84885f491a <http://xmlns.com/foaf/0.1/name> "Bob Smith" .
+_:N66cffb9c29174e3abf94e782215e9a60 <http://example.com/amount> "20" .
+_:N66cffb9c29174e3abf94e782215e9a60 <http://xmlns.com/foaf/0.1/name> "Sue Jones" .
+-- actual (4 lines) --
+_:N2b9ec626424343e79def576e9efdedfe <http://example.com/amount> "20" .
+_:N2b9ec626424343e79def576e9efdedfe <http://xmlns.com/foaf/0.1/name> "Sue Jones" .
+_:N55af5783b21c4f43bcd68e9bfbd5cd59 <http://example.com/amount> "30" .
+_:N55af5783b21c4f43bcd68e9bfbd5cd59 <http://xmlns.com/foaf/0.1/name> "Bob Smith" .

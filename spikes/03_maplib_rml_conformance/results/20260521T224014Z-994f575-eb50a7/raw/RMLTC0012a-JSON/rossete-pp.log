@@ -1,0 +1,20 @@
+
+
+[2026-05-22][00:42:10] [INFO] Starting to Parse all the given mapping files.
+[2026-05-22][00:42:10] [INFO] Parsing File ID:  1 PATH: "/tmp/tmp074qwkq7/RMLTC0012a-JSON/mapping.ttl"
+[2026-05-22][00:42:10] [WARNING] An unknown tokens has appeared in the objectMap parser, TOKEN: {lname}", NEXT TOKEN: rr:termType, LAST MAP: TriplesMap1
+[2026-05-22][00:42:10] [PERFORMANCE INFO] The Procedure: "Parsing Mapping Files" Requiered the following time: 3 ms
+
+
+[2026-05-22][00:42:10] [INFO] Starting to Read and Store all required data files
+[2026-05-22][00:42:10] [INFO] Opening File: persons.json
+[2026-05-22][00:42:10] [INFO] All the files is estimated to requiere 0 MB, TMP Database will be created in memory
+[2026-05-22][00:42:10] [INFO] The following table was created in the database: "db-persons-JSON-$.persons[*]"
+[2026-05-22][00:42:10] [INFO] File with ID:      0 was readed and closed.
+[2026-05-22][00:42:10] [PERFORMANCE INFO] The Procedure: "Reading and Storing Data Files" Requiered the following time: 0 ms
+
+
+[2026-05-22][00:42:10] [INFO] Starting to create the RDF File from Mapping and Data Files
+[2026-05-22][00:42:10] [INFO] RDF FROM DB TABLE: "db-persons-JSON-$.persons[*]" AND MAP: TriplesMap1
+[2026-05-22][00:42:10] [PERFORMANCE INFO] The Procedure: "Create RDF File with all Data and Mappings" Requiered the following time: 0 ms
+[2026-05-22][00:42:10] [INFO] Process Finished :) :) :)

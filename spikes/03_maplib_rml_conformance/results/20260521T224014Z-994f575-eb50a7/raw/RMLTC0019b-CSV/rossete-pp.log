@@ -1,0 +1,21 @@
+
+
+[2026-05-22][00:42:31] [INFO] Starting to Parse all the given mapping files.
+[2026-05-22][00:42:31] [INFO] Parsing File ID:  1 PATH: "/tmp/tmp8c1smnsk/RMLTC0019b-CSV/mapping.ttl"
+[2026-05-22][00:42:31] [WARNING] An Unidentified Element has appeared in the Term Index: 48. Term: .. Last Mapping: TriplesMap1 Last Token: ]
+[2026-05-22][00:42:31] [PERFORMANCE INFO] The Procedure: "Parsing Mapping Files" Requiered the following time: 2 ms
+
+
+[2026-05-22][00:42:31] [INFO] Starting to Read and Store all required data files
+[2026-05-22][00:42:31] [INFO] Opening File: persons.csv
+[2026-05-22][00:42:31] [INFO] All the files is estimated to requiere 0 MB, TMP Database will be created in memory
+[2026-05-22][00:42:31] [INFO] The following table was created in the database: "db-persons-CSV"
+[2026-05-22][00:42:31] [INFO] File with ID:      0 was readed and closed.
+[2026-05-22][00:42:31] [PERFORMANCE INFO] The Procedure: "Reading and Storing Data Files" Requiered the following time: 0 ms
+
+
+[2026-05-22][00:42:31] [INFO] Starting to create the RDF File from Mapping and Data Files
+
+thread 'main' (497226) panicked at src/materialiser.rs:47:57:
+called `Option::unwrap()` on a `None` value
+note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace

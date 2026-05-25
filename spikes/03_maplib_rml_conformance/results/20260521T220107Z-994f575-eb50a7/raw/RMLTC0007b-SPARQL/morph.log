@@ -1,0 +1,40 @@
+Installed 52 packages in 48ms
+INFO | 2026-05-22 00:02:30,699 | 4 mapping rules retrieved.
+INFO | 2026-05-22 00:02:30,704 | Mapping partition with 2 groups generated.
+INFO | 2026-05-22 00:02:30,704 | Maximum number of rules within mapping group: 2.
+INFO | 2026-05-22 00:02:30,704 | Mappings processed in 0.304 seconds.
+multiprocessing.pool.RemoteTraceback: 
+"""
+Traceback (most recent call last):
+  File "/usr/lib/python3.12/multiprocessing/pool.py", line 125, in worker
+    result = (True, func(*args, **kwds))
+                    ^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/multiprocessing/pool.py", line 51, in starmapstar
+    return list(itertools.starmap(args[0], args[1]))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/nico/.cache/uv/archive-v0/33o8-rHEogHCw8a-/lib/python3.12/site-packages/morph_kgc/materializer.py", line 364, in _materialize_mapping_group_to_file
+    data = _materialize_rml_rule(rml_rule, rml_df, fnml_df, config)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/nico/.cache/uv/archive-v0/33o8-rHEogHCw8a-/lib/python3.12/site-packages/morph_kgc/materializer.py", line 330, in _materialize_rml_rule
+    data = _get_data(config, rml_rule, references, python_source)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/nico/.cache/uv/archive-v0/33o8-rHEogHCw8a-/lib/python3.12/site-packages/morph_kgc/materializer.py", line 65, in _get_data
+    data = _preprocess_data(data, rml_rule, references, config)
+                            ^^^^
+UnboundLocalError: cannot access local variable 'data' where it is not associated with a value
+"""
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/home/nico/.cache/uv/archive-v0/33o8-rHEogHCw8a-/lib/python3.12/site-packages/morph_kgc/__main__.py", line 79, in <module>
+    num_triples = sum(pool.starmap(_materialize_mapping_group_to_file,
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/multiprocessing/pool.py", line 375, in starmap
+    return self._map_async(func, iterable, starmapstar, chunksize).get()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/multiprocessing/pool.py", line 774, in get
+    raise self._value
+UnboundLocalError: cannot access local variable 'data' where it is not associated with a value

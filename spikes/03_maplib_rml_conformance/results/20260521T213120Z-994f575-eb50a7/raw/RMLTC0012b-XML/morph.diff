@@ -1,0 +1,12 @@
+--- expected
++++ actual
+-- expected (4 lines) --
+_:Ncd65fc4c9eb24fa8962ec5df7e66b006 <http://example.com/city> "Madrid" .
+_:Ncd65fc4c9eb24fa8962ec5df7e66b006 <http://xmlns.com/foaf/0.1/name> "Sue Jones" .
+_:Nd139ada6692b442a8f98f7aef4adc30b <http://example.com/city> "London" .
+_:Nd139ada6692b442a8f98f7aef4adc30b <http://xmlns.com/foaf/0.1/name> "Bob Smith" .
+-- actual (4 lines) --
+_:N531248bb576646aaaf5a7a58ef355131 <http://example.com/city> "Madrid" .
+_:N531248bb576646aaaf5a7a58ef355131 <http://xmlns.com/foaf/0.1/name> "Sue Jones" .
+_:Nc2810dba4ecd491d9e48fc6c23e69542 <http://example.com/city> "London" .
+_:Nc2810dba4ecd491d9e48fc6c23e69542 <http://xmlns.com/foaf/0.1/name> "Bob Smith" .

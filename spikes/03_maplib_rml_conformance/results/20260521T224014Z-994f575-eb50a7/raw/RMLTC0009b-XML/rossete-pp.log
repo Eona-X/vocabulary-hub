@@ -1,0 +1,6 @@
+
+
+[2026-05-22][00:41:58] [INFO] Starting to Parse all the given mapping files.
+[2026-05-22][00:41:58] [INFO] Parsing File ID:  1 PATH: "/tmp/tmp4p_wsqa0/RMLTC0009b-XML/mapping.ttl"
+[2026-05-22][00:41:58] [ERROR] Unknown Token has Appeared in a PredicateMap: rr:graph LAST MAP: TriplesMap1
+[2026-05-22][00:41:58] [ERROR] Process Finished Due to an error. ERROR CODE: IncorrectMappingFormat

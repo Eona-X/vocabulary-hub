@@ -1,0 +1,7 @@
+Installed 52 packages in 51ms
+INFO | 2026-05-21 23:31:32,333 | 1 mapping rules retrieved.
+INFO | 2026-05-21 23:31:32,341 | Mapping partition with 1 groups generated.
+INFO | 2026-05-21 23:31:32,342 | Maximum number of rules within mapping group: 1.
+INFO | 2026-05-21 23:31:32,342 | Mappings processed in 0.447 seconds.
+INFO | 2026-05-21 23:31:32,529 | Number of triples generated in total: 1.
+INFO | 2026-05-21 23:31:32,530 | Materialization finished in 0.186 seconds.

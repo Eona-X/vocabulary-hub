@@ -1,0 +1,1654 @@
+{
+  "schema": "adr-004-spike-manifest/v1",
+  "run_id": "20260521T214056Z-994f575-eb50a7",
+  "spike": "03_maplib_rml_conformance",
+  "started_at": "2026-05-21T21:40:56Z",
+  "finished_at": "2026-05-21T21:44:19Z",
+  "git": {
+    "sha": "994f5756b54f98e424b4a65c2e51a9cc85eae931",
+    "branch": "impl/adr-004",
+    "dirty": true
+  },
+  "host": {
+    "hostname": "mainworkws",
+    "os": "Linux 6.8.0-117-generic",
+    "cpu_count": 22,
+    "mem_total_gb": 93.74
+  },
+  "python": "3.12.3",
+  "tools": {
+    "maplib": "0.20.18",
+    "morph-kgc": "not-installed",
+    "rdflib": "7.6.0"
+  },
+  "inputs": {
+    "kind": "public-reference",
+    "files": [
+      {
+        "path": "/home/nico/wspace/eona/eona_vocabulary_services/spikes/03_maplib_rml_conformance/inputs/rml-test-cases/test-cases/RMLTC0000-CSV/mapping.ttl",
+        "sha256": "9c674c1259657d5a46ca830c0769cdfa66943c76dd4493c6de6d9f86ce9f53cf",
+        "size": 634
+      },
+      {
+        "path": "/home/nico/wspace/eona/eona_vocabulary_services/spikes/03_maplib_rml_conformance/inputs/rml-test-cases/test-cases/RMLTC0000-JSON/mapping.ttl",
+        "sha256": "89bbef5936eea5e55e00e9852d43f2a1f7c873b881487a513ab90b3512240584",
+        "size": 674
+      },
+      {
+        "path": "/home/nico/wspace/eona/eona_vocabulary_services/spikes/03_maplib_rml_conformance/inputs/rml-test-cases/test-cases/RMLTC0000-MySQL/mapping.ttl",
+        "sha256": "42ec73e696b73ca23d3e95756060adffdc7ed857fe06c88106ce7b8e982bfa48",
+        "size": 930
+      },
+      {
+        "path": "/home/nico/wspace/eona/eona_vocabulary_services/spikes/03_maplib_rml_conformance/inputs/rml-test-cases/test-cases/RMLTC0000-PostgreSQL/mapping.ttl",
+        "sha256": "959c957c4d470dc9351a4da8556df149c1d8484fe7cbf0e5ba98e1b7152bde58",
+        "size": 876
+      },
+      {
+        "path": "/home/nico/wspace/eona/eona_vocabulary_services/spikes/03_maplib_rml_conformance/inputs/rml-test-cases/test-cases/RMLTC0000-SPARQL/mapping.ttl",
+        "sha256": "7de8bf3643f0e1b47da43b4f3780a48125a1d0fa1067a4fab3c123f7fb47d7b0",
+        "size": 1336
+      },
+      {
+        "path": "/home/nico/wspace/eona/eona_vocabulary_services/spikes/03_maplib_rml_conformance/inputs/rml-test-cases/test-cases/RMLTC0000-SQLServer/mapping.ttl",
+        "sha256": "f46afa32560c6b2112344e9445301f16c33c3ef0798acb6c46b1e600ec22c615",
+        "size": 913
+      },
+      {
+        "path": "/home/nico/wspace/eona/eona_vocabulary_services/spikes/03_maplib_rml_conformance/inputs/rml-test-cases/test-cases/RMLTC0000-XML/mapping.ttl",
+        "sha256": "239b997f196fa4dbaca3da29fe78823d7f0419e1eace98694858b48576798e52",
+        "size": 674
+      },
+      {
+        "path": "/home/nico/wspace/eona/eona_vocabulary_services/spikes/03_maplib_rml_conformance/inputs/rml-test-cases/test-cases/RMLTC0001a-CSV/mapping.ttl",
+        "sha256": "ec233594e4005fe914331d376847238f0bceed79355e79d99bad5e190cd89517",
+        "size": 638
+      },
+      {
+        "path": "/home/nico/wspace/eona/eona_vocabulary_services/spikes/03_maplib_rml_conformance/inputs/rml-test-cases/test-cases/RMLTC0001a-JSON/mapping.ttl",
+        "sha256": "26c61663b06604f2c826d9eb5d0d99fa70759f3a526b03818077fc2ebbb1f1ce",
+        "size": 704
+      },
+      {
+        "path": "/home/nico/wspace/eona/eona_vocabulary_services/spikes/03_maplib_rml_conformance/inputs/rml-test-cases/test-cases/RMLTC0001a-MySQL/mapping.ttl",
+        "sha256": "658eafca5f403c8731687eeb444b03a5d4addd66c31bd6ed0448eb3997e0eae6",
+        "size": 934
+      },
+      {
+        "path": "/home/nico/wspace/eona/eona_vocabulary_services/spikes/03_maplib_rml_conformance/inputs/rml-test-cases/test-cases/RMLTC0001a-PostgreSQL/mapping.ttl",
+        "sha256": "e77c7886849d9492fb7157efb201cc31d7cdc0dc7b98560064d94bafd07ddf61",
+        "size": 880
+      },
+      {
+        "path": "/home/nico/wspace/eona/eona_vocabulary_services/spikes/03_maplib_rml_conformance/inputs/rml-test-cases/test-cases/RMLTC0001a-SPARQL/mapping.ttl",
+        "sha256": "e006e7896266473df8d3793128e7008ca370b2537f34d8cd05682c454f1371fc",
+        "size": 1388
+      },
+      {
+        "path": "/home/nico/wspace/eona/eona_vocabulary_services/spikes/03_maplib_rml_conformance/inputs/rml-test-cases/test-cases/RMLTC0001a-SQLServer/mapping.ttl",
+        "sha256": "3f426afa69c3490a4f76b1d6108d51438b964f60d8d3e645c45bca5ee6ba3eee",
+        "size": 916
+      },
+      {
+        "path": "/home/nico/wspace/eona/eona_vocabulary_services/spikes/03_maplib_rml_conformance/inputs/rml-test-cases/test-cases/RMLTC0001a-XML/mapping.ttl",
+        "sha256": "8b08c62d4833f43e4732ab7222e1925475cb2e7b17a3b5936ac309a19158761d",
+        "size": 677
+      },
+      {
+        "path": "/home/nico/wspace/eona/eona_vocabulary_services/spikes/03_maplib_rml_conformance/inputs/rml-test-cases/test-cases/RMLTC0001b-CSV/mapping.ttl",
+        "sha256": "2fb2d9b83de942ecc66ccb1e5c4288e1f2d8b07d28564b7d70e43a3191a22ee9",
+        "size": 633
+      },
+      {
+        "path": "/home/nico/wspace/eona/eona_vocabulary_services/spikes/03_maplib_rml_conformance/inputs/rml-test-cases/test-cases/RMLTC0001b-JSON/mapping.ttl",
+        "sha256": "46e6b6df22738e415035f0d33a0794d2a35629059b8e1df690c8568eb502227e",
+        "size": 673
+      },
+      {
+        "path": "/home/nico/wspace/eona/eona_vocabulary_services/spikes/03_maplib_rml_conformance/inputs/rml-test-cases/test-cases/RMLTC0001b-MySQL/mapping.ttl",
+        "sha256": "05d37e9b3d15352c4fd6250942729d3da4b7596514a4d1ecc2bd5ff6beba5f70",
+        "size": 986
+      },
+      {
+        "path": "/home/nico/wspace/eona/eona_vocabulary_services/spikes/03_maplib_rml_conformance/inputs/rml-test-cases/test-cases/RMLTC0001b-PostgreSQL/mapping.ttl",
+        "sha256": "bc1afd9b0af4e3c4646f2bae2b83f87fa180606d29e54138b753cdd8720d71b6",
+        "size": 931
+      },
+      {
+        "path": "/home/nico/wspace/eona/eona_vocabulary_services/spikes/03_maplib_rml_conformance/inputs/rml-test-cases/test-cases/RMLTC0001b-SPARQL/mapping.ttl",
+        "sha256": "e006e7896266473df8d3793128e7008ca370b2537f34d8cd05682c454f1371fc",
+        "size": 1388
+      },
+      {
+        "path": "/home/nico/wspace/eona/eona_vocabulary_services/spikes/03_maplib_rml_conformance/inputs/rml-test-cases/test-cases/RMLTC0001b-SQLServer/mapping.ttl",
+        "sha256": "a8afca9dd4653ec335219dedf7d3183a39116c89db05d26c8fe520a9e9e41eb4",
+        "size": 963
+      },
+      {
+        "path": "/home/nico/wspace/eona/eona_vocabulary_services/spikes/03_maplib_rml_conformance/inputs/rml-test-cases/test-cases/RMLTC0001b-XML/mapping.ttl",
+        "sha256": "e8bc066439de785e6574d2cd2b240dbe4d7d48b06b8d9df562f36cbc8b5beaf4",
+        "size": 673
+      },
+      {
+        "path": "/home/nico/wspace/eona/eona_vocabulary_services/spikes/03_maplib_rml_conformance/inputs/rml-test-cases/test-cases/RMLTC0002a-CSV/mapping.ttl",
+        "sha256": "dc0869379de3ca1dddd9dde571047fc1cbac8dc52250c14319a19424c874c6ed",
+        "size": 742
+      },
+      {
+        "path": "/home/nico/wspace/eona/eona_vocabulary_services/spikes/03_maplib_rml_conformance/inputs/rml-test-cases/test-cases/RMLTC0002a-JSON/mapping.ttl",
+        "sha256": "f0e9f726e3819a3b0b5339a0c187527557e013466169701e0a3842ac9bf4970a",
+        "size": 781
+      },
+      {
+        "path": "/home/nico/wspace/eona/eona_vocabulary_services/spikes/03_maplib_rml_conformance/inputs/rml-test-cases/test-cases/RMLTC0002a-MySQL/mapping.ttl",
+        "sha256": "073f30516bff20d30375efe9c01a7a88d15cce8eecd21ed071d7a263f66958e9",
+        "size": 1042
+      },
+      {
+        "path": "/home/nico/wspace/eona/eona_vocabulary_services/spikes/03_maplib_rml_conformance/inputs/rml-test-cases/test-cases/RMLTC0002a-PostgreSQL/mapping.ttl",
+        "sha256": "ea74f4334033cf9ba2dab5cd2642b3c30bda6b2def6008e6e6707cfcd5668822",
+        "size": 987
+      },
+      {
+        "path": "/home/nico/wspace/eona/eona_vocabulary_services/spikes/03_maplib_rml_conformance/inputs/rml-test-cases/test-cases/RMLTC0002a-SPARQL/mapping.ttl",
+        "sha256": "51bf259bfeda80f8aefee1c091642ff3563aeaac4e5aa6f5f4424c2f1736f556",
+        "size": 1612
+      },
+      {
+        "path": "/home/nico/wspace/eona/eona_vocabulary_services/spikes/03_maplib_rml_conformance/inputs/rml-test-cases/test-cases/RMLTC0002a-SQLServer/mapping.ttl",
+        "sha256": "aeacf5c27c7ece9b8c49f7454751230fd588fb23fa4cf595247af310e5ee02a2",
+        "size": 1024
+      },
+      {
+        "path": "/home/nico/wspace/eona/eona_vocabulary_services/spikes/03_maplib_rml_conformance/inputs/rml-test-cases/test-cases/RMLTC0002a-XML/mapping.ttl",
+        "sha256": "27a33545f4dd8e14095f2af2b897abbb81ee4a147deff30ca58e81a6f1cd960b",
+        "size": 781
+      },
+      {
+        "path": "/home/nico/wspace/eona/eona_vocabulary_services/spikes/03_maplib_rml_conformance/inputs/rml-test-cases/test-cases/RMLTC0002b-CSV/mapping.ttl",
+        "sha256": "5eb6c1217d4e91cee97f7ce4c5667117f29a490870f6e6518f784b727b83d262",
+        "size": 626
+      },
+      {
+        "path": "/home/nico/wspace/eona/eona_vocabulary_services/spikes/03_maplib_rml_conformance/inputs/rml-test-cases/test-cases/RMLTC0002b-JSON/mapping.ttl",
+        "sha256": "0aa9703fbe4c9a0f393d350949e04994925122b37da1a4dda4d5762cd43b2f3e",
+        "size": 666
+      },
+      {
+        "path": "/home/nico/wspace/eona/eona_vocabulary_services/spikes/03_maplib_rml_conformance/inputs/rml-test-cases/test-cases/RMLTC0002b-MySQL/mapping.ttl",
+        "sha256": "f3cb2ed543f5fcac3ff8d769687d2ca3897a2ff00c60be5770c0532dbe54397b",
+        "size": 922
+      },
+      {
+        "path": "/home/nico/wspace/eona/eona_vocabulary_services/spikes/03_maplib_rml_conformance/inputs/rml-test-cases/test-cases/RMLTC0002b-PostgreSQL/mapping.ttl",
+        "sha256": "004b711ec09df58374f422d2da02a34d0329f35710bb76ff22470d400c2f4c03",
+        "size": 868
+      },
+      {
+        "path": "/home/nico/wspace/eona/eona_vocabulary_services/spikes/03_maplib_rml_conformance/inputs/rml-test-cases/test-cases/RMLTC0002b-SPARQL/mapping.ttl",
+        "sha256": "77b5e257c65f6552d425b3e60446b64a63e3d03ed6f2ad5cd0460183be132ea4",
+        "size": 1490
+      },
+      {
+        "path": "/home/nico/wspace/eona/eona_vocabulary_services/spikes/03_maplib_rml_conformance/inputs/rml-test-cases/test-cases/RMLTC0002b-SQLServer/mapping.ttl",
+        "sha256": "e3d046b61a3fb3f363179c9901d19a3caaec1332aa7d7439525127be4ec050af",
+        "size": 905
+      },
+      {
+        "path": "/home/nico/wspace/eona/eona_vocabulary_services/spikes/03_maplib_rml_conformance/inputs/rml-test-cases/test-cases/RMLTC0002b-XML/mapping.ttl",
+        "sha256": "780ce61d8c9b3cfc61e6f91fb2ce66b283dd3bb60587757dedcea17448cb02b1",
+        "size": 666
+      },
+      {
+        "path": "/home/nico/wspace/eona/eona_vocabulary_services/spikes/03_maplib_rml_conformance/inputs/rml-test-cases/test-cases/RMLTC0002c-CSV/mapping.ttl",
+        "sha256": "e327f6ba4bda15942c8e289694feb228a320ed3f94132ab466992bcec4b4d57b",
+        "size": 613
+      },
+      {
+        "path": "/home/nico/wspace/eona/eona_vocabulary_services/spikes/03_maplib_rml_conformance/inputs/rml-test-cases/test-cases/RMLTC0002c-JSON/mapping.ttl",
+        "sha256": "4188d5edd6e2fc1d7b6ccf70b0c4dd290694d474971d712a6550e7a0b4bca026",
+        "size": 653
+      },
+      {
+        "path": "/home/nico/wspace/eona/eona_vocabulary_services/spikes/03_maplib_rml_conformance/inputs/rml-test-cases/test-cases/RMLTC0002c-MySQL/mapping.ttl",
+        "sha256": "1201ea6663b135c95914ff1332a782e41cb7092382133a7c39f4dddd8bef3804",
+        "size": 888
+      },
+      {
+        "path": "/home/nico/wspace/eona/eona_vocabulary_services/spikes/03_maplib_rml_conformance/inputs/rml-test-cases/test-cases/RMLTC0002c-PostgreSQL/mapping.ttl",
+        "sha256": "88a18dd97764ce43d8c099db8448d847d9d5e44fb93a646cfe7e03b6f9739507",
+        "size": 835
+      },
+      {
+        "path": "/home/nico/wspace/eona/eona_vocabulary_services/spikes/03_maplib_rml_conformance/inputs/rml-test-cases/test-cases/RMLTC0002c-SQLServer/mapping.ttl",
+        "sha256": "828784de7db81877aee034e161305d5faabd01005b3e448cf5339e794cce2508",
+        "size": 872
+      },
+      {
+        "path": "/home/nico/wspace/eona/eona_vocabulary_services/spikes/03_maplib_rml_conformance/inputs/rml-test-cases/test-cases/RMLTC0002c-XML/mapping.ttl",
+        "sha256": "31dd60ec4f287d1f13bd7b164a84273440414d8d572a3f3c3009eb80c727fb43",
+        "size": 653
+      },
+      {
+        "path": "/home/nico/wspace/eona/eona_vocabulary_services/spikes/03_maplib_rml_conformance/inputs/rml-test-cases/test-cases/RMLTC0002d-MySQL/mapping.ttl",
+        "sha256": "328345e6623f108f889eb0cc568af42c79c2b72fb6b1ccada4f16658231e7abb",
+        "size": 1020
+      },
+      {
+        "path": "/home/nico/wspace/eona/eona_vocabulary_services/spikes/03_maplib_rml_conformance/inputs/rml-test-cases/test-cases/RMLTC0002d-PostgreSQL/mapping.ttl",
+        "sha256": "369ec794fa6d72032f6528e15c1f84ed0f68a2e137cba05d60baa115bd6e8e32",
+        "size": 1017
+      },
+      {
+        "path": "/home/nico/wspace/eona/eona_vocabulary_services/spikes/03_maplib_rml_conformance/inputs/rml-test-cases/test-cases/RMLTC0002d-SQLServer/mapping.ttl",
+        "sha256": "02e53af8859143d34b1a90c7ce9c8d3ec6657b56cec6999c7b1452e50f280f06",
+        "size": 1058
+      },
+      {
+        "path": "/home/nico/wspace/eona/eona_vocabulary_services/spikes/03_maplib_rml_conformance/inputs/rml-test-cases/test-cases/RMLTC0002e-CSV/mapping.ttl",
+        "sha256": "e048468aadbfc255729c98d3426e8590ee1addeb07a1ac809fabf6119ec11feb",
+        "size": 614
+      },
+      {
+        "path": "/home/nico/wspace/eona/eona_vocabulary_services/spikes/03_maplib_rml_conformance/inputs/rml-test-cases/test-cases/RMLTC0002e-JSON/mapping.ttl",
+        "sha256": "93db5cf415b7f93053261a497a13754a274e0858d99c3a5274d0159a3544d35e",
+        "size": 654
+      },
+      {
+        "path": "/home/nico/wspace/eona/eona_vocabulary_services/spikes/03_maplib_rml_conformance/inputs/rml-test-cases/test-cases/RMLTC0002e-MySQL/mapping.ttl",
+        "sha256": "15a627bb4e67078d5f19e8e9f9e29b1c14298bff5f945d44fdb24dd115288fcd",
+        "size": 919
+      },
+      {
+        "path": "/home/nico/wspace/eona/eona_vocabulary_services/spikes/03_maplib_rml_conformance/inputs/rml-test-cases/test-cases/RMLTC0002e-PostgreSQL/mapping.ttl",
+        "sha256": "17e791d588612b2be5f61357bc7d84638c44465d78521ca3c314886bf837eeed",
+        "size": 865
+      },
+      {
+        "path": "/home/nico/wspace/eona/eona_vocabulary_services/spikes/03_maplib_rml_conformance/inputs/rml-test-cases/test-cases/RMLTC0002e-SQLServer/mapping.ttl",
+        "sha256": "71731b7306f6ee6a6bc7f245886926befd9be6c923c6b71e5abebab476b1bc37",
+        "size": 902
+      },
+      {
+        "path": "/home/nico/wspace/eona/eona_vocabulary_services/spikes/03_maplib_rml_conformance/inputs/rml-test-cases/test-cases/RMLTC0002e-XML/mapping.ttl",
+        "sha256": "596c7e1d9d1661cf37025ffe73712c8074002e4515c656c609ffa04335b4c92c",
+        "size": 654
+      },
+      {
+        "path": "/home/nico/wspace/eona/eona_vocabulary_services/spikes/03_maplib_rml_conformance/inputs/rml-test-cases/test-cases/RMLTC0002f-MySQL/mapping.ttl",
+        "sha256": "fd316be701deb48f482a32f36b1029380ccf4b7df3b4f5d0bd9aab0c65dc7863",
+        "size": 1011
+      },
+      {
+        "path": "/home/nico/wspace/eona/eona_vocabulary_services/spikes/03_maplib_rml_conformance/inputs/rml-test-cases/test-cases/RMLTC0002f-PostgreSQL/mapping.ttl",
+        "sha256": "8f660f3174845caf30fec686654963966ff1f98a7ad1cb5637fddebcaeaf3867",
+        "size": 1012
+      },
+      {
+        "path": "/home/nico/wspace/eona/eona_vocabulary_services/spikes/03_maplib_rml_conformance/inputs/rml-test-cases/test-cases/RMLTC0002f-SQLServer/mapping.ttl",
+        "sha256": "b3b876c6d08f0ecba4100a60f2a2d2c30af8d7574e39d7afeb43991813eaeb47",
+        "size": 1049
+      },
+      {
+        "path": "/home/nico/wspace/eona/eona_vocabulary_services/spikes/03_maplib_rml_conformance/inputs/rml-test-cases/test-cases/RMLTC0002g-JSON/mapping.ttl",
+        "sha256": "a965b8e429329f3484f1c4aa23e6990f6eef8c1e402ba6cbee597f0dfa4568d0",
+        "size": 655
+      },
+      {
+        "path": "/home/nico/wspace/eona/eona_vocabulary_services/spikes/03_maplib_rml_conformance/inputs/rml-test-cases/test-cases/RMLTC0002g-MySQL/mapping.ttl",
+        "sha256": "9703449ddb5a7d8428805ed079c2ff662fd97fe89fee77361b5b2ec2c2ad7d6f",
+        "size": 985
+      },
+      {
+        "path": "/home/nico/wspace/eona/eona_vocabulary_services/spikes/03_maplib_rml_conformance/inputs/rml-test-cases/test-cases/RMLTC0002g-PostgreSQL/mapping.ttl",
+        "sha256": "b52b191b7e311342269bc0af8b4d3f33be2aa44e958ba79b3f76d76e04c88adb",
+        "size": 931
+      },
+      {
+        "path": "/home/nico/wspace/eona/eona_vocabulary_services/spikes/03_maplib_rml_conformance/inputs/rml-test-cases/test-cases/RMLTC0002g-SPARQL/mapping.ttl",
+        "sha256": "f1f59e47f85934b141717ccc2bb181f3327c83067d18cd7c3f57dfcc87d8d212",
+        "size": 1498
+      },
+      {
+        "path": "/home/nico/wspace/eona/eona_vocabulary_services/spikes/03_maplib_rml_conformance/inputs/rml-test-cases/test-cases/RMLTC0002g-SQLServer/mapping.ttl",
+        "sha256": "265a4610780d5bec2bb543234417a54de5d1e87a2009138472427b2d5148e888",
+        "size": 968
+      },
+      {
+        "path": "/home/nico/wspace/eona/eona_vocabulary_services/spikes/03_maplib_rml_conformance/inputs/rml-test-cases/test-cases/RMLTC0002h-MySQL/mapping.ttl",
+        "sha256": "1de9c046174a689e98368cc97bcf8f56a418160d89e660b2850ecff0df36dc0d",
+        "size": 967
+      },
+      {
+        "path": "/home/nico/wspace/eona/eona_vocabulary_services/spikes/03_maplib_rml_conformance/inputs/rml-test-cases/test-cases/RMLTC0002h-PostgreSQL/mapping.ttl",
+        "sha256": "0e2f6ce11958b4cbf8af4fd241be20c9e8261a8a861c706f6a8595bf9cad3853",
+        "size": 913
+      },
+      {
+        "path": "/home/nico/wspace/eona/eona_vocabulary_services/spikes/03_maplib_rml_conformance/inputs/rml-test-cases/test-cases/RMLTC0002h-SPARQL/mapping.ttl",
+        "sha256": "ebf303053d6a16dc501893a32aba698b7c0d7f867ae2ad091a6c732150088c0b",
+        "size": 1406
+      },
+      {
+        "path": "/home/nico/wspace/eona/eona_vocabulary_services/spikes/03_maplib_rml_conformance/inputs/rml-test-cases/test-cases/RMLTC0002h-SQLServer/mapping.ttl",
+        "sha256": "66c22dfc4c845fb9f146712c0a4286c996536f5c7241e1af2e8e8c43955e3269",
+        "size": 950
+      },
+      {
+        "path": "/home/nico/wspace/eona/eona_vocabulary_services/spikes/03_maplib_rml_conformance/inputs/rml-test-cases/test-cases/RMLTC0002i-MySQL/mapping.ttl",
+        "sha256": "e6ed8db6797b49974a7877bd9d78a1fcb99ccd9769501346b1ac9e6820d9c766",
+        "size": 933
+      },
+      {
+        "path": "/home/nico/wspace/eona/eona_vocabulary_services/spikes/03_maplib_rml_conformance/inputs/rml-test-cases/test-cases/RMLTC0002i-PostgreSQL/mapping.ttl",
+        "sha256": "0e044892b67e76a93b9183205cc9d79a1f8e85528dd38f109a80883df63a6dcc",
+        "size": 877
+      },
+      {
+        "path": "/home/nico/wspace/eona/eona_vocabulary_services/spikes/03_maplib_rml_conformance/inputs/rml-test-cases/test-cases/RMLTC0002i-SQLServer/mapping.ttl",
+        "sha256": "9278dc84b6634abe1f43bbba0da6b4933d680a366c8ae1e71b569c225f7e6923",
+        "size": 914
+      },
+      {
+        "path": "/home/nico/wspace/eona/eona_vocabulary_services/spikes/03_maplib_rml_conformance/inputs/rml-test-cases/test-cases/RMLTC0002j-MySQL/mapping.ttl",
+        "sha256": "2cb8082bbfa479c42ba783ee2e9a32351171db4f7d495808100c6f3e191c4a98",
+        "size": 975
+      },
+      {
+        "path": "/home/nico/wspace/eona/eona_vocabulary_services/spikes/03_maplib_rml_conformance/inputs/rml-test-cases/test-cases/RMLTC0002j-PostgreSQL/mapping.ttl",
+        "sha256": "c4a0fadf12b6ca0e5ae9e2a2592d7a4c4d7da21c861cae59f40c10977b1b58a3",
+        "size": 921
+      },
+      {
+        "path": "/home/nico/wspace/eona/eona_vocabulary_services/spikes/03_maplib_rml_conformance/inputs/rml-test-cases/test-cases/RMLTC0002j-SQLServer/mapping.ttl",
+        "sha256": "587e8361428931fc1e7cc292e3593eb490d3018955a0bef65c545c6988f8b256",
+        "size": 958
+      },
+      {
+        "path": "/home/nico/wspace/eona/eona_vocabulary_services/spikes/03_maplib_rml_conformance/inputs/rml-test-cases/test-cases/RMLTC0003a-MySQL/mapping.ttl",
+        "sha256": "e316b4c4f08651ac512d1fa240bd1db9d5ff9ff6a8ebef3edf0af7fe5a053d5e",
+        "size": 946
+      },
+      {
+        "path": "/home/nico/wspace/eona/eona_vocabulary_services/spikes/03_maplib_rml_conformance/inputs/rml-test-cases/test-cases/RMLTC0003a-PostgreSQL/mapping.ttl",
+        "sha256": "af724a66ece49c3bd9e8c53e939d62aa103f6018447ec95219bb491625eaa2c8",
+        "size": 892
+      },
+      {
+        "path": "/home/nico/wspace/eona/eona_vocabulary_services/spikes/03_maplib_rml_conformance/inputs/rml-test-cases/test-cases/RMLTC0003a-SQLServer/mapping.ttl",
+        "sha256": "157d744423896af4b6b1afbded25bfc2c6572196bf71718ac859080f729dd2e1",
+        "size": 929
+      },
+      {
+        "path": "/home/nico/wspace/eona/eona_vocabulary_services/spikes/03_maplib_rml_conformance/inputs/rml-test-cases/test-cases/RMLTC0003b-MySQL/mapping.ttl",
+        "sha256": "d151bdef1aa89ba0e0500aeed80e962e9b4397a6bc399d1ff99671ac8763d5d7",
+        "size": 1082
+      },
+      {
+        "path": "/home/nico/wspace/eona/eona_vocabulary_services/spikes/03_maplib_rml_conformance/inputs/rml-test-cases/test-cases/RMLTC0003b-PostgreSQL/mapping.ttl",
+        "sha256": "c8bb03a71ebb9bda2687e495038fa2eacf58205a34be2da5cc84a40c0a0e3060",
+        "size": 1027
+      },
+      {
+        "path": "/home/nico/wspace/eona/eona_vocabulary_services/spikes/03_maplib_rml_conformance/inputs/rml-test-cases/test-cases/RMLTC0003b-SQLServer/mapping.ttl",
+        "sha256": "f30153a48c85afbf261446d2c65a5d793704fdba1f74f2315da69cd6bd5542d9",
+        "size": 1064
+      },
+      {
+        "path": "/home/nico/wspace/eona/eona_vocabulary_services/spikes/03_maplib_rml_conformance/inputs/rml-test-cases/test-cases/RMLTC0003c-CSV/mapping.ttl",
+        "sha256": "46c479283c6df7645729fe0609b12aa09698b4fe778ca2b625131c9cc1969958",
+        "size": 677
+      },
+      {
+        "path": "/home/nico/wspace/eona/eona_vocabulary_services/spikes/03_maplib_rml_conformance/inputs/rml-test-cases/test-cases/RMLTC0003c-JSON/mapping.ttl",
+        "sha256": "254b0af740054f013ed8e742aec2bdc238f4c674d57f242794ac3b74420c9d07",
+        "size": 717
+      },
+      {
+        "path": "/home/nico/wspace/eona/eona_vocabulary_services/spikes/03_maplib_rml_conformance/inputs/rml-test-cases/test-cases/RMLTC0003c-MySQL/mapping.ttl",
+        "sha256": "ac06993f36579515e9a4f9f78a41e7ce6517eb5bd919a12774500cff7ad0d095",
+        "size": 974
+      },
+      {
+        "path": "/home/nico/wspace/eona/eona_vocabulary_services/spikes/03_maplib_rml_conformance/inputs/rml-test-cases/test-cases/RMLTC0003c-PostgreSQL/mapping.ttl",
+        "sha256": "7bc241a14d64b3d2c8499755c124b1da5f1bc9e9c255d92bcbda3ee1d9537cfe",
+        "size": 920
+      },
+      {
+        "path": "/home/nico/wspace/eona/eona_vocabulary_services/spikes/03_maplib_rml_conformance/inputs/rml-test-cases/test-cases/RMLTC0003c-SPARQL/mapping.ttl",
+        "sha256": "5cc53f4068eb0b1a920933609a0a660f46fd209c6bf08a1ea862fa20e41384dc",
+        "size": 1633
+      },
+      {
+        "path": "/home/nico/wspace/eona/eona_vocabulary_services/spikes/03_maplib_rml_conformance/inputs/rml-test-cases/test-cases/RMLTC0003c-SQLServer/mapping.ttl",
+        "sha256": "3a5f14476af00cfc7f2685a39c06be1db81cf2ed381e22b859d1375324dda776",
+        "size": 957
+      },
+      {
+        "path": "/home/nico/wspace/eona/eona_vocabulary_services/spikes/03_maplib_rml_conformance/inputs/rml-test-cases/test-cases/RMLTC0003c-XML/mapping.ttl",
+        "sha256": "6f4489a3bdcfbe7d5f542ee9aa915df06c372a0965183fe58e7fbfcd18e971db",
+        "size": 716
+      },
+      {
+        "path": "/home/nico/wspace/eona/eona_vocabulary_services/spikes/03_maplib_rml_conformance/inputs/rml-test-cases/test-cases/RMLTC0004a-CSV/mapping.ttl",
+        "sha256": "cf978583f90c3f447353a234ba606f22e3c2f39f62af5922869617bbb51f1ebf",
+        "size": 1006
+      },
+      {
+        "path": "/home/nico/wspace/eona/eona_vocabulary_services/spikes/03_maplib_rml_conformance/inputs/rml-test-cases/test-cases/RMLTC0004a-JSON/mapping.ttl",
+        "sha256": "6ab7dceb53e2d7cdaebb7b25992e3a72fe6229beacac47119062566ed8915369",
+        "size": 1085
+      },
+      {
+        "path": "/home/nico/wspace/eona/eona_vocabulary_services/spikes/03_maplib_rml_conformance/inputs/rml-test-cases/test-cases/RMLTC0004a-MySQL/mapping.ttl",
+        "sha256": "ecd5135520709ee1c86fff097cad3e2852b78268245626d30a46057fcde01f08",
+        "size": 1322
+      },
+      {
+        "path": "/home/nico/wspace/eona/eona_vocabulary_services/spikes/03_maplib_rml_conformance/inputs/rml-test-cases/test-cases/RMLTC0004a-PostgreSQL/mapping.ttl",
+        "sha256": "0ca321d9c70a54fcbb0a44f385ec8e008d7d4b35d97bac70a3c9a158be76b7f3",
+        "size": 1268
+      },
+      {
+        "path": "/home/nico/wspace/eona/eona_vocabulary_services/spikes/03_maplib_rml_conformance/inputs/rml-test-cases/test-cases/RMLTC0004a-SPARQL/mapping.ttl",
+        "sha256": "57cfc3c53486c2c215725f195cc24589fb179a1a4c2882fb66b2e675b1489ee5",
+        "size": 2510
+      },
+      {
+        "path": "/home/nico/wspace/eona/eona_vocabulary_services/spikes/03_maplib_rml_conformance/inputs/rml-test-cases/test-cases/RMLTC0004a-SQLServer/mapping.ttl",
+        "sha256": "8bd5f978b8add7d6302d82c139d86b2c15db39a2b140c8ad551dbf16b59409b1",
+        "size": 1305
+      },
+      {
+        "path": "/home/nico/wspace/eona/eona_vocabulary_services/spikes/03_maplib_rml_conformance/inputs/rml-test-cases/test-cases/RMLTC0004a-XML/mapping.ttl",
+        "sha256": "d18ec516b52eff3202d7adcc04f05b8e2eebe102b341cdce25f20506fa0aa74c",
+        "size": 1085
+      },
+      {
+        "path": "/home/nico/wspace/eona/eona_vocabulary_services/spikes/03_maplib_rml_conformance/inputs/rml-test-cases/test-cases/RMLTC0004b-CSV/mapping.ttl",
+        "sha256": "c5d8b71f7a60e98ae26fd1fdd8feec3f9e54ea5a74c6d5fdb5ef4c0c1516f50a",
+        "size": 653
+      },
+      {
+        "path": "/home/nico/wspace/eona/eona_vocabulary_services/spikes/03_maplib_rml_conformance/inputs/rml-test-cases/test-cases/RMLTC0004b-JSON/mapping.ttl",
+        "sha256": "c5680d9cf65569e5b55a0e5c7ccdeee2b97284037327154a4b7e4aafbd3a6606",
+        "size": 705
+      },
+      {
+        "path": "/home/nico/wspace/eona/eona_vocabulary_services/spikes/03_maplib_rml_conformance/inputs/rml-test-cases/test-cases/RMLTC0004b-MySQL/mapping.ttl",
+        "sha256": "f463fcdcabed125103ed09af149a78f1f90da4d689d4275d7a057c0dfc67fbd4",
+        "size": 950
+      },
+      {
+        "path": "/home/nico/wspace/eona/eona_vocabulary_services/spikes/03_maplib_rml_conformance/inputs/rml-test-cases/test-cases/RMLTC0004b-PostgreSQL/mapping.ttl",
+        "sha256": "11cec9ee8f5db63848d163182eccacf913eb1f6f21e2aab0ed8694c19310572a",
+        "size": 896
+      },
+      {
+        "path": "/home/nico/wspace/eona/eona_vocabulary_services/spikes/03_maplib_rml_conformance/inputs/rml-test-cases/test-cases/RMLTC0004b-SPARQL/mapping.ttl",
+        "sha256": "0f3a09460c263feeebdcc1624a7d455f79c3197dbc493586c45e11ae975f81ca",
+        "size": 1493
+      },
+      {
+        "path": "/home/nico/wspace/eona/eona_vocabulary_services/spikes/03_maplib_rml_conformance/inputs/rml-test-cases/test-cases/RMLTC0004b-SQLServer/mapping.ttl",
+        "sha256": "184ede1f41b235e10d9455af80b79702ef3db4b25224a006db775327e4945887",
+        "size": 933
+      },
+      {
+        "path": "/home/nico/wspace/eona/eona_vocabulary_services/spikes/03_maplib_rml_conformance/inputs/rml-test-cases/test-cases/RMLTC0004b-XML/mapping.ttl",
+        "sha256": "d07174d38cc350296f664084e3eac879dcdd507058ca0ea1f75dcd95226d82c4",
+        "size": 705
+      },
+      {
+        "path": "/home/nico/wspace/eona/eona_vocabulary_services/spikes/03_maplib_rml_conformance/inputs/rml-test-cases/test-cases/RMLTC0005a-CSV/mapping.ttl",
+        "sha256": "99f9043e4ff14d43b84ba0f7d9a8ef9c1f1c8173c371360761604b0941612947",
+        "size": 644
+      },
+      {
+        "path": "/home/nico/wspace/eona/eona_vocabulary_services/spikes/03_maplib_rml_conformance/inputs/rml-test-cases/test-cases/RMLTC0005a-JSON/mapping.ttl",
+        "sha256": "05075db3ea100edc7e1ac828b39a749e5d5040813be4e9e832a0623dfa5ab1b6",
+        "size": 683
+      },
+      {
+        "path": "/home/nico/wspace/eona/eona_vocabulary_services/spikes/03_maplib_rml_conformance/inputs/rml-test-cases/test-cases/RMLTC0005a-MySQL/mapping.ttl",
+        "sha256": "15701d26f9fd2cc6bffb3ff14e4e2514954ddf26fc8df0c54cf21d990d00ed5d",
+        "size": 888
+      },
+      {
+        "path": "/home/nico/wspace/eona/eona_vocabulary_services/spikes/03_maplib_rml_conformance/inputs/rml-test-cases/test-cases/RMLTC0005a-PostgreSQL/mapping.ttl",
+        "sha256": "518fbe59debaafe06631c601161155e29f8861a0d78e59bcb5a75fdd14e1f293",
+        "size": 889
+      },
+      {
+        "path": "/home/nico/wspace/eona/eona_vocabulary_services/spikes/03_maplib_rml_conformance/inputs/rml-test-cases/test-cases/RMLTC0005a-SQLServer/mapping.ttl",
+        "sha256": "66da55f8c8ba100ae873ed8d284064a286e8482708e69f240a52195cb83c6b52",
+        "size": 926
+      },
+      {
+        "path": "/home/nico/wspace/eona/eona_vocabulary_services/spikes/03_maplib_rml_conformance/inputs/rml-test-cases/test-cases/RMLTC0005a-XML/mapping.ttl",
+        "sha256": "ce4b263cb3e74bf0401d9447e43e2f8841e7f2ff584fca553772497836a3afe0",
+        "size": 682
+      },
+      {
+        "path": "/home/nico/wspace/eona/eona_vocabulary_services/spikes/03_maplib_rml_conformance/inputs/rml-test-cases/test-cases/RMLTC0005b-MySQL/mapping.ttl",
+        "sha256": "6f1c572a0b29889743b96eb31096357aacf72d71199d358290249b6d04aa9a33",
+        "size": 1117
+      },
+      {
+        "path": "/home/nico/wspace/eona/eona_vocabulary_services/spikes/03_maplib_rml_conformance/inputs/rml-test-cases/test-cases/RMLTC0005b-PostgreSQL/mapping.ttl",
+        "sha256": "2f90adc55ef782206622d745ba7f81f0eb9829d2dcc089f33beae7553a538742",
+        "size": 1118
+      },
+      {
+        "path": "/home/nico/wspace/eona/eona_vocabulary_services/spikes/03_maplib_rml_conformance/inputs/rml-test-cases/test-cases/RMLTC0005b-SQLServer/mapping.ttl",
+        "sha256": "86e3a58b65330f937c7e07b72d92ec455e07add88de0de17079fb35c57a353c4",
+        "size": 1155
+      },
+      {
+        "path": "/home/nico/wspace/eona/eona_vocabulary_services/spikes/03_maplib_rml_conformance/inputs/rml-test-cases/test-cases/RMLTC0006a-CSV/mapping.ttl",
+        "sha256": "c72a1de18d3417c4258af6cfa49b433e2ca029434fe61c2ac5fe79f4c5698558",
+        "size": 697
+      },
+      {
+        "path": "/home/nico/wspace/eona/eona_vocabulary_services/spikes/03_maplib_rml_conformance/inputs/rml-test-cases/test-cases/RMLTC0006a-JSON/mapping.ttl",
+        "sha256": "46793cd93f4b8cb6a2bfe99a53f8ff58769f6b4e970ccb1e26b71c489ab08c13",
+        "size": 737
+      },
+      {
+        "path": "/home/nico/wspace/eona/eona_vocabulary_services/spikes/03_maplib_rml_conformance/inputs/rml-test-cases/test-cases/RMLTC0006a-MySQL/mapping.ttl",
+        "sha256": "efce3d7c4c9e3f9aa81d6dc70abd5953eff1b2a519d464a5ef7f3cb11ad00c46",
+        "size": 989
+      },
+      {
+        "path": "/home/nico/wspace/eona/eona_vocabulary_services/spikes/03_maplib_rml_conformance/inputs/rml-test-cases/test-cases/RMLTC0006a-PostgreSQL/mapping.ttl",
+        "sha256": "09a726f0d5521f3b49406b925675989f4b33a46fbe9f8eded5acb0feecd24525",
+        "size": 935
+      },
+      {
+        "path": "/home/nico/wspace/eona/eona_vocabulary_services/spikes/03_maplib_rml_conformance/inputs/rml-test-cases/test-cases/RMLTC0006a-SPARQL/mapping.ttl",
+        "sha256": "e61cb2c07a164b8e637592a30e855ecc69c21164f4fc3ff2726975fff8a50e43",
+        "size": 1468
+      },
+      {
+        "path": "/home/nico/wspace/eona/eona_vocabulary_services/spikes/03_maplib_rml_conformance/inputs/rml-test-cases/test-cases/RMLTC0006a-SQLServer/mapping.ttl",
+        "sha256": "c7e3ef0793f7fc4709f2ca819b62fc9a9a64d4dcdc7e2aa1bd23ebd614ce80c5",
+        "size": 972
+      },
+      {
+        "path": "/home/nico/wspace/eona/eona_vocabulary_services/spikes/03_maplib_rml_conformance/inputs/rml-test-cases/test-cases/RMLTC0006a-XML/mapping.ttl",
+        "sha256": "4774f197978290dbb6ddf14ef8c5bbed91568644e8b54f4747c3f6222b3c237f",
+        "size": 726
+      },
+      {
+        "path": "/home/nico/wspace/eona/eona_vocabulary_services/spikes/03_maplib_rml_conformance/inputs/rml-test-cases/test-cases/RMLTC0007a-CSV/mapping.ttl",
+        "sha256": "d391f63574d3616ec0f4554c698579bd4273c6e3cef2eb4303de4e6cd1360cb8",
+        "size": 673
+      },
+      {
+        "path": "/home/nico/wspace/eona/eona_vocabulary_services/spikes/03_maplib_rml_conformance/inputs/rml-test-cases/test-cases/RMLTC0007a-JSON/mapping.ttl",
+        "sha256": "a250159fa6152658dec5dafc6092f7c6b30ae1a966ce705e445ac7b6f66bf616",
+        "size": 714
+      },
+      {
+        "path": "/home/nico/wspace/eona/eona_vocabulary_services/spikes/03_maplib_rml_conformance/inputs/rml-test-cases/test-cases/RMLTC0007a-MySQL/mapping.ttl",
+        "sha256": "bbf6ae0b3a682bf56fb025ebec57dcab2158a5ba26d27a86ad2ac61c009bc47b",
+        "size": 962
+      },
+      {
+        "path": "/home/nico/wspace/eona/eona_vocabulary_services/spikes/03_maplib_rml_conformance/inputs/rml-test-cases/test-cases/RMLTC0007a-PostgreSQL/mapping.ttl",
+        "sha256": "a31b191b5dd7537f206331f48281b31bca5afacf4d5861cb0c040ccadc72ae59",
+        "size": 908
+      },
+      {
+        "path": "/home/nico/wspace/eona/eona_vocabulary_services/spikes/03_maplib_rml_conformance/inputs/rml-test-cases/test-cases/RMLTC0007a-SPARQL/mapping.ttl",
+        "sha256": "d8c4e9d260ab0576e8274d70bd544c1af1eb72efc1360fe2a74d806db7ea6f57",
+        "size": 1617
+      },
+      {
+        "path": "/home/nico/wspace/eona/eona_vocabulary_services/spikes/03_maplib_rml_conformance/inputs/rml-test-cases/test-cases/RMLTC0007a-SQLServer/mapping.ttl",
+        "sha256": "b4a0fa75781bde334648ba8fdd701cbdf55c94ab91a21193e26299e1491371c2",
+        "size": 945
+      },
+      {
+        "path": "/home/nico/wspace/eona/eona_vocabulary_services/spikes/03_maplib_rml_conformance/inputs/rml-test-cases/test-cases/RMLTC0007a-XML/mapping.ttl",
+        "sha256": "6dd9a9efc953df674f6dc5a60771d463dfe5b2bdd6dce61d2c66ef9625b7fab3",
+        "size": 706
+      },
+      {
+        "path": "/home/nico/wspace/eona/eona_vocabulary_services/spikes/03_maplib_rml_conformance/inputs/rml-test-cases/test-cases/RMLTC0007b-CSV/mapping.ttl",
+        "sha256": "c83721c9bf96943e4de921cf73c2c410dd950e7702505afe5f1e86f2093396ad",
+        "size": 800
+      },
+      {
+        "path": "/home/nico/wspace/eona/eona_vocabulary_services/spikes/03_maplib_rml_conformance/inputs/rml-test-cases/test-cases/RMLTC0007b-JSON/mapping.ttl",
+        "sha256": "c8886b9887d5ee8b9b04e4e684095d3d44ca6a0db300ed61ddec33dcc982d4b1",
+        "size": 843
+      },
+      {
+        "path": "/home/nico/wspace/eona/eona_vocabulary_services/spikes/03_maplib_rml_conformance/inputs/rml-test-cases/test-cases/RMLTC0007b-MySQL/mapping.ttl",
+        "sha256": "7642c0194fe3f9a0360ff89cabcb41a9ec11e43881119b8e82f3ba23d5e31682",
+        "size": 1098
+      },
+      {
+        "path": "/home/nico/wspace/eona/eona_vocabulary_services/spikes/03_maplib_rml_conformance/inputs/rml-test-cases/test-cases/RMLTC0007b-PostgreSQL/mapping.ttl",
+        "sha256": "9a66b91209e1c97f8000a998e08e7f7ac632d6391eadb110b38dea4f8e0da069",
+        "size": 1044
+      },
+      {
+        "path": "/home/nico/wspace/eona/eona_vocabulary_services/spikes/03_maplib_rml_conformance/inputs/rml-test-cases/test-cases/RMLTC0007b-SPARQL/mapping.ttl",
+        "sha256": "a3eabb775ccc8c6d396bbe85752ec9f6883ec818d6bdc55eb36d987f92f020ce",
+        "size": 1779
+      },
+      {
+        "path": "/home/nico/wspace/eona/eona_vocabulary_services/spikes/03_maplib_rml_conformance/inputs/rml-test-cases/test-cases/RMLTC0007b-SQLServer/mapping.ttl",
+        "sha256": "010e28e4b807a6c68b717132b2a15d52994cb478a6f92776b6b4e7d61bb6d94f",
+        "size": 1081
+      },
+      {
+        "path": "/home/nico/wspace/eona/eona_vocabulary_services/spikes/03_maplib_rml_conformance/inputs/rml-test-cases/test-cases/RMLTC0007b-XML/mapping.ttl",
+        "sha256": "39507f85a2bfdee2c8c0bddd83704b2086f2c83e9c966ed2c624fdd7626da77d",
+        "size": 850
+      },
+      {
+        "path": "/home/nico/wspace/eona/eona_vocabulary_services/spikes/03_maplib_rml_conformance/inputs/rml-test-cases/test-cases/RMLTC0007c-CSV/mapping.ttl",
+        "sha256": "0910e586d10f8058b6cd67ccc9d8a40958d01e28a877f5c1a1b7066506db504c",
+        "size": 770
+      },
+      {
+        "path": "/home/nico/wspace/eona/eona_vocabulary_services/spikes/03_maplib_rml_conformance/inputs/rml-test-cases/test-cases/RMLTC0007c-JSON/mapping.ttl",
+        "sha256": "e3b59e48c900a5e13f7818b209dcc9763b01096df6e1618922109ae9fdb61f6a",
+        "size": 812
+      },
+      {
+        "path": "/home/nico/wspace/eona/eona_vocabulary_services/spikes/03_maplib_rml_conformance/inputs/rml-test-cases/test-cases/RMLTC0007c-MySQL/mapping.ttl",
+        "sha256": "a37d168c874f71476d0b8d8d458be0dd1a147a3697eb66728e0f9200431f360d",
+        "size": 1066
+      },
+      {
+        "path": "/home/nico/wspace/eona/eona_vocabulary_services/spikes/03_maplib_rml_conformance/inputs/rml-test-cases/test-cases/RMLTC0007c-PostgreSQL/mapping.ttl",
+        "sha256": "f4ff4282ba6dad430b86def30d9a981e14f40e9bd3dc70737b8379704a82a809",
+        "size": 1012
+      },
+      {
+        "path": "/home/nico/wspace/eona/eona_vocabulary_services/spikes/03_maplib_rml_conformance/inputs/rml-test-cases/test-cases/RMLTC0007c-SPARQL/mapping.ttl",
+        "sha256": "55837a790ac8a7b01ad412aaf82cbcf31951aca0ee69bf7de9e7c5592d858066",
+        "size": 1622
+      },
+      {
+        "path": "/home/nico/wspace/eona/eona_vocabulary_services/spikes/03_maplib_rml_conformance/inputs/rml-test-cases/test-cases/RMLTC0007c-SQLServer/mapping.ttl",
+        "sha256": "7d3cc3cc7f41e641a354b6b7fbcdd9a137d5cb4d8d9628f9672f616a534c45fa",
+        "size": 1049
+      },
+      {
+        "path": "/home/nico/wspace/eona/eona_vocabulary_services/spikes/03_maplib_rml_conformance/inputs/rml-test-cases/test-cases/RMLTC0007c-XML/mapping.ttl",
+        "sha256": "017ff3df3de3863d277803b06ba383018676556b23a88d6c5d13aca159f12c2c",
+        "size": 810
+      },
+      {
+        "path": "/home/nico/wspace/eona/eona_vocabulary_services/spikes/03_maplib_rml_conformance/inputs/rml-test-cases/test-cases/RMLTC0007d-CSV/mapping.ttl",
+        "sha256": "58b797e83c2642adbbfca452f2cf046d1e8ab91fc3d5b98e8d7de1244534b32e",
+        "size": 964
+      },
+      {
+        "path": "/home/nico/wspace/eona/eona_vocabulary_services/spikes/03_maplib_rml_conformance/inputs/rml-test-cases/test-cases/RMLTC0007d-JSON/mapping.ttl",
+        "sha256": "9c41449aec0ed15b45e5702aeb4de487b93ebcf3bf160b592941157672bad190",
+        "size": 993
+      },
+      {
+        "path": "/home/nico/wspace/eona/eona_vocabulary_services/spikes/03_maplib_rml_conformance/inputs/rml-test-cases/test-cases/RMLTC0007d-MySQL/mapping.ttl",
+        "sha256": "9ee40bf0dece0130f9a3a6ef010e294675070ce4e45b10b3dd2d0fe5e8e547d1",
+        "size": 1256
+      },
+      {
+        "path": "/home/nico/wspace/eona/eona_vocabulary_services/spikes/03_maplib_rml_conformance/inputs/rml-test-cases/test-cases/RMLTC0007d-PostgreSQL/mapping.ttl",
+        "sha256": "4d1cf234e4d19fca8ede81aee0da48cb65fd19ea9e016f05952646b30ace8201",
+        "size": 1202
+      },
+      {
+        "path": "/home/nico/wspace/eona/eona_vocabulary_services/spikes/03_maplib_rml_conformance/inputs/rml-test-cases/test-cases/RMLTC0007d-SPARQL/mapping.ttl",
+        "sha256": "610f620d85afa5792f6937a9c0fc420f663acfa42d6c8b7f4c0e5d2307bb775c",
+        "size": 1847
+      },
+      {
+        "path": "/home/nico/wspace/eona/eona_vocabulary_services/spikes/03_maplib_rml_conformance/inputs/rml-test-cases/test-cases/RMLTC0007d-SQLServer/mapping.ttl",
+        "sha256": "3b8a2d649523238cb1d2458a2340110f4bbd206878b42d883e5cfa21ce76f37c",
+        "size": 1239
+      },
+      {
+        "path": "/home/nico/wspace/eona/eona_vocabulary_services/spikes/03_maplib_rml_conformance/inputs/rml-test-cases/test-cases/RMLTC0007d-XML/mapping.ttl",
+        "sha256": "0dde7acfa87257beb324ea55e35b844971124a545b1c27bb2b18df9afa7cd987",
+        "size": 1003
+      },
+      {
+        "path": "/home/nico/wspace/eona/eona_vocabulary_services/spikes/03_maplib_rml_conformance/inputs/rml-test-cases/test-cases/RMLTC0007e-CSV/mapping.ttl",
+        "sha256": "1b85faeb9a4be1c157ad92377d2545b0ab8ec8e3decb865a5d014a42dff102cf",
+        "size": 790
+      },
+      {
+        "path": "/home/nico/wspace/eona/eona_vocabulary_services/spikes/03_maplib_rml_conformance/inputs/rml-test-cases/test-cases/RMLTC0007e-JSON/mapping.ttl",
+        "sha256": "add65a1e2f1e2deabbbe1f92866a97e2112a1e30e2ca81bec274d743fa07fd9b",
+        "size": 821
+      },
+      {
+        "path": "/home/nico/wspace/eona/eona_vocabulary_services/spikes/03_maplib_rml_conformance/inputs/rml-test-cases/test-cases/RMLTC0007e-MySQL/mapping.ttl",
+        "sha256": "db66c28d86fb6823e7f0b26b46a4b9934ec904e0b3a039d81e343709e3590426",
+        "size": 1085
+      },
+      {
+        "path": "/home/nico/wspace/eona/eona_vocabulary_services/spikes/03_maplib_rml_conformance/inputs/rml-test-cases/test-cases/RMLTC0007e-PostgreSQL/mapping.ttl",
+        "sha256": "3f6c1d8983f6398ac622c6fd49f7a2fb117ad7a6c0b1a1b4e04a3c135d11b3cb",
+        "size": 1031
+      },
+      {
+        "path": "/home/nico/wspace/eona/eona_vocabulary_services/spikes/03_maplib_rml_conformance/inputs/rml-test-cases/test-cases/RMLTC0007e-SPARQL/mapping.ttl",
+        "sha256": "2e91d52a56da067008a06460cac5b4d31b4052b0b29dc43932899b88f8d27e85",
+        "size": 1515
+      },
+      {
+        "path": "/home/nico/wspace/eona/eona_vocabulary_services/spikes/03_maplib_rml_conformance/inputs/rml-test-cases/test-cases/RMLTC0007e-SQLServer/mapping.ttl",
+        "sha256": "1742af3ff0e0aa1e0d4fe3212cacf762229ba12c37c2d39ee566ffbfa89cff1f",
+        "size": 1068
+      },
+      {
+        "path": "/home/nico/wspace/eona/eona_vocabulary_services/spikes/03_maplib_rml_conformance/inputs/rml-test-cases/test-cases/RMLTC0007e-XML/mapping.ttl",
+        "sha256": "75d4d172624cf1cedafb3982b34190183543da66d22ba0692822c96d80368794",
+        "size": 830
+      },
+      {
+        "path": "/home/nico/wspace/eona/eona_vocabulary_services/spikes/03_maplib_rml_conformance/inputs/rml-test-cases/test-cases/RMLTC0007f-CSV/mapping.ttl",
+        "sha256": "49378c1b7840d5ff0c81e9b37b8b6b19b34da4dc53d40f9441f3d4061fcd2064",
+        "size": 908
+      },
+      {
+        "path": "/home/nico/wspace/eona/eona_vocabulary_services/spikes/03_maplib_rml_conformance/inputs/rml-test-cases/test-cases/RMLTC0007f-JSON/mapping.ttl",
+        "sha256": "cc3667992f46c8ff28b3925c3f40f4f6974503e2605485d84d9f069edf7bb58b",
+        "size": 951
+      },
+      {
+        "path": "/home/nico/wspace/eona/eona_vocabulary_services/spikes/03_maplib_rml_conformance/inputs/rml-test-cases/test-cases/RMLTC0007f-MySQL/mapping.ttl",
+        "sha256": "1d55eb6b0c961880106c9ba341f4b17ceece9831016216580d83b03a1f2c0be6",
+        "size": 1153
+      },
+      {
+        "path": "/home/nico/wspace/eona/eona_vocabulary_services/spikes/03_maplib_rml_conformance/inputs/rml-test-cases/test-cases/RMLTC0007f-PostgreSQL/mapping.ttl",
+        "sha256": "87ff917caca6ddfcc7da2385f81f5138cc85c34b38d1f469033c19affbe522e0",
+        "size": 1152
+      },
+      {
+        "path": "/home/nico/wspace/eona/eona_vocabulary_services/spikes/03_maplib_rml_conformance/inputs/rml-test-cases/test-cases/RMLTC0007f-SPARQL/mapping.ttl",
+        "sha256": "16f1ef5848d88490addfeb75680e904341ea2f27bbebee8046cb00d1d2a2c102",
+        "size": 1649
+      },
+      {
+        "path": "/home/nico/wspace/eona/eona_vocabulary_services/spikes/03_maplib_rml_conformance/inputs/rml-test-cases/test-cases/RMLTC0007f-SQLServer/mapping.ttl",
+        "sha256": "ca67b1b842933ff796826917ebb0eca3b2b7f93b7196edd34b2cc3d0b00454d4",
+        "size": 1189
+      },
+      {
+        "path": "/home/nico/wspace/eona/eona_vocabulary_services/spikes/03_maplib_rml_conformance/inputs/rml-test-cases/test-cases/RMLTC0007f-XML/mapping.ttl",
+        "sha256": "cf65b6feffdf8ca3d64e03759df6581ec3853daa0cfb0c8a75de1372e608c690",
+        "size": 940
+      },
+      {
+        "path": "/home/nico/wspace/eona/eona_vocabulary_services/spikes/03_maplib_rml_conformance/inputs/rml-test-cases/test-cases/RMLTC0007g-CSV/mapping.ttl",
+        "sha256": "cc5b1b15f562224648511ca6d2ded1f77c285389cd83dd4bcd405a8fb24a53be",
+        "size": 671
+      },
+      {
+        "path": "/home/nico/wspace/eona/eona_vocabulary_services/spikes/03_maplib_rml_conformance/inputs/rml-test-cases/test-cases/RMLTC0007g-JSON/mapping.ttl",
+        "sha256": "156b430a502a0a336a9bb11c68628b1321599c52556c163c09155d5f16c67563",
+        "size": 714
+      },
+      {
+        "path": "/home/nico/wspace/eona/eona_vocabulary_services/spikes/03_maplib_rml_conformance/inputs/rml-test-cases/test-cases/RMLTC0007g-MySQL/mapping.ttl",
+        "sha256": "5e47f8a5e80377f9beef2865457ff5cddca47a23c887b70fe73e0185ac0ad6b3",
+        "size": 970
+      },
+      {
+        "path": "/home/nico/wspace/eona/eona_vocabulary_services/spikes/03_maplib_rml_conformance/inputs/rml-test-cases/test-cases/RMLTC0007g-PostgreSQL/mapping.ttl",
+        "sha256": "94a31b91b91752eeb4e7713fc66dcb5a22347d50b3af64f9690ea187ec6dc597",
+        "size": 916
+      },
+      {
+        "path": "/home/nico/wspace/eona/eona_vocabulary_services/spikes/03_maplib_rml_conformance/inputs/rml-test-cases/test-cases/RMLTC0007g-SPARQL/mapping.ttl",
+        "sha256": "65a4db071923cef6bee3f2c8c0c890f264a1cd59a2ab205cd7f5ab9d1d18f65c",
+        "size": 1632
+      },
+      {
+        "path": "/home/nico/wspace/eona/eona_vocabulary_services/spikes/03_maplib_rml_conformance/inputs/rml-test-cases/test-cases/RMLTC0007g-SQLServer/mapping.ttl",
+        "sha256": "bdbd8ca5799ab3114001760944274fb610529fc57090652c1db7a7b1aa7aa64b",
+        "size": 953
+      },
+      {
+        "path": "/home/nico/wspace/eona/eona_vocabulary_services/spikes/03_maplib_rml_conformance/inputs/rml-test-cases/test-cases/RMLTC0007g-XML/mapping.ttl",
+        "sha256": "54970e10e58ca7f6d9ef40495cc11705940c29047089359e2b79abc363fac356",
+        "size": 711
+      },
+      {
+        "path": "/home/nico/wspace/eona/eona_vocabulary_services/spikes/03_maplib_rml_conformance/inputs/rml-test-cases/test-cases/RMLTC0007h-CSV/mapping.ttl",
+        "sha256": "20c8404d166a3edeafd6391ac91bbd24b3bc7c9847ecb8da00ecd60712dd929a",
+        "size": 700
+      },
+      {
+        "path": "/home/nico/wspace/eona/eona_vocabulary_services/spikes/03_maplib_rml_conformance/inputs/rml-test-cases/test-cases/RMLTC0007h-JSON/mapping.ttl",
+        "sha256": "4c625c00871e65eb8ab98efe184034c424c70aede65777ab43d54425cc5acc6b",
+        "size": 743
+      },
+      {
+        "path": "/home/nico/wspace/eona/eona_vocabulary_services/spikes/03_maplib_rml_conformance/inputs/rml-test-cases/test-cases/RMLTC0007h-MySQL/mapping.ttl",
+        "sha256": "19b8b70bf1c33b4148d125748d116e7d8c2e911c9042e252f422f78fdfe55776",
+        "size": 998
+      },
+      {
+        "path": "/home/nico/wspace/eona/eona_vocabulary_services/spikes/03_maplib_rml_conformance/inputs/rml-test-cases/test-cases/RMLTC0007h-PostgreSQL/mapping.ttl",
+        "sha256": "3ef1c76997309a0c7384964dd0176c46fcd802ed12f57174e177166cfb4fb6f3",
+        "size": 944
+      },
+      {
+        "path": "/home/nico/wspace/eona/eona_vocabulary_services/spikes/03_maplib_rml_conformance/inputs/rml-test-cases/test-cases/RMLTC0007h-SPARQL/mapping.ttl",
+        "sha256": "5ea2cabf6ae0388c81408a020c38b5240e8f03af977dc3b91043a9976e1f0c12",
+        "size": 1661
+      },
+      {
+        "path": "/home/nico/wspace/eona/eona_vocabulary_services/spikes/03_maplib_rml_conformance/inputs/rml-test-cases/test-cases/RMLTC0007h-SQLServer/mapping.ttl",
+        "sha256": "522a907a47b990a8e43e8179ff6a076d4a211915ae9617456a8513c33c41ce9c",
+        "size": 981
+      },
+      {
+        "path": "/home/nico/wspace/eona/eona_vocabulary_services/spikes/03_maplib_rml_conformance/inputs/rml-test-cases/test-cases/RMLTC0007h-XML/mapping.ttl",
+        "sha256": "771f19567ec28ca0e1d098476fad67b3b3e523c4a7c43091991cc3114db9356e",
+        "size": 740
+      },
+      {
+        "path": "/home/nico/wspace/eona/eona_vocabulary_services/spikes/03_maplib_rml_conformance/inputs/rml-test-cases/test-cases/RMLTC0008a-CSV/mapping.ttl",
+        "sha256": "f7bbbc7524b826cfd370a7e164d5c9be537f49f51efa6902a0f221e9c6ce87f2",
+        "size": 1046
+      },
+      {
+        "path": "/home/nico/wspace/eona/eona_vocabulary_services/spikes/03_maplib_rml_conformance/inputs/rml-test-cases/test-cases/RMLTC0008a-JSON/mapping.ttl",
+        "sha256": "926317789a259dbb9fc96a25b182d68e5865e86445e1b4f4bc94396b890c5fce",
+        "size": 1098
+      },
+      {
+        "path": "/home/nico/wspace/eona/eona_vocabulary_services/spikes/03_maplib_rml_conformance/inputs/rml-test-cases/test-cases/RMLTC0008a-MySQL/mapping.ttl",
+        "sha256": "3bafbba96b0ea99f1a9904c5245339daf0dbe63cb3d9b1135c0820099d87bc5e",
+        "size": 1300
+      },
+      {
+        "path": "/home/nico/wspace/eona/eona_vocabulary_services/spikes/03_maplib_rml_conformance/inputs/rml-test-cases/test-cases/RMLTC0008a-PostgreSQL/mapping.ttl",
+        "sha256": "9d2cf51cc2b94f387c32c6657c7c4f9c505bf0b866431e1930cec68bfc03dfc7",
+        "size": 1300
+      },
+      {
+        "path": "/home/nico/wspace/eona/eona_vocabulary_services/spikes/03_maplib_rml_conformance/inputs/rml-test-cases/test-cases/RMLTC0008a-SPARQL/mapping.ttl",
+        "sha256": "ad0e76239b70747c80181dd51e275a03ace627dabc2e0393f6c0eb92f0cc532e",
+        "size": 2120
+      },
+      {
+        "path": "/home/nico/wspace/eona/eona_vocabulary_services/spikes/03_maplib_rml_conformance/inputs/rml-test-cases/test-cases/RMLTC0008a-SQLServer/mapping.ttl",
+        "sha256": "05c1c3f4525e7efeedd074a21eaf211342872bbb4ba4422c9cea5cb719722e94",
+        "size": 1337
+      },
+      {
+        "path": "/home/nico/wspace/eona/eona_vocabulary_services/spikes/03_maplib_rml_conformance/inputs/rml-test-cases/test-cases/RMLTC0008a-XML/mapping.ttl",
+        "sha256": "8f255224c58d9e99c8b9cb93f841566664e38e0859271305985df2da17e89cd8",
+        "size": 1096
+      },
+      {
+        "path": "/home/nico/wspace/eona/eona_vocabulary_services/spikes/03_maplib_rml_conformance/inputs/rml-test-cases/test-cases/RMLTC0008b-CSV/mapping.ttl",
+        "sha256": "fb5f6745a1badd13bf51b14e2ed63b9b2e67eb1ed4cc9de2176094980d905119",
+        "size": 1374
+      },
+      {
+        "path": "/home/nico/wspace/eona/eona_vocabulary_services/spikes/03_maplib_rml_conformance/inputs/rml-test-cases/test-cases/RMLTC0008b-JSON/mapping.ttl",
+        "sha256": "a4cb39919bd4c0294046c2c357be6dda8fda5ee427615d9577f59dcf30e0b287",
+        "size": 1454
+      },
+      {
+        "path": "/home/nico/wspace/eona/eona_vocabulary_services/spikes/03_maplib_rml_conformance/inputs/rml-test-cases/test-cases/RMLTC0008b-MySQL/mapping.ttl",
+        "sha256": "01ba5963cf3f924986882c0fef10a431d308df6e0306cd6c11b74dc134a8db8d",
+        "size": 1708
+      },
+      {
+        "path": "/home/nico/wspace/eona/eona_vocabulary_services/spikes/03_maplib_rml_conformance/inputs/rml-test-cases/test-cases/RMLTC0008b-PostgreSQL/mapping.ttl",
+        "sha256": "1171fd0f402e25b36ddb1ea7669edfc53fb5925db92b0842f51ac22c733f2224",
+        "size": 1656
+      },
+      {
+        "path": "/home/nico/wspace/eona/eona_vocabulary_services/spikes/03_maplib_rml_conformance/inputs/rml-test-cases/test-cases/RMLTC0008b-SPARQL/mapping.ttl",
+        "sha256": "17f85b852ee81f45c225c5f50655cfacd2b116641d23f4c691551c73eedc6da9",
+        "size": 2829
+      },
+      {
+        "path": "/home/nico/wspace/eona/eona_vocabulary_services/spikes/03_maplib_rml_conformance/inputs/rml-test-cases/test-cases/RMLTC0008b-SQLServer/mapping.ttl",
+        "sha256": "2d7b2fc2c7400d6906a55a6a9bcf28cdd09ba11c0d025c71eeea023dfae07f52",
+        "size": 1691
+      },
+      {
+        "path": "/home/nico/wspace/eona/eona_vocabulary_services/spikes/03_maplib_rml_conformance/inputs/rml-test-cases/test-cases/RMLTC0008b-XML/mapping.ttl",
+        "sha256": "bd8382c64775d741640551d0669cd0258dfac93a7353dd790f475d0f4bda6484",
+        "size": 1442
+      },
+      {
+        "path": "/home/nico/wspace/eona/eona_vocabulary_services/spikes/03_maplib_rml_conformance/inputs/rml-test-cases/test-cases/RMLTC0008c-CSV/mapping.ttl",
+        "sha256": "10c6bc7155cbfc15c0d847d8cdf4238adf0962df101416475888d6285ef0c8c9",
+        "size": 692
+      },
+      {
+        "path": "/home/nico/wspace/eona/eona_vocabulary_services/spikes/03_maplib_rml_conformance/inputs/rml-test-cases/test-cases/RMLTC0008c-JSON/mapping.ttl",
+        "sha256": "0ba89a20565e28e3a97f0a0826e64f9cd6cf41049ffac4c51d86c9e476dce54e",
+        "size": 733
+      },
+      {
+        "path": "/home/nico/wspace/eona/eona_vocabulary_services/spikes/03_maplib_rml_conformance/inputs/rml-test-cases/test-cases/RMLTC0008c-MySQL/mapping.ttl",
+        "sha256": "87b8f1a40e96092172a96171a1c157c47333bb5aad8f3c8d2a837e066c8721d0",
+        "size": 991
+      },
+      {
+        "path": "/home/nico/wspace/eona/eona_vocabulary_services/spikes/03_maplib_rml_conformance/inputs/rml-test-cases/test-cases/RMLTC0008c-PostgreSQL/mapping.ttl",
+        "sha256": "5728b4d5e4b014b54352fa1fa815370e90b04f81d77a4954c7fc93019bfacd1d",
+        "size": 937
+      },
+      {
+        "path": "/home/nico/wspace/eona/eona_vocabulary_services/spikes/03_maplib_rml_conformance/inputs/rml-test-cases/test-cases/RMLTC0008c-SPARQL/mapping.ttl",
+        "sha256": "a9856feca8496b562cf08e48ff02f998c738dc4510b05b2b3c9cd282a8b98bd2",
+        "size": 1551
+      },
+      {
+        "path": "/home/nico/wspace/eona/eona_vocabulary_services/spikes/03_maplib_rml_conformance/inputs/rml-test-cases/test-cases/RMLTC0008c-SQLServer/mapping.ttl",
+        "sha256": "48af580e11f7469035eead4287f62627b9dee73e1872ef2438153af5b35519cb",
+        "size": 974
+      },
+      {
+        "path": "/home/nico/wspace/eona/eona_vocabulary_services/spikes/03_maplib_rml_conformance/inputs/rml-test-cases/test-cases/RMLTC0008c-XML/mapping.ttl",
+        "sha256": "f5e90c02bb3c5cb9301de129caa9fa668dc998c13976dfe8728ccec96388a469",
+        "size": 733
+      },
+      {
+        "path": "/home/nico/wspace/eona/eona_vocabulary_services/spikes/03_maplib_rml_conformance/inputs/rml-test-cases/test-cases/RMLTC0009a-CSV/mapping.ttl",
+        "sha256": "5bd55b071ba9f2045543b211c393ba9fc8d93d1e99bb37d1f78c1eca7a293415",
+        "size": 1308
+      },
+      {
+        "path": "/home/nico/wspace/eona/eona_vocabulary_services/spikes/03_maplib_rml_conformance/inputs/rml-test-cases/test-cases/RMLTC0009a-JSON/mapping.ttl",
+        "sha256": "5f9348e624488b23ba9c74e91f95b66ad0aea4103c21bead734b5593c27cbfe5",
+        "size": 1386
+      },
+      {
+        "path": "/home/nico/wspace/eona/eona_vocabulary_services/spikes/03_maplib_rml_conformance/inputs/rml-test-cases/test-cases/RMLTC0009a-MySQL/mapping.ttl",
+        "sha256": "963ae069697341af3bbcb0db8eb5155ec4ab04f7f23707a61eb6f0341444eb5c",
+        "size": 1638
+      },
+      {
+        "path": "/home/nico/wspace/eona/eona_vocabulary_services/spikes/03_maplib_rml_conformance/inputs/rml-test-cases/test-cases/RMLTC0009a-PostgreSQL/mapping.ttl",
+        "sha256": "0eec9278597b4b56d0dda4cc425d57c8e466185b39548f0f2c4dd0c833bee5e2",
+        "size": 1584
+      },
+      {
+        "path": "/home/nico/wspace/eona/eona_vocabulary_services/spikes/03_maplib_rml_conformance/inputs/rml-test-cases/test-cases/RMLTC0009a-SPARQL/mapping.ttl",
+        "sha256": "ab6acc64981cc251a13f865fd3054c11c7b807b6a1e3d2ed0b76b178bbf51faf",
+        "size": 3090
+      },
+      {
+        "path": "/home/nico/wspace/eona/eona_vocabulary_services/spikes/03_maplib_rml_conformance/inputs/rml-test-cases/test-cases/RMLTC0009a-SQLServer/mapping.ttl",
+        "sha256": "713d18791a171d1d582cbbccb428674e9b849ea7c0f7d4f4ccabec59499f13e6",
+        "size": 1621
+      },
+      {
+        "path": "/home/nico/wspace/eona/eona_vocabulary_services/spikes/03_maplib_rml_conformance/inputs/rml-test-cases/test-cases/RMLTC0009a-XML/mapping.ttl",
+        "sha256": "b8b841f9dd6d9b969bd404e0f3bd300f1bfd83294befc14102e7f4a8cdfaf10f",
+        "size": 1384
+      },
+      {
+        "path": "/home/nico/wspace/eona/eona_vocabulary_services/spikes/03_maplib_rml_conformance/inputs/rml-test-cases/test-cases/RMLTC0009b-CSV/mapping.ttl",
+        "sha256": "25ec2d5f12d8798853ed1a5617a618393dc2cacf46fb4e161721c157f87d32f3",
+        "size": 1631
+      },
+      {
+        "path": "/home/nico/wspace/eona/eona_vocabulary_services/spikes/03_maplib_rml_conformance/inputs/rml-test-cases/test-cases/RMLTC0009b-JSON/mapping.ttl",
+        "sha256": "2c1208b6e86832756935d81820b5f6904bfdcda97f60e65410c10193f8fe1cea",
+        "size": 1697
+      },
+      {
+        "path": "/home/nico/wspace/eona/eona_vocabulary_services/spikes/03_maplib_rml_conformance/inputs/rml-test-cases/test-cases/RMLTC0009b-MySQL/mapping.ttl",
+        "sha256": "0e6d795065dc96c31d720157af041cd5eb738f417255b1da281a0037259cde26",
+        "size": 1950
+      },
+      {
+        "path": "/home/nico/wspace/eona/eona_vocabulary_services/spikes/03_maplib_rml_conformance/inputs/rml-test-cases/test-cases/RMLTC0009b-PostgreSQL/mapping.ttl",
+        "sha256": "6ab1e61bf0ac2806bae32594799e913f8e9d8dbdaba406640f969a9d280f8ce1",
+        "size": 1896
+      },
+      {
+        "path": "/home/nico/wspace/eona/eona_vocabulary_services/spikes/03_maplib_rml_conformance/inputs/rml-test-cases/test-cases/RMLTC0009b-SPARQL/mapping.ttl",
+        "sha256": "f159d0e6149bd8511b209c002856774ac44d94da39cd7632aeb13320b0e42984",
+        "size": 3443
+      },
+      {
+        "path": "/home/nico/wspace/eona/eona_vocabulary_services/spikes/03_maplib_rml_conformance/inputs/rml-test-cases/test-cases/RMLTC0009b-SQLServer/mapping.ttl",
+        "sha256": "333283e548a134bc0620dae07d3269471ce2512d22e5063ac5e649cafbdfac18",
+        "size": 1933
+      },
+      {
+        "path": "/home/nico/wspace/eona/eona_vocabulary_services/spikes/03_maplib_rml_conformance/inputs/rml-test-cases/test-cases/RMLTC0009b-XML/mapping.ttl",
+        "sha256": "d9f501059ed02cea4b97743e54f9aac6e7475164e9395555c5bd1219c3f8153f",
+        "size": 1703
+      },
+      {
+        "path": "/home/nico/wspace/eona/eona_vocabulary_services/spikes/03_maplib_rml_conformance/inputs/rml-test-cases/test-cases/RMLTC0009c-MySQL/mapping.ttl",
+        "sha256": "53a926b4c6d7e885eae15c37fd054eb8f1548c94c743529cecedb61ce697088a",
+        "size": 1047
+      },
+      {
+        "path": "/home/nico/wspace/eona/eona_vocabulary_services/spikes/03_maplib_rml_conformance/inputs/rml-test-cases/test-cases/RMLTC0009c-PostgreSQL/mapping.ttl",
+        "sha256": "e6e406f9676fa2494a09951a2225abb8e2f659c1ff48a7aa6443516ae85805b2",
+        "size": 1047
+      },
+      {
+        "path": "/home/nico/wspace/eona/eona_vocabulary_services/spikes/03_maplib_rml_conformance/inputs/rml-test-cases/test-cases/RMLTC0009c-SQLServer/mapping.ttl",
+        "sha256": "1333866f9ee90fb1952359c7a18c272fd59153599bdd16c82611463c252331c9",
+        "size": 1084
+      },
+      {
+        "path": "/home/nico/wspace/eona/eona_vocabulary_services/spikes/03_maplib_rml_conformance/inputs/rml-test-cases/test-cases/RMLTC0009d-MySQL/mapping.ttl",
+        "sha256": "f4c10508510c697e4093db7db8e59dfde3a7526c343694b4743b92736cd59398",
+        "size": 1180
+      },
+      {
+        "path": "/home/nico/wspace/eona/eona_vocabulary_services/spikes/03_maplib_rml_conformance/inputs/rml-test-cases/test-cases/RMLTC0009d-PostgreSQL/mapping.ttl",
+        "sha256": "28219da84ef8a9833a69dedbebaf48b64da47e550fcfdb4419bdb7705be97000",
+        "size": 1180
+      },
+      {
+        "path": "/home/nico/wspace/eona/eona_vocabulary_services/spikes/03_maplib_rml_conformance/inputs/rml-test-cases/test-cases/RMLTC0009d-SQLServer/mapping.ttl",
+        "sha256": "e08677fa97d80d4d75b077965a869cc392ff5fa14ffefb8fc7ea8831c9eca55a",
+        "size": 1217
+      },
+      {
+        "path": "/home/nico/wspace/eona/eona_vocabulary_services/spikes/03_maplib_rml_conformance/inputs/rml-test-cases/test-cases/RMLTC0010a-CSV/mapping.ttl",
+        "sha256": "da35e2d873999ebd2da059b3ae9e1a7afbbaac93c58be5a2f2ffa3e26a3192ac",
+        "size": 661
+      },
+      {
+        "path": "/home/nico/wspace/eona/eona_vocabulary_services/spikes/03_maplib_rml_conformance/inputs/rml-test-cases/test-cases/RMLTC0010a-JSON/mapping.ttl",
+        "sha256": "183125ff2ddbae45ea5bdba25e30874270b404e706676fb46c8f4d5350770497",
+        "size": 702
+      },
+      {
+        "path": "/home/nico/wspace/eona/eona_vocabulary_services/spikes/03_maplib_rml_conformance/inputs/rml-test-cases/test-cases/RMLTC0010a-MySQL/mapping.ttl",
+        "sha256": "72bf2bd883a858f05d1186acf73d4271ad6fc165e74013b77e7bfc0df5380548",
+        "size": 964
+      },
+      {
+        "path": "/home/nico/wspace/eona/eona_vocabulary_services/spikes/03_maplib_rml_conformance/inputs/rml-test-cases/test-cases/RMLTC0010a-PostgreSQL/mapping.ttl",
+        "sha256": "04b56610b99788597e8f096ad9648ac46204edbe22907efe87d3d34ed82a979f",
+        "size": 909
+      },
+      {
+        "path": "/home/nico/wspace/eona/eona_vocabulary_services/spikes/03_maplib_rml_conformance/inputs/rml-test-cases/test-cases/RMLTC0010a-SQLServer/mapping.ttl",
+        "sha256": "a8d88219b88dbdfe27c7821271deb131be33fab3a15ea86b5ec67dbe5bad4d52",
+        "size": 946
+      },
+      {
+        "path": "/home/nico/wspace/eona/eona_vocabulary_services/spikes/03_maplib_rml_conformance/inputs/rml-test-cases/test-cases/RMLTC0010b-CSV/mapping.ttl",
+        "sha256": "e51a40f8fb829e6d15a3bc69eff47af6b5145cbd25ec430a5659cf20963583b2",
+        "size": 668
+      },
+      {
+        "path": "/home/nico/wspace/eona/eona_vocabulary_services/spikes/03_maplib_rml_conformance/inputs/rml-test-cases/test-cases/RMLTC0010b-JSON/mapping.ttl",
+        "sha256": "a6fdfd88b22f7832c35833d29f9f31719b7eb9e1d1975e9f8a98bb5619b64d58",
+        "size": 709
+      },
+      {
+        "path": "/home/nico/wspace/eona/eona_vocabulary_services/spikes/03_maplib_rml_conformance/inputs/rml-test-cases/test-cases/RMLTC0010b-MySQL/mapping.ttl",
+        "sha256": "7a713758da56b3d14641c99b263bcce5e49b8fb4b241cb1ce1d51815925864e0",
+        "size": 970
+      },
+      {
+        "path": "/home/nico/wspace/eona/eona_vocabulary_services/spikes/03_maplib_rml_conformance/inputs/rml-test-cases/test-cases/RMLTC0010b-PostgreSQL/mapping.ttl",
+        "sha256": "ac0b793bbdb2b564092097722018cf68222bcae49acf0b9ef55c970390969cdb",
+        "size": 916
+      },
+      {
+        "path": "/home/nico/wspace/eona/eona_vocabulary_services/spikes/03_maplib_rml_conformance/inputs/rml-test-cases/test-cases/RMLTC0010b-SQLServer/mapping.ttl",
+        "sha256": "d03ecba1aec08df42699cd573dd5fb677a20f28792d0a99d31d1b72bc80e978a",
+        "size": 953
+      },
+      {
+        "path": "/home/nico/wspace/eona/eona_vocabulary_services/spikes/03_maplib_rml_conformance/inputs/rml-test-cases/test-cases/RMLTC0010b-XML/mapping.ttl",
+        "sha256": "54d65fd70416210c2212d18288133f471bfc449c463230bf6c359e892f56b285",
+        "size": 708
+      },
+      {
+        "path": "/home/nico/wspace/eona/eona_vocabulary_services/spikes/03_maplib_rml_conformance/inputs/rml-test-cases/test-cases/RMLTC0010c-CSV/mapping.ttl",
+        "sha256": "4837fa52b55468b763ef7954a92f3dcf72b751a8a7db669cd474f518dcb42c82",
+        "size": 715
+      },
+      {
+        "path": "/home/nico/wspace/eona/eona_vocabulary_services/spikes/03_maplib_rml_conformance/inputs/rml-test-cases/test-cases/RMLTC0010c-JSON/mapping.ttl",
+        "sha256": "1f563165e07b5f3e600202203d281a20af4a8fbb0d719dd5095c2dd5d207ad4e",
+        "size": 756
+      },
+      {
+        "path": "/home/nico/wspace/eona/eona_vocabulary_services/spikes/03_maplib_rml_conformance/inputs/rml-test-cases/test-cases/RMLTC0010c-MySQL/mapping.ttl",
+        "sha256": "03a58e2e4e13c2394f39d031683df6bf42d9c37514c71b75a8968ab745a1b01e",
+        "size": 961
+      },
+      {
+        "path": "/home/nico/wspace/eona/eona_vocabulary_services/spikes/03_maplib_rml_conformance/inputs/rml-test-cases/test-cases/RMLTC0010c-PostgreSQL/mapping.ttl",
+        "sha256": "1cad16225c61774870100652abba6f79d5b83a67c888aaa7e8eb059520fc8c3e",
+        "size": 961
+      },
+      {
+        "path": "/home/nico/wspace/eona/eona_vocabulary_services/spikes/03_maplib_rml_conformance/inputs/rml-test-cases/test-cases/RMLTC0010c-SQLServer/mapping.ttl",
+        "sha256": "3fc7539f8c210f8130fadc504111f85d762b326fa3717d3e218978f2e74d9fc8",
+        "size": 998
+      },
+      {
+        "path": "/home/nico/wspace/eona/eona_vocabulary_services/spikes/03_maplib_rml_conformance/inputs/rml-test-cases/test-cases/RMLTC0010c-XML/mapping.ttl",
+        "sha256": "662912226d453e9bf665724a36eb1faeaa8ec5cd2e5ba0f76bd6fca827bb34d1",
+        "size": 754
+      },
+      {
+        "path": "/home/nico/wspace/eona/eona_vocabulary_services/spikes/03_maplib_rml_conformance/inputs/rml-test-cases/test-cases/RMLTC0011a-MySQL/mapping.ttl",
+        "sha256": "81d2fd37285a405a1584125656c15ca30291bfe6a53b398e641d96bd514def73",
+        "size": 2087
+      },
+      {
+        "path": "/home/nico/wspace/eona/eona_vocabulary_services/spikes/03_maplib_rml_conformance/inputs/rml-test-cases/test-cases/RMLTC0011a-PostgreSQL/mapping.ttl",
+        "sha256": "1560e4f88949c8d2eb57092a7d0620429b8e08c80662e2db73079d69117a34f0",
+        "size": 2088
+      },
+      {
+        "path": "/home/nico/wspace/eona/eona_vocabulary_services/spikes/03_maplib_rml_conformance/inputs/rml-test-cases/test-cases/RMLTC0011a-SQLServer/mapping.ttl",
+        "sha256": "634cb806840226b5491edaa1e600333926497e3dfa198e7d4a4b87b1833b245d",
+        "size": 2125
+      },
+      {
+        "path": "/home/nico/wspace/eona/eona_vocabulary_services/spikes/03_maplib_rml_conformance/inputs/rml-test-cases/test-cases/RMLTC0011b-CSV/mapping.ttl",
+        "sha256": "3c07140938aeafd39a3150595a20d01045410be8f4da94995c7469e1ad37c107",
+        "size": 1583
+      },
+      {
+        "path": "/home/nico/wspace/eona/eona_vocabulary_services/spikes/03_maplib_rml_conformance/inputs/rml-test-cases/test-cases/RMLTC0011b-JSON/mapping.ttl",
+        "sha256": "670b5ba712ee3c28a2bd7adbe4da23f58253695578c98a6bfd20d3ed1e471522",
+        "size": 1696
+      },
+      {
+        "path": "/home/nico/wspace/eona/eona_vocabulary_services/spikes/03_maplib_rml_conformance/inputs/rml-test-cases/test-cases/RMLTC0011b-MySQL/mapping.ttl",
+        "sha256": "ec027fea0db3cd1f57a182a14c7d7bfcf9e234688145608853eac920e1044026",
+        "size": 1918
+      },
+      {
+        "path": "/home/nico/wspace/eona/eona_vocabulary_services/spikes/03_maplib_rml_conformance/inputs/rml-test-cases/test-cases/RMLTC0011b-PostgreSQL/mapping.ttl",
+        "sha256": "62e96dff8eabfaaf180cfbcf19aebff48b7e12e574e73061df1c5571f3d35e2f",
+        "size": 1864
+      },
+      {
+        "path": "/home/nico/wspace/eona/eona_vocabulary_services/spikes/03_maplib_rml_conformance/inputs/rml-test-cases/test-cases/RMLTC0011b-SQLServer/mapping.ttl",
+        "sha256": "126c883330fbd5cbe426acca20252090bf36904a3ff2a1d877504d40171c53d1",
+        "size": 1901
+      },
+      {
+        "path": "/home/nico/wspace/eona/eona_vocabulary_services/spikes/03_maplib_rml_conformance/inputs/rml-test-cases/test-cases/RMLTC0011b-XML/mapping.ttl",
+        "sha256": "bd7e579863e683d524870b0ac6993af3deebcd9c83360e2e94a8265e03452cf9",
+        "size": 1691
+      },
+      {
+        "path": "/home/nico/wspace/eona/eona_vocabulary_services/spikes/03_maplib_rml_conformance/inputs/rml-test-cases/test-cases/RMLTC0012a-CSV/mapping.ttl",
+        "sha256": "25105f1b3507a311e6046b4e8f5e2dcbf5ffeebf3fc887654e86c6501fc95c77",
+        "size": 804
+      },
+      {
+        "path": "/home/nico/wspace/eona/eona_vocabulary_services/spikes/03_maplib_rml_conformance/inputs/rml-test-cases/test-cases/RMLTC0012a-JSON/mapping.ttl",
+        "sha256": "ef7ab3424834c0bf3aaf0d2d4cf0b6616f5594bb8e7e545363059835346a95b6",
+        "size": 843
+      },
+      {
+        "path": "/home/nico/wspace/eona/eona_vocabulary_services/spikes/03_maplib_rml_conformance/inputs/rml-test-cases/test-cases/RMLTC0012a-MySQL/mapping.ttl",
+        "sha256": "11fe395908b34489cbfc33c5493a4188302e0cd4c79950f9aef78230e0a8f32c",
+        "size": 1048
+      },
+      {
+        "path": "/home/nico/wspace/eona/eona_vocabulary_services/spikes/03_maplib_rml_conformance/inputs/rml-test-cases/test-cases/RMLTC0012a-PostgreSQL/mapping.ttl",
+        "sha256": "1cf8f064fb229428cd8eb151115abb64cbf65f23d9883245cabeab1aa5e0a699",
+        "size": 1048
+      },
+      {
+        "path": "/home/nico/wspace/eona/eona_vocabulary_services/spikes/03_maplib_rml_conformance/inputs/rml-test-cases/test-cases/RMLTC0012a-SPARQL/mapping.ttl",
+        "sha256": "08c230f467ae63aaf7a1c59808c000dfde93a6178cedf54a282e1bcca1497b44",
+        "size": 1799
+      },
+      {
+        "path": "/home/nico/wspace/eona/eona_vocabulary_services/spikes/03_maplib_rml_conformance/inputs/rml-test-cases/test-cases/RMLTC0012a-SQLServer/mapping.ttl",
+        "sha256": "34c0d1b5b591582783bdb9c1cc9df4283de0e59ac4e4262b087f016c7e60fb45",
+        "size": 1085
+      },
+      {
+        "path": "/home/nico/wspace/eona/eona_vocabulary_services/spikes/03_maplib_rml_conformance/inputs/rml-test-cases/test-cases/RMLTC0012a-XML/mapping.ttl",
+        "sha256": "44b0882e4e5627bd0e6e6d0db5750a3cb4e25673812303b0488764973c1b75be",
+        "size": 842
+      },
+      {
+        "path": "/home/nico/wspace/eona/eona_vocabulary_services/spikes/03_maplib_rml_conformance/inputs/rml-test-cases/test-cases/RMLTC0012b-CSV/mapping.ttl",
+        "sha256": "98a875562199762fc798a5374c59fee1cf47ac1ae204602850650c2274b40446",
+        "size": 1014
+      },
+      {
+        "path": "/home/nico/wspace/eona/eona_vocabulary_services/spikes/03_maplib_rml_conformance/inputs/rml-test-cases/test-cases/RMLTC0012b-JSON/mapping.ttl",
+        "sha256": "b468612890e7a1b42c2c20582ca79b262159a5a7d9f320d12811008658e8f891",
+        "size": 1086
+      },
+      {
+        "path": "/home/nico/wspace/eona/eona_vocabulary_services/spikes/03_maplib_rml_conformance/inputs/rml-test-cases/test-cases/RMLTC0012b-MySQL/mapping.ttl",
+        "sha256": "8a9c9c163e475107bd60e696728b9ddf4308f351ebc09333eefee37a1a0f5814",
+        "size": 1277
+      },
+      {
+        "path": "/home/nico/wspace/eona/eona_vocabulary_services/spikes/03_maplib_rml_conformance/inputs/rml-test-cases/test-cases/RMLTC0012b-PostgreSQL/mapping.ttl",
+        "sha256": "4b0db5786de6207b4494def9c9f75f55b222418c8cca0727ad01dae5b896a74d",
+        "size": 1290
+      },
+      {
+        "path": "/home/nico/wspace/eona/eona_vocabulary_services/spikes/03_maplib_rml_conformance/inputs/rml-test-cases/test-cases/RMLTC0012b-SPARQL/mapping.ttl",
+        "sha256": "49818503227b85afb964ed0b6981da4f244d6e0f9add9d67bee2e7e33d9571d1",
+        "size": 2762
+      },
+      {
+        "path": "/home/nico/wspace/eona/eona_vocabulary_services/spikes/03_maplib_rml_conformance/inputs/rml-test-cases/test-cases/RMLTC0012b-SQLServer/mapping.ttl",
+        "sha256": "7647ef91dadc9893877647794f720528e925ce0aac25ebf641e5db5b38b1310e",
+        "size": 1315
+      },
+      {
+        "path": "/home/nico/wspace/eona/eona_vocabulary_services/spikes/03_maplib_rml_conformance/inputs/rml-test-cases/test-cases/RMLTC0012b-XML/mapping.ttl",
+        "sha256": "11aff68ae8e0d800b6ffce84c543981300961f40b6a828de5d76135076066237",
+        "size": 1085
+      },
+      {
+        "path": "/home/nico/wspace/eona/eona_vocabulary_services/spikes/03_maplib_rml_conformance/inputs/rml-test-cases/test-cases/RMLTC0012c-CSV/mapping.ttl",
+        "sha256": "5153f53eef92d72b8ebd8ed67007187e1a2d451a43ce44c27638ae3c2862e643",
+        "size": 716
+      },
+      {
+        "path": "/home/nico/wspace/eona/eona_vocabulary_services/spikes/03_maplib_rml_conformance/inputs/rml-test-cases/test-cases/RMLTC0012c-JSON/mapping.ttl",
+        "sha256": "8139eedc6aadc1cb63af8cd36aa14e0d49b8950d45ceb246be6ec99daf650f93",
+        "size": 755
+      },
+      {
+        "path": "/home/nico/wspace/eona/eona_vocabulary_services/spikes/03_maplib_rml_conformance/inputs/rml-test-cases/test-cases/RMLTC0012c-MySQL/mapping.ttl",
+        "sha256": "9d45c4874ba829aa16015f9ee068d6413aaec96aacbc116e7e39377ad8e5d8ae",
+        "size": 949
+      },
+      {
+        "path": "/home/nico/wspace/eona/eona_vocabulary_services/spikes/03_maplib_rml_conformance/inputs/rml-test-cases/test-cases/RMLTC0012c-PostgreSQL/mapping.ttl",
+        "sha256": "8d2f9aa7e246d83f79bbbc40d0b2e17f3767fa9b06aa3c5bb6d68ee33bb7c376",
+        "size": 958
+      },
+      {
+        "path": "/home/nico/wspace/eona/eona_vocabulary_services/spikes/03_maplib_rml_conformance/inputs/rml-test-cases/test-cases/RMLTC0012c-SQLServer/mapping.ttl",
+        "sha256": "966a899724857124fc12d6847d0cbe87113242750c3c99971ce5785d7e0b3456",
+        "size": 987
+      },
+      {
+        "path": "/home/nico/wspace/eona/eona_vocabulary_services/spikes/03_maplib_rml_conformance/inputs/rml-test-cases/test-cases/RMLTC0012c-XML/mapping.ttl",
+        "sha256": "1583e5925ecbce41e82fcde2178c81696b7fdc80085059916c58bff81da2bbb6",
+        "size": 755
+      },
+      {
+        "path": "/home/nico/wspace/eona/eona_vocabulary_services/spikes/03_maplib_rml_conformance/inputs/rml-test-cases/test-cases/RMLTC0012d-CSV/mapping.ttl",
+        "sha256": "77f367fe5a373c32715b26c276da5ef70aec629271ecb8c3aca952e4164f5b26",
+        "size": 893
+      },
+      {
+        "path": "/home/nico/wspace/eona/eona_vocabulary_services/spikes/03_maplib_rml_conformance/inputs/rml-test-cases/test-cases/RMLTC0012d-JSON/mapping.ttl",
+        "sha256": "bd3cc29ebbe15413794b953b716a06d9c3d95cbc7da573c1f30f29f77d6e91ea",
+        "size": 933
+      },
+      {
+        "path": "/home/nico/wspace/eona/eona_vocabulary_services/spikes/03_maplib_rml_conformance/inputs/rml-test-cases/test-cases/RMLTC0012d-MySQL/mapping.ttl",
+        "sha256": "ab872ce879cbc081d62370465d90ff9755b0eade9ac3f3f128de5204ab8f302a",
+        "size": 918
+      },
+      {
+        "path": "/home/nico/wspace/eona/eona_vocabulary_services/spikes/03_maplib_rml_conformance/inputs/rml-test-cases/test-cases/RMLTC0012d-PostgreSQL/mapping.ttl",
+        "sha256": "becfbfb01eb30f474fcb24e017290085a80e54c6f6be81a2506b4f5ea13b21f7",
+        "size": 927
+      },
+      {
+        "path": "/home/nico/wspace/eona/eona_vocabulary_services/spikes/03_maplib_rml_conformance/inputs/rml-test-cases/test-cases/RMLTC0012d-SQLServer/mapping.ttl",
+        "sha256": "88cb2c47b8fdfbcedd174ac1a2f0b1a940d8e230b5012911650452ad9ca9b45f",
+        "size": 956
+      },
+      {
+        "path": "/home/nico/wspace/eona/eona_vocabulary_services/spikes/03_maplib_rml_conformance/inputs/rml-test-cases/test-cases/RMLTC0012d-XML/mapping.ttl",
+        "sha256": "8d746efb20622a308f40408d6b4624da7f6fa94910eca413844cc3c8a2bad436",
+        "size": 933
+      },
+      {
+        "path": "/home/nico/wspace/eona/eona_vocabulary_services/spikes/03_maplib_rml_conformance/inputs/rml-test-cases/test-cases/RMLTC0012e-MySQL/mapping.ttl",
+        "sha256": "10924fc247bad423f515095db347c0a4227eba9798f90afdf391301581c6d778",
+        "size": 2028
+      },
+      {
+        "path": "/home/nico/wspace/eona/eona_vocabulary_services/spikes/03_maplib_rml_conformance/inputs/rml-test-cases/test-cases/RMLTC0012e-PostgreSQL/mapping.ttl",
+        "sha256": "29b685daeba03b0ec8e9a63742604048151bae73e3c882506bd4df25f6199e3e",
+        "size": 2009
+      },
+      {
+        "path": "/home/nico/wspace/eona/eona_vocabulary_services/spikes/03_maplib_rml_conformance/inputs/rml-test-cases/test-cases/RMLTC0012e-SQLServer/mapping.ttl",
+        "sha256": "70da02120b800c662ff5e4bbd5a86223f485d27576c1a4ae52a9341edd0ea4e1",
+        "size": 2046
+      },
+      {
+        "path": "/home/nico/wspace/eona/eona_vocabulary_services/spikes/03_maplib_rml_conformance/inputs/rml-test-cases/test-cases/RMLTC0013a-JSON/mapping.ttl",
+        "sha256": "4f5ebe8e80cd97ab2270b437156e3589bba824b6292d5b4dae9f859530ca0a23",
+        "size": 688
+      },
+      {
+        "path": "/home/nico/wspace/eona/eona_vocabulary_services/spikes/03_maplib_rml_conformance/inputs/rml-test-cases/test-cases/RMLTC0013a-MySQL/mapping.ttl",
+        "sha256": "f230cc45c28160e1778f6e70966a7233b305a8160f4b580ad53b32f1bc10fab7",
+        "size": 957
+      },
+      {
+        "path": "/home/nico/wspace/eona/eona_vocabulary_services/spikes/03_maplib_rml_conformance/inputs/rml-test-cases/test-cases/RMLTC0013a-PostgreSQL/mapping.ttl",
+        "sha256": "1777558cbd29120dccf0c3984928edce166daf3c81c87a7449aa5a57ef1b99d6",
+        "size": 948
+      },
+      {
+        "path": "/home/nico/wspace/eona/eona_vocabulary_services/spikes/03_maplib_rml_conformance/inputs/rml-test-cases/test-cases/RMLTC0013a-SQLServer/mapping.ttl",
+        "sha256": "7ef24687a9c5508deba06d0ea371f64c0bb23e1b4893cc4c2c34419a09ec75c4",
+        "size": 977
+      },
+      {
+        "path": "/home/nico/wspace/eona/eona_vocabulary_services/spikes/03_maplib_rml_conformance/inputs/rml-test-cases/test-cases/RMLTC0014d-MySQL/mapping.ttl",
+        "sha256": "8b89f6553cfc51cd43515c60f9f2c5a99e4e52704851621c6eb8bafaa016a840",
+        "size": 1194
+      },
+      {
+        "path": "/home/nico/wspace/eona/eona_vocabulary_services/spikes/03_maplib_rml_conformance/inputs/rml-test-cases/test-cases/RMLTC0014d-PostgreSQL/mapping.ttl",
+        "sha256": "398bb16f97f80dc474a64c3e16ff5af37272e87df8df7d6d26d6650442c1a113",
+        "size": 1195
+      },
+      {
+        "path": "/home/nico/wspace/eona/eona_vocabulary_services/spikes/03_maplib_rml_conformance/inputs/rml-test-cases/test-cases/RMLTC0014d-SQLServer/mapping.ttl",
+        "sha256": "da066ae8489e2c79ac489c1a20ab57f2a7f6df0e368ea78b07724541320497fe",
+        "size": 1227
+      },
+      {
+        "path": "/home/nico/wspace/eona/eona_vocabulary_services/spikes/03_maplib_rml_conformance/inputs/rml-test-cases/test-cases/RMLTC0015a-CSV/mapping.ttl",
+        "sha256": "9fc01a3ecb83aae18fa4368fce2bb0db6a0fb0d50a1c56087b5b47acb78da105",
+        "size": 1045
+      },
+      {
+        "path": "/home/nico/wspace/eona/eona_vocabulary_services/spikes/03_maplib_rml_conformance/inputs/rml-test-cases/test-cases/RMLTC0015a-JSON/mapping.ttl",
+        "sha256": "05aa03dd95ef4cfaf51c3d3ce403964ce683b53622c21132286cb046333fb57f",
+        "size": 1127
+      },
+      {
+        "path": "/home/nico/wspace/eona/eona_vocabulary_services/spikes/03_maplib_rml_conformance/inputs/rml-test-cases/test-cases/RMLTC0015a-MySQL/mapping.ttl",
+        "sha256": "dde81bfe734768a4f67938cdfd502ed7386bd0cd4e01bc196a6ea3689a25609d",
+        "size": 1540
+      },
+      {
+        "path": "/home/nico/wspace/eona/eona_vocabulary_services/spikes/03_maplib_rml_conformance/inputs/rml-test-cases/test-cases/RMLTC0015a-PostgreSQL/mapping.ttl",
+        "sha256": "8d53ec41a7dd284d8e4a4f5372b380b6f9d48b7f013ec92713a09ecdc1dd1bf8",
+        "size": 1541
+      },
+      {
+        "path": "/home/nico/wspace/eona/eona_vocabulary_services/spikes/03_maplib_rml_conformance/inputs/rml-test-cases/test-cases/RMLTC0015a-SQLServer/mapping.ttl",
+        "sha256": "d15d3edaf7fe31ffbb9d5fbd580cc89a73a79800398ead456bfb6045ba6e7968",
+        "size": 1578
+      },
+      {
+        "path": "/home/nico/wspace/eona/eona_vocabulary_services/spikes/03_maplib_rml_conformance/inputs/rml-test-cases/test-cases/RMLTC0015a-XML/mapping.ttl",
+        "sha256": "5673d207075036f73c41d65d0ca5fc19870b1d252cb869f396dd272a53f6269e",
+        "size": 1127
+      },
+      {
+        "path": "/home/nico/wspace/eona/eona_vocabulary_services/spikes/03_maplib_rml_conformance/inputs/rml-test-cases/test-cases/RMLTC0015b-CSV/mapping.ttl",
+        "sha256": "de7e4f60a5c404fca834abf7947976e112dfe5b3610f2f9c71b3d9e80fec5311",
+        "size": 1033
+      },
+      {
+        "path": "/home/nico/wspace/eona/eona_vocabulary_services/spikes/03_maplib_rml_conformance/inputs/rml-test-cases/test-cases/RMLTC0015b-JSON/mapping.ttl",
+        "sha256": "1ee023ec7e1f85c8394d3f1fcdb9a671f9cf3bdbbc1f2bf91b11c6d0ed86403c",
+        "size": 1115
+      },
+      {
+        "path": "/home/nico/wspace/eona/eona_vocabulary_services/spikes/03_maplib_rml_conformance/inputs/rml-test-cases/test-cases/RMLTC0015b-MySQL/mapping.ttl",
+        "sha256": "458571b344b2fc5c8c622714ba2c9ef884f05a889044f51941473aeba3dc0114",
+        "size": 1532
+      },
+      {
+        "path": "/home/nico/wspace/eona/eona_vocabulary_services/spikes/03_maplib_rml_conformance/inputs/rml-test-cases/test-cases/RMLTC0015b-PostgreSQL/mapping.ttl",
+        "sha256": "22f75affa6cb5b73bea88462744ed64827f16e8a8ac42d9de3f5484f2f623b28",
+        "size": 1494
+      },
+      {
+        "path": "/home/nico/wspace/eona/eona_vocabulary_services/spikes/03_maplib_rml_conformance/inputs/rml-test-cases/test-cases/RMLTC0015b-SQLServer/mapping.ttl",
+        "sha256": "f4efe04c1a70f6d461854ac81d82e09c281a218a3aaeadbcaae76c3bd6748179",
+        "size": 1531
+      },
+      {
+        "path": "/home/nico/wspace/eona/eona_vocabulary_services/spikes/03_maplib_rml_conformance/inputs/rml-test-cases/test-cases/RMLTC0015b-XML/mapping.ttl",
+        "sha256": "218a088ec1b8090ba751fa1c77341b354057b0e0082268c8914027dea00e815c",
+        "size": 1115
+      },
+      {
+        "path": "/home/nico/wspace/eona/eona_vocabulary_services/spikes/03_maplib_rml_conformance/inputs/rml-test-cases/test-cases/RMLTC0016a-MySQL/mapping.ttl",
+        "sha256": "b99687f3488b1fe963f7d339704aabda74228b10dce0cb92610f8a3e983de0cf",
+        "size": 1362
+      },
+      {
+        "path": "/home/nico/wspace/eona/eona_vocabulary_services/spikes/03_maplib_rml_conformance/inputs/rml-test-cases/test-cases/RMLTC0016a-PostgreSQL/mapping.ttl",
+        "sha256": "b89c081662e4f99345f576775fb792c135727b96e8c6bb1884cf777dbaf0262a",
+        "size": 1363
+      },
+      {
+        "path": "/home/nico/wspace/eona/eona_vocabulary_services/spikes/03_maplib_rml_conformance/inputs/rml-test-cases/test-cases/RMLTC0016a-SQLServer/mapping.ttl",
+        "sha256": "b62c20c69ae92c10423234d357dcda561f6225700dcd75997a71154e2e16e5e4",
+        "size": 1400
+      },
+      {
+        "path": "/home/nico/wspace/eona/eona_vocabulary_services/spikes/03_maplib_rml_conformance/inputs/rml-test-cases/test-cases/RMLTC0016b-MySQL/mapping.ttl",
+        "sha256": "29fa7205e1452fb74fbea153fce34294f0dc9e42e50333fabeed2d89a9add97b",
+        "size": 1131
+      },
+      {
+        "path": "/home/nico/wspace/eona/eona_vocabulary_services/spikes/03_maplib_rml_conformance/inputs/rml-test-cases/test-cases/RMLTC0016b-PostgreSQL/mapping.ttl",
+        "sha256": "7bc785f4dcdd0b7b534dc8609ebd03ab85de22d5c67d67b34d685f060ae2cfea",
+        "size": 1132
+      },
+      {
+        "path": "/home/nico/wspace/eona/eona_vocabulary_services/spikes/03_maplib_rml_conformance/inputs/rml-test-cases/test-cases/RMLTC0016b-SQLServer/mapping.ttl",
+        "sha256": "67f3fa6cee495cdfc0cab572a327eeb656520830421efe195e977aba28b32704",
+        "size": 1169
+      },
+      {
+        "path": "/home/nico/wspace/eona/eona_vocabulary_services/spikes/03_maplib_rml_conformance/inputs/rml-test-cases/test-cases/RMLTC0016c-MySQL/mapping.ttl",
+        "sha256": "f64498440df23d18530776fc1a63cc5e71f4506445d82a34aea32a4c71f42264",
+        "size": 1147
+      },
+      {
+        "path": "/home/nico/wspace/eona/eona_vocabulary_services/spikes/03_maplib_rml_conformance/inputs/rml-test-cases/test-cases/RMLTC0016c-PostgreSQL/mapping.ttl",
+        "sha256": "d2e543bc20a96595c565438d2711843c2cfc1a0d2194c84efa02d5c14e8c3dcf",
+        "size": 1148
+      },
+      {
+        "path": "/home/nico/wspace/eona/eona_vocabulary_services/spikes/03_maplib_rml_conformance/inputs/rml-test-cases/test-cases/RMLTC0016c-SQLServer/mapping.ttl",
+        "sha256": "a34b835471456556e445b0b5e244f715d1445b3285ac6b7b2a5fa39ee6b85ebc",
+        "size": 1185
+      },
+      {
+        "path": "/home/nico/wspace/eona/eona_vocabulary_services/spikes/03_maplib_rml_conformance/inputs/rml-test-cases/test-cases/RMLTC0016d-MySQL/mapping.ttl",
+        "sha256": "8c5a08741befb8d5dd304a2563c00dd6f3b8ea85d024047b2fbbdb0f736b5f10",
+        "size": 1016
+      },
+      {
+        "path": "/home/nico/wspace/eona/eona_vocabulary_services/spikes/03_maplib_rml_conformance/inputs/rml-test-cases/test-cases/RMLTC0016d-PostgreSQL/mapping.ttl",
+        "sha256": "4203935e0b625d5f8f0db435f2cf1d3f235b7a690e7e20943cf3580ce8ddbf59",
+        "size": 1017
+      },
+      {
+        "path": "/home/nico/wspace/eona/eona_vocabulary_services/spikes/03_maplib_rml_conformance/inputs/rml-test-cases/test-cases/RMLTC0016d-SQLServer/mapping.ttl",
+        "sha256": "d65f3112bfac6d37eb9b2f827785575a247b1376d594fc74df3b466041ad1b50",
+        "size": 1054
+      },
+      {
+        "path": "/home/nico/wspace/eona/eona_vocabulary_services/spikes/03_maplib_rml_conformance/inputs/rml-test-cases/test-cases/RMLTC0016e-MySQL/mapping.ttl",
+        "sha256": "b0c6f796721e4549ad26397ab3407b55875171c41080ba719d965d963f23cb4d",
+        "size": 1026
+      },
+      {
+        "path": "/home/nico/wspace/eona/eona_vocabulary_services/spikes/03_maplib_rml_conformance/inputs/rml-test-cases/test-cases/RMLTC0016e-PostgreSQL/mapping.ttl",
+        "sha256": "965695ec52f00298314e5811f10e96be7d491fee3aca068ea0883e2c0616b1c2",
+        "size": 1027
+      },
+      {
+        "path": "/home/nico/wspace/eona/eona_vocabulary_services/spikes/03_maplib_rml_conformance/inputs/rml-test-cases/test-cases/RMLTC0016e-SQLServer/mapping.ttl",
+        "sha256": "1bd3e06937fae7db18a7366d015206f7da02f2dc374025e8d117e5e027737fd7",
+        "size": 1064
+      },
+      {
+        "path": "/home/nico/wspace/eona/eona_vocabulary_services/spikes/03_maplib_rml_conformance/inputs/rml-test-cases/test-cases/RMLTC0018a-MySQL/mapping.ttl",
+        "sha256": "5d8cc023c21495aa523d148c1e1a2da9676411ed186798bf89fe2d39a27e65c6",
+        "size": 1044
+      },
+      {
+        "path": "/home/nico/wspace/eona/eona_vocabulary_services/spikes/03_maplib_rml_conformance/inputs/rml-test-cases/test-cases/RMLTC0018a-PostgreSQL/mapping.ttl",
+        "sha256": "99dba51a97de291ca96734266f85d2625b4a5a7c6ff35b346177cf0b9b716181",
+        "size": 1045
+      },
+      {
+        "path": "/home/nico/wspace/eona/eona_vocabulary_services/spikes/03_maplib_rml_conformance/inputs/rml-test-cases/test-cases/RMLTC0018a-SQLServer/mapping.ttl",
+        "sha256": "122a6d286095635e22b6769ab91770608723839f01c86bd2d11ab854d7c5fd12",
+        "size": 1082
+      },
+      {
+        "path": "/home/nico/wspace/eona/eona_vocabulary_services/spikes/03_maplib_rml_conformance/inputs/rml-test-cases/test-cases/RMLTC0019a-CSV/mapping.ttl",
+        "sha256": "1636654ae6cb77df8cc280014f9e5c92517f2a37afd13f21e8ba63f4410527d9",
+        "size": 656
+      },
+      {
+        "path": "/home/nico/wspace/eona/eona_vocabulary_services/spikes/03_maplib_rml_conformance/inputs/rml-test-cases/test-cases/RMLTC0019a-JSON/mapping.ttl",
+        "sha256": "9ab217b4539c8b593821b89a89334fddb2586c3787df98669574fae3479c0ccb",
+        "size": 695
+      },
+      {
+        "path": "/home/nico/wspace/eona/eona_vocabulary_services/spikes/03_maplib_rml_conformance/inputs/rml-test-cases/test-cases/RMLTC0019a-MySQL/mapping.ttl",
+        "sha256": "031d5e9d8a32d4754557821653e701498d90d962c0b1bebc19262262afae79be",
+        "size": 1025
+      },
+      {
+        "path": "/home/nico/wspace/eona/eona_vocabulary_services/spikes/03_maplib_rml_conformance/inputs/rml-test-cases/test-cases/RMLTC0019a-PostgreSQL/mapping.ttl",
+        "sha256": "a78f24488005d27ea09d499af493b22ce46250b46b5f46adb6df5291620ff6cf",
+        "size": 1026
+      },
+      {
+        "path": "/home/nico/wspace/eona/eona_vocabulary_services/spikes/03_maplib_rml_conformance/inputs/rml-test-cases/test-cases/RMLTC0019a-SQLServer/mapping.ttl",
+        "sha256": "ff30e481f9ee7e54b1393d6163889ba143e79e1e2dd8a9b2814a4febcb453b88",
+        "size": 1063
+      },
+      {
+        "path": "/home/nico/wspace/eona/eona_vocabulary_services/spikes/03_maplib_rml_conformance/inputs/rml-test-cases/test-cases/RMLTC0019a-XML/mapping.ttl",
+        "sha256": "9065954fcb3fb37ecebf8971724c9dba0669599c4ddb8a102411607d64ea8a64",
+        "size": 694
+      },
+      {
+        "path": "/home/nico/wspace/eona/eona_vocabulary_services/spikes/03_maplib_rml_conformance/inputs/rml-test-cases/test-cases/RMLTC0019b-CSV/mapping.ttl",
+        "sha256": "1636654ae6cb77df8cc280014f9e5c92517f2a37afd13f21e8ba63f4410527d9",
+        "size": 656
+      },
+      {
+        "path": "/home/nico/wspace/eona/eona_vocabulary_services/spikes/03_maplib_rml_conformance/inputs/rml-test-cases/test-cases/RMLTC0019b-JSON/mapping.ttl",
+        "sha256": "9ab217b4539c8b593821b89a89334fddb2586c3787df98669574fae3479c0ccb",
+        "size": 695
+      },
+      {
+        "path": "/home/nico/wspace/eona/eona_vocabulary_services/spikes/03_maplib_rml_conformance/inputs/rml-test-cases/test-cases/RMLTC0019b-MySQL/mapping.ttl",
+        "sha256": "b2207bef92324815076f7271e7644feea6f08b2d52809562ca7451776efe57fe",
+        "size": 904
+      },
+      {
+        "path": "/home/nico/wspace/eona/eona_vocabulary_services/spikes/03_maplib_rml_conformance/inputs/rml-test-cases/test-cases/RMLTC0019b-PostgreSQL/mapping.ttl",
+        "sha256": "ecc57006b34636a1b2b9fd945ecf35e126b776ee74292e32be2dfc915bb67263",
+        "size": 905
+      },
+      {
+        "path": "/home/nico/wspace/eona/eona_vocabulary_services/spikes/03_maplib_rml_conformance/inputs/rml-test-cases/test-cases/RMLTC0019b-SQLServer/mapping.ttl",
+        "sha256": "11f3e801d398d6c519eb9a37fcb5e49865fdf0e60bd4df81311f02ffd2fa121b",
+        "size": 942
+      },
+      {
+        "path": "/home/nico/wspace/eona/eona_vocabulary_services/spikes/03_maplib_rml_conformance/inputs/rml-test-cases/test-cases/RMLTC0019b-XML/mapping.ttl",
+        "sha256": "9065954fcb3fb37ecebf8971724c9dba0669599c4ddb8a102411607d64ea8a64",
+        "size": 694
+      },
+      {
+        "path": "/home/nico/wspace/eona/eona_vocabulary_services/spikes/03_maplib_rml_conformance/inputs/rml-test-cases/test-cases/RMLTC0020a-CSV/mapping.ttl",
+        "sha256": "0b950e811645195d56678b7a1c6f9b1934cda44be3aa15ded1df56a408f517b2",
+        "size": 709
+      },
+      {
+        "path": "/home/nico/wspace/eona/eona_vocabulary_services/spikes/03_maplib_rml_conformance/inputs/rml-test-cases/test-cases/RMLTC0020a-JSON/mapping.ttl",
+        "sha256": "17f6cfc211fb128b648896bd941ccff96492c90e9c9e0ed9154e4e6167a9a485",
+        "size": 749
+      },
+      {
+        "path": "/home/nico/wspace/eona/eona_vocabulary_services/spikes/03_maplib_rml_conformance/inputs/rml-test-cases/test-cases/RMLTC0020a-MySQL/mapping.ttl",
+        "sha256": "0120e75ada5ad77745d6440a7be22a7922c9dac2851ab75c9138ba729af23808",
+        "size": 907
+      },
+      {
+        "path": "/home/nico/wspace/eona/eona_vocabulary_services/spikes/03_maplib_rml_conformance/inputs/rml-test-cases/test-cases/RMLTC0020a-PostgreSQL/mapping.ttl",
+        "sha256": "ed8681cb5e89d1c324f71b1c2786e1695f4896c25fda123b04fbd75f50db5a08",
+        "size": 916
+      },
+      {
+        "path": "/home/nico/wspace/eona/eona_vocabulary_services/spikes/03_maplib_rml_conformance/inputs/rml-test-cases/test-cases/RMLTC0020a-SQLServer/mapping.ttl",
+        "sha256": "2b59495a70ffe32cf43579a6a376411e3c1083531dcd6017dca9f857928561c7",
+        "size": 945
+      },
+      {
+        "path": "/home/nico/wspace/eona/eona_vocabulary_services/spikes/03_maplib_rml_conformance/inputs/rml-test-cases/test-cases/RMLTC0020a-XML/mapping.ttl",
+        "sha256": "2f33365c5b646c6eff89d41fcf7789b0aaf0be15c8ae5b66d9c138a8a1d6f940",
+        "size": 730
+      },
+      {
+        "path": "/home/nico/wspace/eona/eona_vocabulary_services/spikes/03_maplib_rml_conformance/inputs/rml-test-cases/test-cases/RMLTC0020b-CSV/mapping.ttl",
+        "sha256": "6ce60b683260d84a7fc027cf54abaea17b7f6ebfd897e1bdcfcf594c49b60668",
+        "size": 672
+      },
+      {
+        "path": "/home/nico/wspace/eona/eona_vocabulary_services/spikes/03_maplib_rml_conformance/inputs/rml-test-cases/test-cases/RMLTC0020b-JSON/mapping.ttl",
+        "sha256": "9a345addea9d4252586a8c1f9a6415ead7a457538cdb6b376a2cb1321a52f722",
+        "size": 712
+      },
+      {
+        "path": "/home/nico/wspace/eona/eona_vocabulary_services/spikes/03_maplib_rml_conformance/inputs/rml-test-cases/test-cases/RMLTC0020b-MySQL/mapping.ttl",
+        "sha256": "188a3e594aa80e5b58d38f40e6dd49be68f4eaa1629a4588073601002f454aed",
+        "size": 916
+      },
+      {
+        "path": "/home/nico/wspace/eona/eona_vocabulary_services/spikes/03_maplib_rml_conformance/inputs/rml-test-cases/test-cases/RMLTC0020b-PostgreSQL/mapping.ttl",
+        "sha256": "6a77a1392c376a1e5a3eefe19affc7e81e222e4af586f28538f0e740c2bfab8e",
+        "size": 925
+      },
+      {
+        "path": "/home/nico/wspace/eona/eona_vocabulary_services/spikes/03_maplib_rml_conformance/inputs/rml-test-cases/test-cases/RMLTC0020b-SQLServer/mapping.ttl",
+        "sha256": "574279e7c8fc9eb43e50e2983d5c241f86fdf5ddce621e94d0a446d445bb6aac",
+        "size": 954
+      },
+      {
+        "path": "/home/nico/wspace/eona/eona_vocabulary_services/spikes/03_maplib_rml_conformance/inputs/rml-test-cases/test-cases/RMLTC0020b-XML/mapping.ttl",
+        "sha256": "811e79ab74bcbd88247e4ed09f1ece163983d3961fb1b7d2dccdce0a9ecfcbc1",
+        "size": 712
+      }
+    ]
+  },
+  "args": {
+    "n_tests": 324
+  },
+  "notes": "rml-test-cases pinned via run.sh; see manifest input hashes for commit.",
+  "tests": 324
+}

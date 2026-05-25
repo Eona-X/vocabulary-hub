@@ -1,0 +1,7 @@
+01:01:34.285 [main] ERROR be.ugent.rml.Executor               .<init>(89) - Failed to make mapping file conformant to RML spec.
+java.lang.Exception: TriplesMap requires a subject map
+	at be.ugent.rml.conformer.MappingConformer.detect(MappingConformer.java:87)
+	at be.ugent.rml.conformer.MappingConformer.conform(MappingConformer.java:62)
+	at be.ugent.rml.Executor.<init>(Executor.java:83)
+	at be.ugent.rml.cli.Main.run(Main.java:416)
+	at be.ugent.rml.cli.Main.main(Main.java:49)

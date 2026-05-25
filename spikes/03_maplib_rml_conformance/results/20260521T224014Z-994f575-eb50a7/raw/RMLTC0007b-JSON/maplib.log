@@ -1,0 +1,5 @@
+MaplibException: Template parsing error: error at 8:8: expected @PREFIX
+Traceback (most recent call last):
+  File "/home/nico/wspace/eona/eona_vocabulary_services/spikes/03_maplib_rml_conformance/run_suite.py", line 100, in run_maplib
+    m.read_template(str(test_dir / "mapping.ttl"))
+exceptions.MaplibException: Template parsing error: error at 8:8: expected @PREFIX

@@ -1,0 +1,37 @@
+
+
+[2026-05-22][00:22:05] [INFO] Starting to Parse all the given mapping files.
+[2026-05-22][00:22:05] [INFO] Parsing File ID:  1 PATH: "/home/nico/wspace/eona/eona_vocabulary_services/spikes/03_maplib_rml_conformance/inputs/rml-test-cases/test-cases/RMLTC0000-SPARQL/mapping.ttl"
+[2026-05-22][00:22:05] [WARNING] An Unidentified Element has appeared in the Term Index: 6. Term: .. Last Mapping: No Map Was Created Last Token: <http://semweb.mmlab.be/ns/rml#>
+[2026-05-22][00:22:05] [WARNING] An Unidentified Element has appeared in the Term Index: 10. Term: .. Last Mapping: No Map Was Created Last Token: <http://semweb.mmlab.be/ns/crml#>
+[2026-05-22][00:22:05] [WARNING] An Unidentified Element has appeared in the Term Index: 14. Term: .. Last Mapping: No Map Was Created Last Token: <http://semweb.mmlab.be/ns/ql#>
+[2026-05-22][00:22:05] [WARNING] An Unidentified Element has appeared in the Term Index: 27. Term: .. Last Mapping: No Map Was Created Last Token: <http://www.example.com/>
+[2026-05-22][00:22:05] [WARNING] An Unidentified Element has appeared in the Term Index: 31. Term: .. Last Mapping: No Map Was Created Last Token: <http://www.w3.org/ns/hydra/core#>
+[2026-05-22][00:22:05] [WARNING] An Unidentified Element has appeared in the Term Index: 35. Term: .. Last Mapping: No Map Was Created Last Token: <http://xmlns.com/foaf/0.1/>
+[2026-05-22][00:22:05] [WARNING] An Unidentified Element has appeared in the Term Index: 38. Term: .. Last Mapping: No Map Was Created Last Token: <http://example.com/base>
+[2026-05-22][00:22:05] [WARNING] An Unidentified Element has appeared in the Term Index: 40. Term: a. Last Mapping: InputSPARQL Last Token: <#InputSPARQL>
+[2026-05-22][00:22:05] [WARNING] An Unidentified Element has appeared in the Term Index: 41. Term: sd:Service. Last Mapping: InputSPARQL Last Token: a
+[2026-05-22][00:22:05] [WARNING] An Unidentified Element has appeared in the Term Index: 42. Term: sd:endpoint. Last Mapping: InputSPARQL Last Token: sd:Service
+[2026-05-22][00:22:05] [WARNING] An Unidentified Element has appeared in the Term Index: 43. Term: <http://localhost:PORT/ds1/sparql>. Last Mapping: InputSPARQL Last Token: sd:endpoint
+[2026-05-22][00:22:05] [WARNING] An Unidentified Element has appeared in the Term Index: 44. Term: sd:supportedLanguage. Last Mapping: InputSPARQL Last Token: <http://localhost:PORT/ds1/sparql>
+[2026-05-22][00:22:05] [WARNING] An Unidentified Element has appeared in the Term Index: 45. Term: sd:SPARQL11Query. Last Mapping: InputSPARQL Last Token: sd:supportedLanguage
+[2026-05-22][00:22:05] [WARNING] An Unidentified Element has appeared in the Term Index: 46. Term: sd:resultFormat. Last Mapping: InputSPARQL Last Token: sd:SPARQL11Query
+[2026-05-22][00:22:05] [WARNING] An Unidentified Element has appeared in the Term Index: 47. Term: <http://www.w3.org/ns/formats/SPARQL_Results_JSON>. Last Mapping: InputSPARQL Last Token: sd:resultFormat
+[2026-05-22][00:22:05] [WARNING] An Unidentified Element has appeared in the Term Index: 48. Term: .. Last Mapping: InputSPARQL Last Token: <http://www.w3.org/ns/formats/SPARQL_Results_JSON>
+[2026-05-22][00:22:05] [WARNING] Some unknown tokens has appeared in the logicalSource, TOKEN: rml:query LAST MAP: Country
+[2026-05-22][00:22:05] [WARNING] Some unknown tokens has appeared in the logicalSource, TOKEN: """ LAST MAP: Country
+[2026-05-22][00:22:05] [WARNING] Some unknown tokens has appeared in the logicalSource, TOKEN: PREFIX LAST MAP: Country
+[2026-05-22][00:22:05] [WARNING] Some unknown tokens has appeared in the logicalSource, TOKEN: rdfs: LAST MAP: Country
+[2026-05-22][00:22:05] [WARNING] Some unknown tokens has appeared in the logicalSource, TOKEN: <http://www.w3.org/2000/01/rdf-schema#> LAST MAP: Country
+[2026-05-22][00:22:05] [WARNING] Some unknown tokens has appeared in the logicalSource, TOKEN: SELECT LAST MAP: Country
+[2026-05-22][00:22:05] [WARNING] Some unknown tokens has appeared in the logicalSource, TOKEN: ?name LAST MAP: Country
+[2026-05-22][00:22:05] [WARNING] Some unknown tokens has appeared in the logicalSource, TOKEN: WHERE LAST MAP: Country
+[2026-05-22][00:22:05] [WARNING] Some unknown tokens has appeared in the logicalSource, TOKEN: { LAST MAP: Country
+[2026-05-22][00:22:05] [WARNING] Some unknown tokens has appeared in the logicalSource, TOKEN: ?name LAST MAP: Country
+[2026-05-22][00:22:05] [WARNING] Some unknown tokens has appeared in the logicalSource, TOKEN: a LAST MAP: Country
+[2026-05-22][00:22:05] [WARNING] Some unknown tokens has appeared in the logicalSource, TOKEN: rdfs:Literal LAST MAP: Country
+[2026-05-22][00:22:05] [WARNING] Some unknown tokens has appeared in the logicalSource, TOKEN: . LAST MAP: Country
+[2026-05-22][00:22:05] [WARNING] Some unknown tokens has appeared in the logicalSource, TOKEN: } LAST MAP: Country
+[2026-05-22][00:22:05] [WARNING] Some unknown tokens has appeared in the logicalSource, TOKEN: """ LAST MAP: Country
+[2026-05-22][00:22:05] [ERROR] Mapping: InputSPARQL. There is no logical sources in the mapping or there are too many. Current Ammount: 0 Valid Ammount: 1
+[2026-05-22][00:22:05] [ERROR] Process Finished Due to an error. ERROR CODE: MissingLogicalSource

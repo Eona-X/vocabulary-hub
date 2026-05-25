@@ -1,0 +1,6 @@
+No module named 'maplib'
+Traceback (most recent call last):
+  File "/home/nico/wspace/eona/eona_vocabulary_services/spikes/03_maplib_rml_conformance/run_suite.py", line 68, in run_maplib
+    from maplib import Mapping  # type: ignore
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^
+ModuleNotFoundError: No module named 'maplib'

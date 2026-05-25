@@ -1,0 +1,20 @@
+java.lang.IllegalArgumentException: Unable to parse mapping rules as Turtle. Does the file exist and is it valid Turtle?
+01:00:34.548 [main] ERROR be.ugent.rml.cli.Main               .run(287) - Unable to parse mapping rules as Turtle. Does the file exist and is it valid Turtle?
+org.eclipse.rdf4j.rio.RDFParseException: absolute or empty path expected U+50 at index 17: http://localhost:PORT/ds1/sparql [line 14]
+	at org.eclipse.rdf4j.rio.helpers.RDFParserHelper.reportError(RDFParserHelper.java:279)
+	at org.eclipse.rdf4j.rio.helpers.AbstractRDFParser.reportError(AbstractRDFParser.java:602)
+	at org.eclipse.rdf4j.rio.turtle.TurtleParser.reportError(TurtleParser.java:1301)
+	at org.eclipse.rdf4j.rio.helpers.AbstractRDFParser.createURI(AbstractRDFParser.java:353)
+	at org.eclipse.rdf4j.rio.helpers.AbstractRDFParser.resolveURI(AbstractRDFParser.java:341)
+	at org.eclipse.rdf4j.rio.turtle.TurtleParser.parseURI(TurtleParser.java:944)
+	at org.eclipse.rdf4j.rio.turtle.TurtleParser.parseValue(TurtleParser.java:571)
+	at org.eclipse.rdf4j.rio.turtle.TurtleParser.parseObject(TurtleParser.java:453)
+	at org.eclipse.rdf4j.rio.turtle.TurtleParser.parseObjectList(TurtleParser.java:375)
+	at org.eclipse.rdf4j.rio.turtle.TurtleParser.parsePredicateObjectList(TurtleParser.java:370)
+	at org.eclipse.rdf4j.rio.turtle.TurtleParser.parseTriples(TurtleParser.java:335)
+	at org.eclipse.rdf4j.rio.turtle.TurtleParser.parseStatement(TurtleParser.java:203)
+	at org.eclipse.rdf4j.rio.turtle.TurtleParser.parse(TurtleParser.java:165)
+	at org.eclipse.rdf4j.rio.turtle.TurtleParser.parse(TurtleParser.java:128)
+	at be.ugent.rml.store.RDF4JStore.read(RDF4JStore.java:147)
+	at be.ugent.rml.cli.Main.run(Main.java:284)
+	at be.ugent.rml.cli.Main.main(Main.java:49)

@@ -1,0 +1,50 @@
+{
+  "schema": "adr-004-spike-manifest/v1",
+  "run_id": "20260522T083109Z-98dac21-32d201",
+  "spike": "04_maplib_bench",
+  "started_at": "2026-05-22T08:31:09Z",
+  "finished_at": "2026-05-22T08:31:11Z",
+  "git": {
+    "sha": "98dac21ccaf1b9918bcaa1b3a7ca8a3a188d56c7",
+    "branch": "impl/adr-004",
+    "dirty": true
+  },
+  "host": {
+    "hostname": "mainworkws",
+    "os": "Linux 6.8.0-117-generic",
+    "cpu_count": 22,
+    "mem_total_gb": 93.74
+  },
+  "python": "3.12.3",
+  "tools": {
+    "maplib": "0.20.18",
+    "morph-kgc": "not-installed",
+    "rdflib": "7.6.0",
+    "psutil": "7.2.2"
+  },
+  "inputs": {
+    "kind": "synthetic-fallback",
+    "files": [
+      {
+        "path": "/home/nico/wspace/eona/eona_vocabulary_services/spikes/04_maplib_bench/inputs/synthetic/concepts.csv",
+        "sha256": "d9e489eecb586cc58f74cc6bbaf4b4ba5cf6b7e0e53ac3bb5d63593c80e8859e",
+        "size": 51
+      },
+      {
+        "path": "/home/nico/wspace/eona/eona_vocabulary_services/spikes/04_maplib_bench/inputs/synthetic/mapping.ttl",
+        "sha256": "a54135132d06641aa41823eac9e7f74a50e81947ce49338057276d1b15c606fc",
+        "size": 503
+      }
+    ]
+  },
+  "args": {
+    "scale": "1",
+    "mapping": "/home/nico/wspace/eona/eona_vocabulary_services/spikes/04_maplib_bench/inputs/synthetic/mapping.ttl"
+  },
+  "notes": "GTFS-Madrid-Bench at requested scale; synthetic fallback if absent.",
+  "scale": "1",
+  "output_hashes": {
+    "morph": "9c16d5ef885f8d45ec339869feba134c54409a8b20eec8f714176f837b1f87d6",
+    "maplib": ""
+  }
+}

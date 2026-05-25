@@ -1,0 +1,8 @@
+_:Sue_Jones_20 <http://xmlns.com/foaf/0.1/name> "Sue Jones" .
+_:30_Bob_Smith <http://xmlns.com/foaf/0.1/name> "Bob Smith" .
+_:20_Sue_Jones <http://xmlns.com/foaf/0.1/name> "Sue Jones" .
+_:Bob_Smith_30 <http://xmlns.com/foaf/0.1/name> "Bob Smith" .
+_:20_Sue_Jones <http://example.com/amount> "20" .
+_:Sue_Jones_20 <http://example.com/amount> "20" .
+_:30_Bob_Smith <http://example.com/amount> "30" .
+_:Bob_Smith_30 <http://example.com/amount> "30" .

@@ -1,0 +1,42 @@
+
+
+[2026-05-22][00:41:21] [INFO] Starting to Parse all the given mapping files.
+[2026-05-22][00:41:21] [INFO] Parsing File ID:  1 PATH: "/tmp/tmp682nqawr/RMLTC0007f-SPARQL/mapping.ttl"
+[2026-05-22][00:41:21] [WARNING] An Unidentified Element has appeared in the Term Index: 36. Term: a. Last Mapping: InputSPARQL Last Token: <#InputSPARQL>
+[2026-05-22][00:41:21] [WARNING] An Unidentified Element has appeared in the Term Index: 37. Term: sd:Service. Last Mapping: InputSPARQL Last Token: a
+[2026-05-22][00:41:21] [WARNING] An Unidentified Element has appeared in the Term Index: 38. Term: sd:endpoint. Last Mapping: InputSPARQL Last Token: sd:Service
+[2026-05-22][00:41:21] [WARNING] An Unidentified Element has appeared in the Term Index: 39. Term: <http://localhost:PORT/ds1/sparql>. Last Mapping: InputSPARQL Last Token: sd:endpoint
+[2026-05-22][00:41:21] [WARNING] An Unidentified Element has appeared in the Term Index: 40. Term: sd:supportedLanguage. Last Mapping: InputSPARQL Last Token: <http://localhost:PORT/ds1/sparql>
+[2026-05-22][00:41:21] [WARNING] An Unidentified Element has appeared in the Term Index: 41. Term: sd:SPARQL11Query. Last Mapping: InputSPARQL Last Token: sd:supportedLanguage
+[2026-05-22][00:41:21] [WARNING] An Unidentified Element has appeared in the Term Index: 42. Term: sd:resultFormat. Last Mapping: InputSPARQL Last Token: sd:SPARQL11Query
+[2026-05-22][00:41:21] [WARNING] An Unidentified Element has appeared in the Term Index: 43. Term: <http://www.w3.org/ns/formats/SPARQL_Results_JSON>. Last Mapping: InputSPARQL Last Token: sd:resultFormat
+[2026-05-22][00:41:21] [WARNING] An Unidentified Element has appeared in the Term Index: 44. Term: .. Last Mapping: InputSPARQL Last Token: <http://www.w3.org/ns/formats/SPARQL_Results_JSON>
+[2026-05-22][00:41:21] [WARNING] Some unknown tokens has appeared in the logicalSource, TOKEN: rml:query LAST MAP: Country
+[2026-05-22][00:41:21] [WARNING] Some unknown tokens has appeared in the logicalSource, TOKEN: """ LAST MAP: Country
+[2026-05-22][00:41:21] [WARNING] Some unknown tokens has appeared in the logicalSource, TOKEN: PREFIX LAST MAP: Country
+[2026-05-22][00:41:21] [WARNING] Some unknown tokens has appeared in the logicalSource, TOKEN: rdfs: LAST MAP: Country
+[2026-05-22][00:41:21] [WARNING] Some unknown tokens has appeared in the logicalSource, TOKEN: <http://www.w3.org/2000/01/rdf-schema#> LAST MAP: Country
+[2026-05-22][00:41:21] [WARNING] Some unknown tokens has appeared in the logicalSource, TOKEN: PREFIX LAST MAP: Country
+[2026-05-22][00:41:21] [WARNING] Some unknown tokens has appeared in the logicalSource, TOKEN: foaf: LAST MAP: Country
+[2026-05-22][00:41:21] [WARNING] Some unknown tokens has appeared in the logicalSource, TOKEN: <http://xmlns.com/foaf/0.1/> LAST MAP: Country
+[2026-05-22][00:41:21] [WARNING] Some unknown tokens has appeared in the logicalSource, TOKEN: PREFIX LAST MAP: Country
+[2026-05-22][00:41:21] [WARNING] Some unknown tokens has appeared in the logicalSource, TOKEN: rdf: LAST MAP: Country
+[2026-05-22][00:41:21] [WARNING] Some unknown tokens has appeared in the logicalSource, TOKEN: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> LAST MAP: Country
+[2026-05-22][00:41:21] [WARNING] Some unknown tokens has appeared in the logicalSource, TOKEN: SELECT LAST MAP: Country
+[2026-05-22][00:41:21] [WARNING] Some unknown tokens has appeared in the logicalSource, TOKEN: ?FirstName LAST MAP: Country
+[2026-05-22][00:41:21] [WARNING] Some unknown tokens has appeared in the logicalSource, TOKEN: ?LastName LAST MAP: Country
+[2026-05-22][00:41:21] [WARNING] Some unknown tokens has appeared in the logicalSource, TOKEN: ?ID LAST MAP: Country
+[2026-05-22][00:41:21] [WARNING] Some unknown tokens has appeared in the logicalSource, TOKEN: WHERE LAST MAP: Country
+[2026-05-22][00:41:21] [WARNING] Some unknown tokens has appeared in the logicalSource, TOKEN: { LAST MAP: Country
+[2026-05-22][00:41:21] [WARNING] Some unknown tokens has appeared in the logicalSource, TOKEN: ?x LAST MAP: Country
+[2026-05-22][00:41:21] [WARNING] Some unknown tokens has appeared in the logicalSource, TOKEN: foaf:firstName LAST MAP: Country
+[2026-05-22][00:41:21] [WARNING] Some unknown tokens has appeared in the logicalSource, TOKEN: ?FirstName LAST MAP: Country
+[2026-05-22][00:41:21] [WARNING] Some unknown tokens has appeared in the logicalSource, TOKEN: foaf:lastName LAST MAP: Country
+[2026-05-22][00:41:21] [WARNING] Some unknown tokens has appeared in the logicalSource, TOKEN: ?LastName LAST MAP: Country
+[2026-05-22][00:41:21] [WARNING] Some unknown tokens has appeared in the logicalSource, TOKEN: rdf:ID LAST MAP: Country
+[2026-05-22][00:41:21] [WARNING] Some unknown tokens has appeared in the logicalSource, TOKEN: ?ID LAST MAP: Country
+[2026-05-22][00:41:21] [WARNING] Some unknown tokens has appeared in the logicalSource, TOKEN: . LAST MAP: Country
+[2026-05-22][00:41:21] [WARNING] Some unknown tokens has appeared in the logicalSource, TOKEN: } LAST MAP: Country
+[2026-05-22][00:41:21] [WARNING] Some unknown tokens has appeared in the logicalSource, TOKEN: """ LAST MAP: Country
+[2026-05-22][00:41:21] [ERROR] Unknown Token has Appeared in a PredicateMap: rr:object LAST MAP: Country
+[2026-05-22][00:41:21] [ERROR] Process Finished Due to an error. ERROR CODE: IncorrectMappingFormat

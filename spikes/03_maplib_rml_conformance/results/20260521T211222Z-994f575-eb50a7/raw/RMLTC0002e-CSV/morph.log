@@ -1,0 +1,84 @@
+Installed 52 packages in 59ms
+INFO | 2026-05-21 23:12:59,981 | 1 mapping rules retrieved.
+INFO | 2026-05-21 23:12:59,985 | Mapping partition with 1 groups generated.
+INFO | 2026-05-21 23:12:59,985 | Maximum number of rules within mapping group: 1.
+INFO | 2026-05-21 23:12:59,985 | Mappings processed in 0.302 seconds.
+multiprocessing.pool.RemoteTraceback: 
+"""
+Traceback (most recent call last):
+  File "/home/nico/.cache/uv/archive-v0/33o8-rHEogHCw8a-/lib/python3.12/site-packages/morph_kgc/data_source/data_file.py", line 68, in _read_csv
+    return pd.read_table(rml_rule['logical_source_value'],
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/nico/.cache/uv/archive-v0/33o8-rHEogHCw8a-/lib/python3.12/site-packages/pandas/io/parsers/readers.py", line 1405, in read_table
+    return _read(filepath_or_buffer, kwds)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/nico/.cache/uv/archive-v0/33o8-rHEogHCw8a-/lib/python3.12/site-packages/pandas/io/parsers/readers.py", line 620, in _read
+    parser = TextFileReader(filepath_or_buffer, **kwds)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/nico/.cache/uv/archive-v0/33o8-rHEogHCw8a-/lib/python3.12/site-packages/pandas/io/parsers/readers.py", line 1620, in __init__
+    self._engine = self._make_engine(f, self.engine)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/nico/.cache/uv/archive-v0/33o8-rHEogHCw8a-/lib/python3.12/site-packages/pandas/io/parsers/readers.py", line 1880, in _make_engine
+    self.handles = get_handle(
+                   ^^^^^^^^^^^
+  File "/home/nico/.cache/uv/archive-v0/33o8-rHEogHCw8a-/lib/python3.12/site-packages/pandas/io/common.py", line 882, in get_handle
+    handle = open(handle, ioargs.mode)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'student2.csv'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3.12/multiprocessing/pool.py", line 125, in worker
+    result = (True, func(*args, **kwds))
+                    ^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/multiprocessing/pool.py", line 51, in starmapstar
+    return list(itertools.starmap(args[0], args[1]))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/nico/.cache/uv/archive-v0/33o8-rHEogHCw8a-/lib/python3.12/site-packages/morph_kgc/materializer.py", line 364, in _materialize_mapping_group_to_file
+    data = _materialize_rml_rule(rml_rule, rml_df, fnml_df, config)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/nico/.cache/uv/archive-v0/33o8-rHEogHCw8a-/lib/python3.12/site-packages/morph_kgc/materializer.py", line 330, in _materialize_rml_rule
+    data = _get_data(config, rml_rule, references, python_source)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/nico/.cache/uv/archive-v0/33o8-rHEogHCw8a-/lib/python3.12/site-packages/morph_kgc/materializer.py", line 61, in _get_data
+    data = get_file_data(rml_rule, references)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/nico/.cache/uv/archive-v0/33o8-rHEogHCw8a-/lib/python3.12/site-packages/morph_kgc/data_source/data_file.py", line 31, in get_file_data
+    return _read_csv(rml_rule, references, file_source_type)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/nico/.cache/uv/archive-v0/33o8-rHEogHCw8a-/lib/python3.12/site-packages/morph_kgc/data_source/data_file.py", line 80, in _read_csv
+    return pd.read_table(rml_rule['logical_source_value'],
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/nico/.cache/uv/archive-v0/33o8-rHEogHCw8a-/lib/python3.12/site-packages/pandas/io/parsers/readers.py", line 1405, in read_table
+    return _read(filepath_or_buffer, kwds)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/nico/.cache/uv/archive-v0/33o8-rHEogHCw8a-/lib/python3.12/site-packages/pandas/io/parsers/readers.py", line 620, in _read
+    parser = TextFileReader(filepath_or_buffer, **kwds)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/nico/.cache/uv/archive-v0/33o8-rHEogHCw8a-/lib/python3.12/site-packages/pandas/io/parsers/readers.py", line 1620, in __init__
+    self._engine = self._make_engine(f, self.engine)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/nico/.cache/uv/archive-v0/33o8-rHEogHCw8a-/lib/python3.12/site-packages/pandas/io/parsers/readers.py", line 1880, in _make_engine
+    self.handles = get_handle(
+                   ^^^^^^^^^^^
+  File "/home/nico/.cache/uv/archive-v0/33o8-rHEogHCw8a-/lib/python3.12/site-packages/pandas/io/common.py", line 873, in get_handle
+    handle = open(
+             ^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'student2.csv'
+"""
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/home/nico/.cache/uv/archive-v0/33o8-rHEogHCw8a-/lib/python3.12/site-packages/morph_kgc/__main__.py", line 79, in <module>
+    num_triples = sum(pool.starmap(_materialize_mapping_group_to_file,
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/multiprocessing/pool.py", line 375, in starmap
+    return self._map_async(func, iterable, starmapstar, chunksize).get()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/multiprocessing/pool.py", line 774, in get
+    raise self._value
+FileNotFoundError: [Errno 2] No such file or directory: 'student2.csv'

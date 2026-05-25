@@ -1,0 +1,16 @@
+Installed 52 packages in 61ms
+Downloading numpy (15.9MiB)
+Downloading duckdb (20.5MiB)
+Downloading pandas (11.8MiB)
+Downloading pyoxigraph (6.5MiB)
+ Downloaded pyoxigraph
+ Downloaded pandas
+ Downloaded numpy
+ Downloaded duckdb
+Installed 16 packages in 47ms
+INFO | 2026-05-21 22:00:01,387 | 1 mapping rules retrieved.
+INFO | 2026-05-21 22:00:01,391 | Mapping partition with 1 groups generated.
+INFO | 2026-05-21 22:00:01,391 | Maximum number of rules within mapping group: 1.
+INFO | 2026-05-21 22:00:01,391 | Mappings processed in 0.356 seconds.
+INFO | 2026-05-21 22:00:01,539 | Number of triples generated in total: 0.
+INFO | 2026-05-21 22:00:01,539 | Materialization finished in 0.145 seconds.

@@ -1,0 +1,20 @@
+
+
+[2026-05-22][00:40:34] [INFO] Starting to Parse all the given mapping files.
+[2026-05-22][00:40:34] [INFO] Parsing File ID:  1 PATH: "/tmp/tmp5l3w0bp8/RMLTC0002c-CSV/mapping.ttl"
+[2026-05-22][00:40:34] [PERFORMANCE INFO] The Procedure: "Parsing Mapping Files" Requiered the following time: 3 ms
+
+
+[2026-05-22][00:40:34] [INFO] Starting to Read and Store all required data files
+[2026-05-22][00:40:34] [INFO] Opening File: student.csv
+[2026-05-22][00:40:34] [INFO] All the files is estimated to requiere 0 MB, TMP Database will be created in memory
+[2026-05-22][00:40:34] [INFO] The following table was created in the database: "db-student-CSV"
+[2026-05-22][00:40:34] [ERROR] There is a missing field in the data file corresponding to the following data table: "db-student-CSV".
+This are the columns in the CSV and the requested columns in all the files. Consider changing delimiter in the configuration file to remedy this.
+COLUMN: ID
+COLUMN: Name
+FIELD: Name
+FIELD: ID
+FIELD: IDs
+[2026-05-22][00:40:34] [INFO] File with ID:      0 was readed and closed.
+[2026-05-22][00:40:34] [ERROR] Process Finished Due to an error. ERROR CODE: MissingFieldInData

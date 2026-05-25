@@ -1,0 +1,6 @@
+
+
+[2026-05-22][00:40:20] [INFO] Starting to Parse all the given mapping files.
+[2026-05-22][00:40:20] [INFO] Parsing File ID:  1 PATH: "/tmp/tmp5d674vx3/RMLTC0001a-JSON/mapping.ttl"
+[2026-05-22][00:40:20] [ERROR] The Mapping TriplesMap1 requires at least a rr:template component
+[2026-05-22][00:40:20] [ERROR] Process Finished Due to an error. ERROR CODE: IncorrectMappingFormat

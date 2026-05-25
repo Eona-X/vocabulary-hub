@@ -1,0 +1,10 @@
+
+
+[2026-05-22][00:40:39] [INFO] Starting to Parse all the given mapping files.
+[2026-05-22][00:40:39] [INFO] Parsing File ID:  1 PATH: "/tmp/tmp76q_ent8/RMLTC0002g-JSON/mapping.ttl"
+[2026-05-22][00:40:39] [PERFORMANCE INFO] The Procedure: "Parsing Mapping Files" Requiered the following time: 4 ms
+
+
+[2026-05-22][00:40:39] [INFO] Starting to Read and Store all required data files
+[2026-05-22][00:40:39] [INFO] Opening File: student2.json
+[2026-05-22][00:40:39] [ERROR] Process Finished Due to an error. ERROR CODE: FileNotFound

@@ -1,0 +1,6 @@
+--- expected
++++ actual
+-- expected (1 lines) --
+<http://example.com/Venus> <http://xmlns.com/foaf/0.1/name> "Venus"  .
+-- actual (1 lines) --
+<http://example.com/Venus> <http://xmlns.com/foaf/0.1/name> "Venus" .

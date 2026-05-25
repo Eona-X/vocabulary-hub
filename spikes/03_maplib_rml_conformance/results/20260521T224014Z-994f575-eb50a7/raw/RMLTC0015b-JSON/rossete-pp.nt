@@ -1,0 +1,12 @@
+<http://example.com/BO> <http://www.w3.org/2000/01/rdf-schema#label> "Bolivia, Plurinational State of"^^<http://www.w3.org/2001/XMLSchema#string> .
+
+
+<http://example.com/IE> <http://www.w3.org/2000/01/rdf-schema#label> "Ireland"^^<http://www.w3.org/2001/XMLSchema#string> .
+
+
+<http://example.com/BO> <http://www.w3.org/2000/01/rdf-schema#label> "Bolivia, Plurinational State of"^^<http://www.w3.org/2001/XMLSchema#string> .
+
+
+<http://example.com/IE> <http://www.w3.org/2000/01/rdf-schema#label> "Ireland"^^<http://www.w3.org/2001/XMLSchema#string> .
+
+
