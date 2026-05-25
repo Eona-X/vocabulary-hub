@@ -1,0 +1,22 @@
+[
+  {
+    "engine": "morph",
+    "scale": "1",
+    "wall_time_s": 1.167555570602417,
+    "peak_rss_mb": 250.734375,
+    "output_triples": 10,
+    "output_hash": "9c16d5ef885f8d45ec339869feba134c54409a8b20eec8f714176f837b1f87d6",
+    "ok": true,
+    "detail": "Installed 52 packages in 21ms\nINFO | 2026-05-22 08:12:36,297 | 2 mapping rules retrieved.\nINFO | 2026-05-22 08:12:36,301 | Mapping partition with 2 groups generated.\nINFO | 2026-05-22 08:12:36,301 | Maximum number of rules within mapping group: 1.\nINFO | 2026-05-22 08:12:36,302 | Mappings processed in 0.269 seconds.\nINFO | 2026-05-22 08:12:36,419 | Number of triples generated in total: 10.\nINFO | 2026-05-22 08:12:36,419 | Materialization finished in 0.117 seconds.\n"
+  },
+  {
+    "engine": "maplib",
+    "scale": "1",
+    "wall_time_s": 0.06882047653198242,
+    "peak_rss_mb": 0.0,
+    "output_triples": 0,
+    "output_hash": "",
+    "ok": false,
+    "detail": "cannot import name 'Mapping' from 'maplib' (/home/nico/wspace/eona/eona_vocabulary_services/spikes/.venv/lib/python3.12/site-packages/maplib/__init__.py)\nTraceback (most recent call last):\n  File \"/home/nico/wspace/eona/eona_vocabulary_services/spikes/04_maplib_bench/bench.py\", line 114, in bench_maplib\n    from maplib import Mapping  # type: ignore\n    ^^^^^^^^^^^^^^^^^^^^^^^^^^\nImportError: cannot import name 'Mapping' from 'maplib' (/home/nico/wspace/eona/eona_vocabulary_services/spikes/.venv/lib/python3.12/site-packages/maplib/__init__.py)\n"
+  }
+]

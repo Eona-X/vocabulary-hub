@@ -1,0 +1,115 @@
+# Spike 3 summary — 20260521T210644Z-994f575-eb50a7
+
+| engine | pass | fail | error | skipped | total | pass-rate |
+|---|---:|---:|---:|---:|---:|---:|
+| morph | 75 | 24 | 40 | 185 | 324 | 23.1% |
+| maplib | 0 | 0 | 144 | 180 | 324 | 0.0% |
+
+## Divergent tests (Maplib verdict ≠ Morph verdict)
+
+| test | morph | maplib |
+|---|---|---|
+| RMLTC0000-CSV | pass | error |
+| RMLTC0000-JSON | pass | error |
+| RMLTC0000-XML | pass | error |
+| RMLTC0001a-CSV | pass | error |
+| RMLTC0001a-JSON | pass | error |
+| RMLTC0001a-XML | pass | error |
+| RMLTC0001b-CSV | fail | error |
+| RMLTC0001b-JSON | fail | error |
+| RMLTC0001b-XML | fail | error |
+| RMLTC0002a-CSV | pass | error |
+| RMLTC0002a-JSON | pass | error |
+| RMLTC0002a-XML | pass | error |
+| RMLTC0002b-CSV | fail | error |
+| RMLTC0002b-JSON | fail | error |
+| RMLTC0002b-XML | fail | error |
+| RMLTC0002c-JSON | pass | error |
+| RMLTC0002c-XML | pass | error |
+| RMLTC0003c-CSV | pass | error |
+| RMLTC0003c-JSON | pass | error |
+| RMLTC0003c-XML | pass | error |
+| RMLTC0004a-CSV | pass | error |
+| RMLTC0004a-JSON | pass | error |
+| RMLTC0004a-XML | pass | error |
+| RMLTC0005a-CSV | pass | error |
+| RMLTC0005a-JSON | pass | error |
+| RMLTC0005a-XML | pass | error |
+| RMLTC0006a-CSV | pass | error |
+| RMLTC0006a-JSON | pass | error |
+| RMLTC0006a-SPARQL | pass | error |
+| RMLTC0006a-XML | pass | error |
+| RMLTC0007a-CSV | pass | error |
+| RMLTC0007a-JSON | pass | error |
+| RMLTC0007a-XML | pass | error |
+| RMLTC0007b-CSV | pass | error |
+| RMLTC0007b-JSON | pass | error |
+| RMLTC0007b-XML | pass | error |
+| RMLTC0007c-CSV | pass | error |
+| RMLTC0007c-JSON | pass | error |
+| RMLTC0007c-XML | pass | error |
+| RMLTC0007d-CSV | pass | error |
+| RMLTC0007d-JSON | pass | error |
+| RMLTC0007d-XML | pass | error |
+| RMLTC0007e-CSV | pass | error |
+| RMLTC0007e-JSON | pass | error |
+| RMLTC0007e-XML | pass | error |
+| RMLTC0007f-CSV | pass | error |
+| RMLTC0007f-JSON | pass | error |
+| RMLTC0007f-XML | pass | error |
+| RMLTC0007g-CSV | pass | error |
+| RMLTC0007g-JSON | pass | error |
+| RMLTC0007g-XML | pass | error |
+| RMLTC0008a-CSV | pass | error |
+| RMLTC0008a-JSON | pass | error |
+| RMLTC0008a-XML | pass | error |
+| RMLTC0008b-CSV | pass | error |
+| RMLTC0008b-JSON | pass | error |
+| RMLTC0008b-XML | pass | error |
+| RMLTC0008c-CSV | pass | error |
+| RMLTC0008c-JSON | pass | error |
+| RMLTC0008c-XML | pass | error |
+| RMLTC0009a-CSV | pass | error |
+| RMLTC0009a-JSON | pass | error |
+| RMLTC0009a-XML | pass | error |
+| RMLTC0009b-CSV | pass | error |
+| RMLTC0009b-JSON | pass | error |
+| RMLTC0009b-XML | pass | error |
+| RMLTC0010a-CSV | pass | error |
+| RMLTC0010a-JSON | pass | error |
+| RMLTC0010b-CSV | pass | error |
+| RMLTC0010b-JSON | pass | error |
+| RMLTC0010b-XML | pass | error |
+| RMLTC0010c-CSV | pass | error |
+| RMLTC0010c-JSON | pass | error |
+| RMLTC0010c-XML | pass | error |
+| RMLTC0011b-CSV | pass | error |
+| RMLTC0011b-JSON | pass | error |
+| RMLTC0011b-XML | pass | error |
+| RMLTC0012a-CSV | fail | error |
+| RMLTC0012a-JSON | fail | error |
+| RMLTC0012a-XML | fail | error |
+| RMLTC0012b-CSV | fail | error |
+| RMLTC0012b-JSON | fail | error |
+| RMLTC0012b-XML | fail | error |
+| RMLTC0012d-CSV | skipped | error |
+| RMLTC0012d-JSON | skipped | error |
+| RMLTC0013a-JSON | pass | error |
+| RMLTC0015a-CSV | pass | error |
+| RMLTC0015a-JSON | pass | error |
+| RMLTC0015a-XML | pass | error |
+| RMLTC0015b-CSV | skipped | error |
+| RMLTC0015b-JSON | skipped | error |
+| RMLTC0015b-XML | skipped | error |
+| RMLTC0019a-CSV | fail | error |
+| RMLTC0019a-JSON | fail | error |
+| RMLTC0019a-XML | fail | error |
+| RMLTC0019b-CSV | fail | error |
+| RMLTC0019b-JSON | fail | error |
+| RMLTC0019b-XML | fail | error |
+| RMLTC0020a-CSV | fail | error |
+| RMLTC0020a-JSON | fail | error |
+| RMLTC0020a-XML | fail | error |
+| RMLTC0020b-CSV | fail | error |
+| RMLTC0020b-JSON | fail | error |
+| RMLTC0020b-XML | fail | error |
