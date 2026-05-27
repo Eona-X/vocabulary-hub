@@ -1,0 +1,63 @@
+{
+  "framework": "virtuoso",
+  "scale": "1m",
+  "data": "/home/nico/wspace/eona/eona_vocabulary_services/spikes/02_oxigraph_bench/data/data-1m.ttl",
+  "load_s": 4.807155702990713,
+  "queries": {
+    "q1_count": {
+      "n": 3,
+      "best_s": 0.015704159013694152,
+      "p50_s": 0.01634047701372765,
+      "p95_s": 0.019776553992414847,
+      "samples_s": [
+        0.015704159013694152,
+        0.01634047701372765,
+        0.019776553992414847
+      ],
+      "timed_out": false,
+      "row_count": 1
+    },
+    "q2_top_customers": {
+      "n": 3,
+      "best_s": 0.09814310501678847,
+      "p50_s": 0.09864495298825204,
+      "p95_s": 0.10017073599738069,
+      "samples_s": [
+        0.10017073599738069,
+        0.09814310501678847,
+        0.09864495298825204
+      ],
+      "timed_out": false,
+      "row_count": 20
+    },
+    "q3_join_filter": {
+      "n": 3,
+      "best_s": 0.006317185005173087,
+      "p50_s": 0.007520616985857487,
+      "p95_s": 0.008429601992247626,
+      "samples_s": [
+        0.008429601992247626,
+        0.007520616985857487,
+        0.006317185005173087
+      ],
+      "timed_out": false,
+      "row_count": 100
+    },
+    "q4_optional_agg": {
+      "n": 3,
+      "best_s": 0.1922321479942184,
+      "p50_s": 0.19884970600833185,
+      "p95_s": 0.22035378601867706,
+      "samples_s": [
+        0.1922321479942184,
+        0.22035378601867706,
+        0.19884970600833185
+      ],
+      "timed_out": false,
+      "row_count": 30
+    }
+  },
+  "rss_peak_bytes": 679267532,
+  "store_bytes_on_disk": 222087803,
+  "virtuoso_image": "openlink/virtuoso-opensource-7:latest"
+}

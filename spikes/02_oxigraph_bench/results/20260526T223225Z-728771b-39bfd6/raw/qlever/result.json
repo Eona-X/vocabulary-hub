@@ -1,0 +1,6 @@
+{
+  "framework": "qlever",
+  "scale": "100k",
+  "error": "QLever did not become ready on http://127.0.0.1:54301/ within 60.0s",
+  "traceback": "Traceback (most recent call last):\n  File \"/home/nico/wspace/eona/eona_vocabulary_services/spikes/02_oxigraph_bench/harness/runner.py\", line 67, in main\n    result = mod.run(data, queries, args.scale)\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/nico/wspace/eona/eona_vocabulary_services/spikes/02_oxigraph_bench/harness/frameworks/qlever.py\", line 178, in run\n    _wait_http(endpoint, timeout_s=60.0)\n  File \"/home/nico/wspace/eona/eona_vocabulary_services/spikes/02_oxigraph_bench/harness/frameworks/qlever.py\", line 71, in _wait_http\n    raise TimeoutError(f\"QLever did not become ready on {url} within {timeout_s}s\")\nTimeoutError: QLever did not become ready on http://127.0.0.1:54301/ within 60.0s\n"
+}

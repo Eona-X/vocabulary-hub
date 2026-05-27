@@ -1,0 +1,54 @@
+{
+  "framework": "qlever",
+  "scale": "100k",
+  "data": "/home/nico/wspace/eona/eona_vocabulary_services/spikes/02_oxigraph_bench/data/data-100k.nt",
+  "load_s": 1.0887017799832392,
+  "queries": {
+    "q1_count": {
+      "n": 3,
+      "best_s": 0.0023934700002428144,
+      "p50_s": 0.0025804429897107184,
+      "p95_s": 0.0032241810113191605,
+      "samples_s": [
+        0.0032241810113191605,
+        0.0023934700002428144,
+        0.0025804429897107184
+      ],
+      "timed_out": false,
+      "row_count": 1
+    },
+    "q2_top_customers": {
+      "n": 3,
+      "best_s": 0.012267874990357086,
+      "p50_s": 0.013350983994314447,
+      "p95_s": 0.014540267002303153,
+      "samples_s": [
+        0.014540267002303153,
+        0.012267874990357086,
+        0.013350983994314447
+      ],
+      "timed_out": false,
+      "row_count": 20
+    },
+    "q3_join_filter": {
+      "n": 3,
+      "best_s": 0.020887019985821098,
+      "p50_s": 0.024549142020987347,
+      "p95_s": 0.025514220003969967,
+      "samples_s": [
+        0.025514220003969967,
+        0.024549142020987347,
+        0.020887019985821098
+      ],
+      "timed_out": false,
+      "row_count": 100
+    },
+    "q4_optional_agg": {
+      "error": "HTTP 500",
+      "body": "{\n    \"exception\": \"Assertion `singleResult.size() == 1` failed. An expression returned a vector expression result that contained an unexpected amount of entries.. Please report this to the developers. In file \\\"/qlever/src/engine/GroupByImpl.cpp\\\" at line 442\",\n    \"query\": \"PREFIX schema: <http://schema.org/>\\nPREFIX ex: <http://example.org/>\\n\\nSELECT ?country ?segment (COUNT(?order) AS ?orders"
+    }
+  },
+  "rss_peak_bytes": 53372518,
+  "store_bytes_on_disk": 14313894,
+  "qlever_image": "adfreiburg/qlever:latest"
+}

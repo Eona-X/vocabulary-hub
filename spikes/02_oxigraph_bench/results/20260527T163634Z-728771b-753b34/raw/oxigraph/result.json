@@ -1,0 +1,50 @@
+{
+  "framework": "oxigraph",
+  "scale": "1m",
+  "data": "/home/nico/wspace/eona/eona_vocabulary_services/spikes/02_oxigraph_bench/data/data-1m.ttl",
+  "load_s": 5.695038253994426,
+  "queries": {
+    "q1_count": {
+      "n": 3,
+      "best_s": 0.27236834398354404,
+      "p50_s": 0.28957340100896545,
+      "p95_s": 0.2940900330140721,
+      "samples_s": [
+        0.2940900330140721,
+        0.28957340100896545,
+        0.27236834398354404
+      ],
+      "timed_out": false,
+      "row_count": 1
+    },
+    "q2_top_customers": {
+      "n": 3,
+      "best_s": 1.1683559259981848,
+      "p50_s": 1.182016531995032,
+      "p95_s": 1.192691256001126,
+      "samples_s": [
+        1.1683559259981848,
+        1.192691256001126,
+        1.182016531995032
+      ],
+      "timed_out": false,
+      "row_count": 20
+    },
+    "q3_join_filter": {
+      "n": 3,
+      "best_s": 0.17114767999737523,
+      "p50_s": 0.17351584500283934,
+      "p95_s": 0.17485440999735147,
+      "samples_s": [
+        0.17351584500283934,
+        0.17485440999735147,
+        0.17114767999737523
+      ],
+      "timed_out": false,
+      "row_count": 100
+    }
+  },
+  "rss_peak_bytes": 998379520,
+  "rss_delta_bytes": 908464128,
+  "store_bytes_on_disk": 151264389
+}

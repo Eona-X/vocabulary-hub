@@ -1,0 +1,48 @@
+{
+  "framework": "qlever",
+  "scale": "100k",
+  "data": "/home/nico/wspace/eona/eona_vocabulary_services/spikes/02_oxigraph_bench/data/data-100k.nt",
+  "load_s": 1.1240791059972253,
+  "queries": {
+    "q1_count": {
+      "n": 3,
+      "best_s": 0.0023688000219408423,
+      "p50_s": 0.0025949630071409047,
+      "p95_s": 0.002808649995131418,
+      "samples_s": [
+        0.0025949630071409047,
+        0.0023688000219408423,
+        0.002808649995131418
+      ]
+    },
+    "q2_top_customers": {
+      "n": 3,
+      "best_s": 0.011075621005147696,
+      "p50_s": 0.014153852011077106,
+      "p95_s": 0.016450462018838152,
+      "samples_s": [
+        0.011075621005147696,
+        0.014153852011077106,
+        0.016450462018838152
+      ]
+    },
+    "q3_join_filter": {
+      "n": 3,
+      "best_s": 0.02268119400832802,
+      "p50_s": 0.022717893996741623,
+      "p95_s": 0.02304475801065564,
+      "samples_s": [
+        0.02304475801065564,
+        0.02268119400832802,
+        0.022717893996741623
+      ]
+    },
+    "q4_optional_agg": {
+      "error": "HTTP 500",
+      "body": "{\n    \"exception\": \"Assertion `singleResult.size() == 1` failed. An expression returned a vector expression result that contained an unexpected amount of entries.. Please report this to the developers. In file \\\"/qlever/src/engine/GroupByImpl.cpp\\\" at line 442\",\n    \"query\": \"PREFIX schema: <http://schema.org/>\\nPREFIX ex: <http://example.org/>\\n\\nSELECT ?country ?segment (COUNT(?order) AS ?orders"
+    }
+  },
+  "rss_peak_bytes": 54284779,
+  "store_bytes_on_disk": 14313893,
+  "qlever_image": "adfreiburg/qlever:latest"
+}

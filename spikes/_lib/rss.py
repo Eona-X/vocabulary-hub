@@ -1,77 +1,87 @@
-"""Lightweight RSS sampler — polls a process and records peak / timeseries.
-
-Used by spikes 2 and 4 to capture the memory profile of the engine under
-test while a workload runs.
-"""
-
 from __future__ import annotations
 
+import os
 import threading
 import time
-from dataclasses import dataclass, field
-from pathlib import Path
+from contextlib import contextmanager
+from dataclasses import dataclass
 
 import psutil
 
 
 @dataclass
 class RssSample:
-    t: float
-    rss_mb: float
-
-
-@dataclass
-class RssTrace:
-    label: str
-    interval_s: float
-    samples: list[RssSample] = field(default_factory=list)
+    peak_bytes: int
+    baseline_bytes: int
 
     @property
-    def peak_mb(self) -> float:
-        return max((s.rss_mb for s in self.samples), default=0.0)
-
-    def write_csv(self, path: Path) -> None:
-        with path.open("w") as f:
-            f.write("t_seconds,rss_mb\n")
-            for s in self.samples:
-                f.write(f"{s.t:.3f},{s.rss_mb:.2f}\n")
+    def delta_bytes(self) -> int:
+        return max(0, self.peak_bytes - self.baseline_bytes)
 
 
-class RssSampler:
-    """Background sampler. Use as a context manager around the workload."""
-
-    def __init__(self, pid: int, label: str, interval_s: float = 0.25):
+class _PeakSampler:
+    def __init__(self, pid: int, interval_s: float, include_children: bool):
         self.proc = psutil.Process(pid)
-        self.trace = RssTrace(label=label, interval_s=interval_s)
+        self.interval = interval_s
+        self.include_children = include_children
+        self.peak = 0
+        self.baseline = 0
         self._stop = threading.Event()
-        self._t0 = 0.0
-        self._thread: threading.Thread | None = None
+        self._t: threading.Thread | None = None
+
+    def _read(self) -> int:
+        try:
+            rss = self.proc.memory_info().rss
+            if self.include_children:
+                for c in self.proc.children(recursive=True):
+                    try:
+                        rss += c.memory_info().rss
+                    except (psutil.NoSuchProcess, psutil.AccessDenied):
+                        pass
+            return rss
+        except psutil.NoSuchProcess:
+            return 0
 
     def _loop(self) -> None:
         while not self._stop.is_set():
-            try:
-                rss_mb = self._collect_rss_mb()
-                self.trace.samples.append(RssSample(time.time() - self._t0, rss_mb))
-            except psutil.NoSuchProcess:
-                break
-            self._stop.wait(self.trace.interval_s)
+            rss = self._read()
+            if rss > self.peak:
+                self.peak = rss
+            self._stop.wait(self.interval)
+        # final read in case the work spiked between ticks
+        rss = self._read()
+        if rss > self.peak:
+            self.peak = rss
 
-    def _collect_rss_mb(self) -> float:
-        total = self.proc.memory_info().rss
-        try:
-            for child in self.proc.children(recursive=True):
-                total += child.memory_info().rss
-        except psutil.NoSuchProcess:
-            pass
-        return total / 1024**2
+    def start(self) -> None:
+        self.baseline = self._read()
+        self.peak = self.baseline
+        self._t = threading.Thread(target=self._loop, daemon=True)
+        self._t.start()
 
-    def __enter__(self) -> "RssSampler":
-        self._t0 = time.time()
-        self._thread = threading.Thread(target=self._loop, daemon=True)
-        self._thread.start()
-        return self
-
-    def __exit__(self, *_exc) -> None:
+    def stop(self) -> RssSample:
         self._stop.set()
-        if self._thread:
-            self._thread.join(timeout=2)
+        if self._t is not None:
+            self._t.join()
+        return RssSample(peak_bytes=self.peak, baseline_bytes=self.baseline)
+
+
+@contextmanager
+def sample_peak_rss(pid: int | None = None, interval_s: float = 0.05, include_children: bool = True):
+    s = _PeakSampler(pid or os.getpid(), interval_s, include_children)
+    s.start()
+    try:
+        yield lambda: RssSample(peak_bytes=s.peak, baseline_bytes=s.baseline)
+    finally:
+        # caller can read the sample via the yielded callable; final value stored below
+        s.stop()
+
+
+def measure_peak_rss(fn, pid: int | None = None, interval_s: float = 0.05, include_children: bool = True) -> tuple[object, RssSample]:
+    s = _PeakSampler(pid or os.getpid(), interval_s, include_children)
+    s.start()
+    try:
+        out = fn()
+    finally:
+        sample = s.stop()
+    return out, sample

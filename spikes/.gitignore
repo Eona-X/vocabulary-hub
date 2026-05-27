@@ -11,3 +11,7 @@ __pycache__/
 03_maplib_rml_conformance/inputs/rml-test-cases/
 04_maplib_bench/inputs/gtfs-madrid-bench/scale-*/
 venv/
+
+# Spike 02: generated synthetic data + fetched binaries
+02_oxigraph_bench/data/
+02_oxigraph_bench/.cache/

@@ -1,0 +1,24 @@
+{
+  "run_id": "20260527T163215Z-728771b-bedbc6",
+  "spike": "02_oxigraph_bench",
+  "started_utc": "2026-05-27T16:32:15.105138+00:00",
+  "git_sha": "728771b81cd91fce1493ff5882278830e2f8ecc5",
+  "git_dirty": true,
+  "host": {
+    "platform": "Linux-6.8.0-117-generic-x86_64-with-glibc2.39",
+    "python": "3.12.3",
+    "machine": "x86_64"
+  },
+  "inputs": {
+    "data": "caac68077f3c5b8e",
+    "q_q1_count": "f910b3f7892148da",
+    "q_q2_top_customers": "58ea58f3ba620bdc",
+    "q_q3_join_filter": "e938087730144020",
+    "q_q4_optional_agg": "f8e0aa7c16023ec8"
+  },
+  "config": {
+    "framework": "virtuoso",
+    "scale": "1m",
+    "format": "ttl"
+  }
+}

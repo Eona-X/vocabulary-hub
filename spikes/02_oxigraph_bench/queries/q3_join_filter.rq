@@ -1,0 +1,13 @@
+PREFIX schema: <http://schema.org/>
+
+SELECT ?customer ?product ?total
+WHERE {
+  ?order a schema:Order ;
+         schema:customer ?customer ;
+         schema:orderedItem ?product ;
+         schema:totalPrice ?total .
+  ?customer schema:addressCountry ?country .
+  ?product schema:category ?cat .
+  FILTER(?country = "FR" && ?cat = "electronics")
+}
+LIMIT 100

@@ -1,0 +1,6 @@
+{
+  "framework": "fuseki_tdb2",
+  "scale": "100k",
+  "error": "Port 3030 is busy \u2014 another Fuseki may be running",
+  "traceback": "Traceback (most recent call last):\n  File \"/home/nico/wspace/eona/eona_vocabulary_services/spikes/02_oxigraph_bench/harness/runner.py\", line 67, in main\n    result = mod.run(data, queries, args.scale)\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/nico/wspace/eona/eona_vocabulary_services/spikes/02_oxigraph_bench/harness/frameworks/fuseki_tdb2.py\", line 80, in run\n    raise RuntimeError(f\"Port {PORT} is busy \u2014 another Fuseki may be running\")\nRuntimeError: Port 3030 is busy \u2014 another Fuseki may be running\n"
+}

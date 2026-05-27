@@ -1,0 +1,50 @@
+{
+  "framework": "rdflib",
+  "scale": "1m",
+  "data": "/home/nico/wspace/eona/eona_vocabulary_services/spikes/02_oxigraph_bench/data/data-1m.ttl",
+  "load_s": 36.20045907900203,
+  "queries": {
+    "q1_count": {
+      "n": 3,
+      "best_s": 7.641273871995509,
+      "p50_s": 7.68405846200767,
+      "p95_s": 9.04261570199742,
+      "samples_s": [
+        7.641273871995509,
+        7.68405846200767,
+        9.04261570199742
+      ],
+      "timed_out": false,
+      "row_count": 1
+    },
+    "q2_top_customers": {
+      "n": 3,
+      "best_s": 6.476009621983394,
+      "p50_s": 6.801456817018334,
+      "p95_s": 8.832070042990381,
+      "samples_s": [
+        6.476009621983394,
+        6.801456817018334,
+        8.832070042990381
+      ],
+      "timed_out": false,
+      "row_count": 20
+    },
+    "q3_join_filter": {
+      "n": 3,
+      "best_s": 0.9955675179953687,
+      "p50_s": 1.1239713219983969,
+      "p95_s": 1.1810934199893381,
+      "samples_s": [
+        1.1239713219983969,
+        1.1810934199893381,
+        0.9955675179953687
+      ],
+      "timed_out": false,
+      "row_count": 100
+    }
+  },
+  "rss_peak_bytes": 2989617152,
+  "rss_delta_bytes": 1501798400,
+  "version": "7.6.0"
+}

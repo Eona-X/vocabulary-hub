@@ -1,0 +1,65 @@
+{
+  "framework": "oxigraph_fork",
+  "scale": "1m",
+  "data": "/home/nico/wspace/eona/eona_vocabulary_services/spikes/02_oxigraph_bench/data/data-1m.ttl",
+  "load_s": 5.322888566995971,
+  "queries": {
+    "q1_count": {
+      "n": 3,
+      "best_s": 0.48035003201221116,
+      "p50_s": 0.5447590359835885,
+      "p95_s": 0.5833289279835299,
+      "samples_s": [
+        0.48035003201221116,
+        0.5833289279835299,
+        0.5447590359835885
+      ],
+      "timed_out": false,
+      "row_count": 1
+    },
+    "q2_top_customers": {
+      "n": 3,
+      "best_s": 1.1044065059977584,
+      "p50_s": 1.2690115649893414,
+      "p95_s": 1.2859706770104822,
+      "samples_s": [
+        1.2859706770104822,
+        1.2690115649893414,
+        1.1044065059977584
+      ],
+      "timed_out": false,
+      "row_count": 20
+    },
+    "q3_join_filter": {
+      "n": 3,
+      "best_s": 0.1648660450009629,
+      "p50_s": 0.16551337399869226,
+      "p95_s": 0.16624252998735756,
+      "samples_s": [
+        0.1648660450009629,
+        0.16551337399869226,
+        0.16624252998735756
+      ],
+      "timed_out": false,
+      "row_count": 100
+    },
+    "q4_optional_agg": {
+      "n": 3,
+      "best_s": 1.7207471169822384,
+      "p50_s": 1.722048032010207,
+      "p95_s": 1.7346366900019348,
+      "samples_s": [
+        1.7346366900019348,
+        1.7207471169822384,
+        1.722048032010207
+      ],
+      "timed_out": false,
+      "row_count": 30
+    }
+  },
+  "rss_peak_bytes": 1004363776,
+  "rss_delta_bytes": 907702272,
+  "store_bytes_on_disk": 151253805,
+  "build": "Deepthought-Solutions/oxigraph @ 5c7feb9 (bugfix/optimizer)",
+  "pyoxigraph_version": "0.5.7"
+}
