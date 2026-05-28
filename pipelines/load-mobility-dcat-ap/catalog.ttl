@@ -1,13 +1,16 @@
 # Eona Vocabulary Hub catalog wrapper.
 #
 # Prez 4.x surfaces only entities reachable from a dcat:Catalog via dcterms:hasPart
-# (OGC Records model). This file declares the catalog and lists the loaded
-# mobilityDCAT-AP graphs as dcat:Resource members so Prez can list/route them.
+# (OGC Records model). This file declares the catalog and its members:
+#   - the ontology + SHACL graphs as dcat:Resource description pages, and
+#   - each mobilityDCAT-AP controlled vocabulary as a skos:ConceptScheme, whose
+#     skos:Concepts Prez then lists as OGC Records `items` under the scheme.
 # Loaded into its own named graph so it does not pollute the source vocabularies.
 
 @prefix dcat: <http://www.w3.org/ns/dcat#> .
 @prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix vann: <http://purl.org/vocab/vann/> .
 @prefix eona: <https://vocab.eona-x.eu/> .
 @prefix mob: <https://w3id.org/mobilitydcat-ap/> .
@@ -26,7 +29,18 @@ eona:catalog a dcat:Catalog ;
     dcterms:description "Catalog of vocabularies, ontologies, and SHACL shapes hosted by the Eona Vocabulary Hub." ;
     dcterms:hasPart <https://w3id.org/mobilitydcat-ap> ,
                     <https://w3id.org/mobilitydcat-ap/shacl> ,
-                    <https://w3id.org/mobilitydcat-ap/shacl-ranges> .
+                    <https://w3id.org/mobilitydcat-ap/shacl-ranges> ,
+                    mob:application-layer-protocol ,
+                    mob:communication-method ,
+                    mob:conditions-for-access-and-usage ,
+                    mob:georeferencing-method ,
+                    mob:grammar ,
+                    mob:intended-information-service ,
+                    mob:mobility-data-standard ,
+                    mob:mobility-theme ,
+                    mob:network-coverage ,
+                    mob:transport-mode ,
+                    mob:update-frequency .
 
 <https://w3id.org/mobilitydcat-ap> a dcat:Resource ;
     dcterms:identifier "mobilitydcat-ap" ;
@@ -45,3 +59,50 @@ eona:catalog a dcat:Catalog ;
     dcterms:title "mobilityDCAT-AP SHACL range shapes" ;
     rdfs:label "mobilityDCAT-AP SHACL range shapes" ;
     dcterms:description "Range/type SHACL shapes for mobilityDCAT-AP properties." .
+
+# Controlled vocabularies. Concrete skos:Concepts + skos:ConceptScheme triples are
+# loaded from each w3id IRI into the matching named graph; these stanzas only add
+# the display title/label the published vocabularies omit on the scheme node.
+mob:application-layer-protocol a skos:ConceptScheme ;
+    dcterms:title "Application Layer Protocol" ;
+    rdfs:label "Application Layer Protocol" .
+
+mob:communication-method a skos:ConceptScheme ;
+    dcterms:title "Communication Method" ;
+    rdfs:label "Communication Method" .
+
+mob:conditions-for-access-and-usage a skos:ConceptScheme ;
+    dcterms:title "Conditions for Access and Usage" ;
+    rdfs:label "Conditions for Access and Usage" .
+
+mob:georeferencing-method a skos:ConceptScheme ;
+    dcterms:title "Georeferencing Method" ;
+    rdfs:label "Georeferencing Method" .
+
+mob:grammar a skos:ConceptScheme ;
+    dcterms:title "Grammar" ;
+    rdfs:label "Grammar" .
+
+mob:intended-information-service a skos:ConceptScheme ;
+    dcterms:title "Intended Information Service" ;
+    rdfs:label "Intended Information Service" .
+
+mob:mobility-data-standard a skos:ConceptScheme ;
+    dcterms:title "Mobility Data Standard" ;
+    rdfs:label "Mobility Data Standard" .
+
+mob:mobility-theme a skos:ConceptScheme ;
+    dcterms:title "Mobility Theme" ;
+    rdfs:label "Mobility Theme" .
+
+mob:network-coverage a skos:ConceptScheme ;
+    dcterms:title "Network Coverage" ;
+    rdfs:label "Network Coverage" .
+
+mob:transport-mode a skos:ConceptScheme ;
+    dcterms:title "Transport Mode" ;
+    rdfs:label "Transport Mode" .
+
+mob:update-frequency a skos:ConceptScheme ;
+    dcterms:title "Update Frequency" ;
+    rdfs:label "Update Frequency" .

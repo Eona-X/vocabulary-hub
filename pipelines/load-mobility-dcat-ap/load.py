@@ -36,12 +36,47 @@ HTTP_TIMEOUT_S = int(os.environ.get("HTTP_TIMEOUT_S", "60"))
 
 @dataclass(frozen=True)
 class Asset:
-    # source: remote URL relative to SOURCE_BASE, or local filesystem path
-    # (resolved against the script directory) if `local=True`.
+    # source resolution:
+    #   local=True     -> source_path is a filesystem path (vs the script dir)
+    #   absolute=True  -> source_path is a full URL fetched as-is
+    #   otherwise      -> source_path is relative to SOURCE_BASE
     source_path: str
     graph_iri: str
     content_type: str
     local: bool = False
+    absolute: bool = False
+
+
+# mobilityDCAT-AP native controlled vocabularies. Each w3id IRI content-negotiates
+# (303) to its published SKOS/Turtle on GitHub Pages. The scheme IRI doubles as the
+# named-graph IRI so a scheme's skos:Concepts (skos:inScheme <scheme>) land in the
+# same graph as their skos:ConceptScheme — this is what lets Prez list concepts as
+# OGC Records `items` under each scheme-as-collection.
+_VOCAB_SLUGS: tuple[str, ...] = (
+    "application-layer-protocol",
+    "communication-method",
+    "conditions-for-access-and-usage",
+    "georeferencing-method",
+    "grammar",
+    "intended-information-service",
+    "mobility-data-standard",
+    "mobility-theme",
+    "network-coverage",
+    "transport-mode",
+    "update-frequency",
+)
+
+
+def _vocab_assets() -> tuple[Asset, ...]:
+    return tuple(
+        Asset(
+            source_path=f"https://w3id.org/mobilitydcat-ap/{slug}",
+            graph_iri=f"https://w3id.org/mobilitydcat-ap/{slug}",
+            content_type="text/turtle",
+            absolute=True,
+        )
+        for slug in _VOCAB_SLUGS
+    )
 
 
 ASSETS: tuple[Asset, ...] = (
@@ -60,8 +95,10 @@ ASSETS: tuple[Asset, ...] = (
         graph_iri="https://w3id.org/mobilitydcat-ap/shacl-ranges",
         content_type="text/turtle",
     ),
-    # Catalog wrapper: declares a dcat:Catalog with dcterms:hasPart pointing at
-    # the three graphs above so Prez can list/route them via OGC Records.
+    *_vocab_assets(),
+    # Catalog wrapper: declares a dcat:Catalog whose dcterms:hasPart members are the
+    # graphs above (ontology + SHACL as resource pages, each vocabulary as a
+    # browsable skos:ConceptScheme) so Prez can list/route them via OGC Records.
     Asset(
         source_path="catalog.ttl",
         graph_iri="https://vocab.eona-x.eu/catalog",
@@ -86,9 +123,11 @@ def wait_for_oxigraph(base: str, timeout_s: int) -> None:
     raise RuntimeError(f"oxigraph not ready after {timeout_s}s: {last_err}")
 
 
-def fetch(url: str) -> bytes:
+def fetch(url: str, accept: str = "text/turtle") -> bytes:
     LOG.info("fetch %s", url)
-    r = requests.get(url, timeout=HTTP_TIMEOUT_S)
+    # Accept header drives w3id.org content negotiation toward the Turtle
+    # serialisation; redirects (303 -> GitHub Pages) are followed by default.
+    r = requests.get(url, headers={"Accept": accept}, timeout=HTTP_TIMEOUT_S)
     r.raise_for_status()
     return r.content
 
@@ -174,6 +213,8 @@ def main() -> int:
     for asset in ASSETS:
         if asset.local:
             body = read_local(asset.source_path)
+        elif asset.absolute:
+            body = fetch(asset.source_path, accept=asset.content_type)
         else:
             body = fetch(f"{SOURCE_BASE}/{asset.source_path}")
         put_graph(OXIGRAPH_BASE, asset.graph_iri, asset.content_type, body)
