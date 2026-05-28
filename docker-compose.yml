@@ -42,6 +42,23 @@ services:
     healthcheck:
       disable: true
 
+  # One-shot loader: fetches mobilityDCAT-AP ontology + SHACL shapes from GitHub
+  # and PUTs them into fixed Oxigraph named graphs. Idempotent — PUT on the
+  # Graph Store Protocol replaces each target graph, so re-runs do not duplicate
+  # triples. Exits 0 on success; "restart: no" keeps it from looping.
+  loader-mobility-dcat-ap:
+    build:
+      context: ./pipelines/load-mobility-dcat-ap
+    image: eona/loader-mobility-dcat-ap:dev
+    container_name: eona-loader-mobility-dcat-ap
+    restart: "no"
+    depends_on:
+      - oxigraph
+    environment:
+      OXIGRAPH_BASE: "http://oxigraph:7878"
+      SOURCE_BASE: "https://raw.githubusercontent.com/Eona-X/mobilityDCAT-AP/HEAD"
+      READY_TIMEOUT_S: "120"
+
   # Prez — read-only Linked Data API + HTML explorer driven by SPARQL + profiles.
   # ADR-005 fasttrack: provides catalog / vocabulary / concept / class pages and
   # HTML/RDF content negotiation out of the box, pointing at Oxigraph.
