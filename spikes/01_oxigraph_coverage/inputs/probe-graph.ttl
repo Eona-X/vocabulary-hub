@@ -1,0 +1,2 @@
+@prefix ex: <https://eona.example/voc/> .
+ex:gsp-marker ex:writtenVia "GSP PUT" .

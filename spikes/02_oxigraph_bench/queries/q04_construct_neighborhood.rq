@@ -1,0 +1,3 @@
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX ex:   <https://eona.example/bulk/>
+CONSTRUCT { ?c ?p ?o } WHERE { ?c skos:broader ex:c100 . ?c ?p ?o }

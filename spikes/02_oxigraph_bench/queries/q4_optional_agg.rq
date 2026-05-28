@@ -1,0 +1,16 @@
+PREFIX schema: <http://schema.org/>
+PREFIX ex: <http://example.org/>
+
+SELECT ?country ?segment (COUNT(?order) AS ?orders) (COALESCE(SUM(?total), 0) AS ?revenue)
+WHERE {
+  ?customer a schema:Person ;
+            schema:addressCountry ?country ;
+            ex:segment ?segment .
+  OPTIONAL {
+    ?order a schema:Order ;
+           schema:customer ?customer ;
+           schema:totalPrice ?total .
+  }
+}
+GROUP BY ?country ?segment
+ORDER BY ?country ?segment

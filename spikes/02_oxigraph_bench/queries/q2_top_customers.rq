@@ -1,0 +1,11 @@
+PREFIX schema: <http://schema.org/>
+
+SELECT ?customer (SUM(?total) AS ?spend)
+WHERE {
+  ?order a schema:Order ;
+         schema:customer ?customer ;
+         schema:totalPrice ?total .
+}
+GROUP BY ?customer
+ORDER BY DESC(?spend)
+LIMIT 20

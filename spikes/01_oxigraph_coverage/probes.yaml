@@ -1,0 +1,146 @@
+# Probe definitions consumed by probe.py.
+# Each key matches the `probe:` cell in feature_matrix.md.
+# Fields:
+#   kind:     sparql-query | sparql-update | gsp | http
+#   accept:   media type to request (optional)
+#   body:     SPARQL string or file reference
+#   pass_if:  one of {status-2xx, has-bindings, ask-true, triple-count>=N}
+
+sparql-select:
+  kind: sparql-query
+  body: |
+    PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+    SELECT ?c WHERE { ?c a skos:Concept } LIMIT 5
+  pass_if: has-bindings
+
+sparql-construct:
+  kind: sparql-query
+  accept: text/turtle
+  body: |
+    PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+    CONSTRUCT { ?c a skos:Concept } WHERE { ?c a skos:Concept } LIMIT 5
+  pass_if: triple-count>=1
+
+sparql-ask:
+  kind: sparql-query
+  body: |
+    PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+    ASK { ?c a skos:Concept }
+  pass_if: ask-true
+
+sparql-describe:
+  kind: sparql-query
+  accept: text/turtle
+  body: |
+    PREFIX ex: <https://eona.example/voc/>
+    DESCRIBE ex:cat
+  pass_if: triple-count>=1
+
+sparql-update-insert:
+  kind: sparql-update
+  body: |
+    PREFIX ex: <https://eona.example/voc/>
+    INSERT DATA { ex:probe-c01 a <https://eona.example/Probe> }
+  pass_if: status-2xx
+
+sparql-update-delete:
+  kind: sparql-update
+  body: |
+    PREFIX ex: <https://eona.example/voc/>
+    DELETE WHERE { ex:probe-c01 ?p ?o }
+  pass_if: status-2xx
+
+gsp-put-get:
+  kind: gsp
+  graph: "https://eona.example/graphs/probe-c07"
+  put_body_file: "inputs/probe-graph.ttl"
+  pass_if: roundtrip-triples-match
+
+sparql-service:
+  kind: sparql-query
+  body: |
+    SELECT ?s WHERE {
+      SERVICE <https://dbpedia.org/sparql> { ?s a <http://www.w3.org/2002/07/owl#Class> } LIMIT 1
+    }
+  pass_if: status-2xx
+  notes: "External SERVICE — network required; failure ≠ engine bug."
+
+sparql-paths:
+  kind: sparql-query
+  body: |
+    PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+    SELECT ?x WHERE { ?x skos:broader+ <https://eona.example/voc/animal> }
+  pass_if: has-bindings
+
+named-graphs:
+  kind: sparql-query
+  body: |
+    SELECT ?g (COUNT(*) AS ?n) WHERE { GRAPH ?g { ?s ?p ?o } } GROUP BY ?g
+  pass_if: has-bindings
+
+io-turtle:
+  kind: sparql-query
+  accept: text/turtle
+  body: "CONSTRUCT { ?s ?p ?o } WHERE { ?s ?p ?o } LIMIT 1"
+  pass_if: triple-count>=1
+
+io-jsonld:
+  kind: sparql-query
+  accept: application/ld+json
+  body: "CONSTRUCT { ?s ?p ?o } WHERE { ?s ?p ?o } LIMIT 1"
+  pass_if: status-2xx
+
+io-ntriples:
+  kind: sparql-query
+  accept: application/n-triples
+  body: "CONSTRUCT { ?s ?p ?o } WHERE { ?s ?p ?o } LIMIT 1"
+  pass_if: triple-count>=1
+
+io-rdfxml:
+  kind: sparql-query
+  accept: application/rdf+xml
+  body: "CONSTRUCT { ?s ?p ?o } WHERE { ?s ?p ?o } LIMIT 1"
+  pass_if: status-2xx
+
+io-trig:
+  kind: sparql-query
+  accept: application/trig
+  body: "CONSTRUCT { ?s ?p ?o } WHERE { ?s ?p ?o } LIMIT 1"
+  pass_if: status-2xx
+
+conneg:
+  kind: http
+  method: GET
+  path_template: "{endpoint}?query=SELECT%20%2A%20WHERE%20%7B%3Fs%20%3Fp%20%3Fo%7D%20LIMIT%201"
+  accept: application/sparql-results+json
+  pass_if: status-2xx-and-json
+
+skos-broader:
+  kind: sparql-query
+  body: |
+    PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+    PREFIX ex: <https://eona.example/voc/>
+    SELECT ?ancestor WHERE { ex:cat skos:broader+ ?ancestor }
+  pass_if: has-bindings
+
+text-search:
+  kind: sparql-query
+  body: |
+    PREFIX text: <http://jena.apache.org/text#>
+    SELECT ?s WHERE { ?s text:query "cat" } LIMIT 1
+  pass_if: status-2xx
+  notes: "Jena-specific extension; expected to fail on Oxigraph — used to confirm the gap, not to penalise it."
+
+persistence-restart:
+  kind: manual
+  notes: |
+    Tested by probe.py only on Oxigraph: writes a sentinel triple via
+    UPDATE, then restarts the oxigraph-server container (volume-backed)
+    and confirms the triple is still queryable. Fuseki in-memory mode
+    is intentionally not persistent in this harness; the persistence
+    check is the Oxigraph claim under evaluation, not a comparison.
+
+bulk-load:
+  kind: bulk
+  inputs_file: "inputs/bulk-100k.nt"
+  pass_if: triple-count==100000

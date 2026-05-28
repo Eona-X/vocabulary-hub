@@ -1,0 +1,17 @@
+# Python / uv
+.venv/
+__pycache__/
+*.pyc
+
+# Deterministically regenerated bulk fixture (12 MB; gen_bulk.py reproduces byte-for-byte)
+01_oxigraph_coverage/inputs/bulk-100k.nt
+02_oxigraph_bench/inputs/bulk-skos.nt
+
+# Fetched at run-time, large; commit SHA recorded in run.sh / manifest instead
+03_maplib_rml_conformance/inputs/rml-test-cases/
+04_maplib_bench/inputs/gtfs-madrid-bench/scale-*/
+venv/
+
+# Spike 02: generated synthetic data + fetched binaries
+02_oxigraph_bench/data/
+02_oxigraph_bench/.cache/

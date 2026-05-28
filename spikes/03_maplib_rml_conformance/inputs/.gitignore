@@ -1,0 +1,3 @@
+# The rml-test-cases checkout is large and reproducible via run.sh; we
+# commit the pinned commit SHA only.
+rml-test-cases/

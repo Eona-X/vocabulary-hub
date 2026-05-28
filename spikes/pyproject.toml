@@ -1,0 +1,21 @@
+[project]
+name = "adr-004-spikes"
+version = "0.0.0"
+description = "Validation spikes for ADR-004 (L1–L3 component re-selection)."
+requires-python = ">=3.11"
+dependencies = [
+    "pyoxigraph>=0.4",
+    "requests>=2.31",
+    "psutil>=5.9",
+    "rdflib>=7.0",
+    "pyyaml>=6.0",
+    "maplib==0.20.18 ; platform_system != 'Windows'",
+]
+
+# morph-kgc lives in its own env: it pins pyoxigraph<0.4 and rdflib<7,
+# which conflicts with the rest of the harness. Spikes 3 & 4 invoke it
+# as an isolated subprocess via `uv run --isolated --with morph-kgc ...`.
+# Do NOT add morph-kgc to the main dependencies.
+
+[tool.uv]
+package = false

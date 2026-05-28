@@ -1,0 +1,38 @@
+@prefix rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl:  <http://www.w3.org/2002/07/owl#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix sh:   <http://www.w3.org/ns/shacl#> .
+@prefix ex:   <https://eona.example/voc/> .
+
+ex:Scheme a skos:ConceptScheme ;
+    rdfs:label "Probe concept scheme" .
+
+ex:animal a skos:Concept ;
+    skos:inScheme ex:Scheme ;
+    skos:prefLabel "animal"@en ;
+    skos:definition "A living organism that feeds on organic matter."@en .
+
+ex:mammal a skos:Concept ;
+    skos:inScheme ex:Scheme ;
+    skos:broader ex:animal ;
+    skos:prefLabel "mammal"@en .
+
+ex:cat a skos:Concept ;
+    skos:inScheme ex:Scheme ;
+    skos:broader ex:mammal ;
+    skos:prefLabel "cat"@en ;
+    skos:definition "A small domesticated carnivorous mammal."@en .
+
+ex:Mammal a owl:Class ;
+    rdfs:subClassOf ex:Animal .
+
+ex:Animal a owl:Class .
+
+ex:ConceptShape a sh:NodeShape ;
+    sh:targetClass skos:Concept ;
+    sh:property [
+        sh:path skos:prefLabel ;
+        sh:minCount 1 ;
+        sh:datatype rdf:langString ;
+    ] .

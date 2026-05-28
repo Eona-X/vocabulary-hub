@@ -1,0 +1,6 @@
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+SELECT ?c ?label WHERE {
+  ?c a skos:Concept ;
+     skos:prefLabel ?label .
+  FILTER(STR(?label) = "concept-12345")
+}

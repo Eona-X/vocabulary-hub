@@ -1,0 +1,22 @@
+[
+  {
+    "engine": "morph",
+    "scale": "1",
+    "wall_time_s": 1.79005765914917,
+    "peak_rss_mb": 254.859375,
+    "output_triples": 10,
+    "output_hash": "9c16d5ef885f8d45ec339869feba134c54409a8b20eec8f714176f837b1f87d6",
+    "ok": true,
+    "detail": "Installed 52 packages in 49ms\nINFO | 2026-05-22 10:31:11,197 | 2 mapping rules retrieved.\nINFO | 2026-05-22 10:31:11,201 | Mapping partition with 2 groups generated.\nINFO | 2026-05-22 10:31:11,201 | Maximum number of rules within mapping group: 1.\nINFO | 2026-05-22 10:31:11,201 | Mappings processed in 0.360 seconds.\nINFO | 2026-05-22 10:31:11,338 | Number of triples generated in total: 10.\nINFO | 2026-05-22 10:31:11,338 | Materialization finished in 0.135 seconds.\n"
+  },
+  {
+    "engine": "maplib",
+    "scale": "1",
+    "wall_time_s": 0.14476585388183594,
+    "peak_rss_mb": 0.0,
+    "output_triples": 0,
+    "output_hash": "",
+    "ok": false,
+    "detail": "Template parsing error: error at 6:14: expected IRI parsing failed\nTraceback (most recent call last):\n  File \"/home/nico/wspace/eona/eona_vocabulary_services/spikes/04_maplib_bench/bench.py\", line 124, in bench_maplib\n    m.read_template(str(mapping))\nexceptions.MaplibException: Template parsing error: error at 6:14: expected IRI parsing failed\n"
+  }
+]

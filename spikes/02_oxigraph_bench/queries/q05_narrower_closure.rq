@@ -1,0 +1,3 @@
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX ex:   <https://eona.example/bulk/>
+SELECT (COUNT(?d) AS ?n) WHERE { ?d skos:broader+ ex:c0 }
