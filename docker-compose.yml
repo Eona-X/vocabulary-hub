@@ -69,8 +69,15 @@ services:
     image: ghcr.io/rdflib/prez:4.23.6
     container_name: eona-prez
     restart: unless-stopped
+    # Start only after the loader has populated Oxigraph and exited 0. Prez runs
+    # link generation against the SPARQL default graph at startup, so booting it
+    # against an empty store leaves catalogs/collections blank until a manual
+    # restart. service_completed_successfully gates Prez on the loader's exit 0.
     depends_on:
-      - oxigraph
+      oxigraph:
+        condition: service_started
+      loader-mobility-dcat-ap:
+        condition: service_completed_successfully
     ports:
       - "8000:8000"
     environment:
@@ -99,6 +106,30 @@ services:
       - prez
     ports:
       - "3000:80"
+
+  # Integration tests — pytest against the live Prez API, parsing responses with
+  # pyoxigraph (same engine as the triplestore). Starts once both Prez and the UI
+  # are up, runs the suite, and exits; restart "no" keeps it from looping.
+  #
+  # Behind the "test" profile so a plain `docker compose up` is not gated on tests.
+  # Run them with:
+  #   docker compose --profile test up --build --abort-on-container-exit \
+  #       --exit-code-from tests tests
+  tests:
+    build:
+      context: ./tests
+    image: eona/vocab-tests:dev
+    container_name: eona-tests
+    profiles: ["test"]
+    restart: "no"
+    depends_on:
+      prez:
+        condition: service_started
+      prez-ui:
+        condition: service_started
+    environment:
+      PREZ_BASE: "http://prez:8000"
+      READY_TIMEOUT_S: "120"
 
 volumes:
   oxigraph-data:

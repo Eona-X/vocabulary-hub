@@ -1,0 +1,6 @@
+pytest==8.3.4
+requests==2.32.3
+# Same engine as the Oxigraph triplestore (0.5.8) and Prez's in-memory store
+# (0.5.3): we re-parse Prez's RDF responses into a pyoxigraph Store and assert
+# against them with SPARQL, exercising the full SPARQL -> Prez -> RDF chain.
+pyoxigraph==0.5.3
