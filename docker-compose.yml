@@ -1,0 +1,45 @@
+# Eona Vocabulary Services — L1/L2 bootstrap
+#
+# Oxigraph 0.5.8 (RocksDB persistent backend) — per ADR-004 §1.
+# Single service for now; API, mapping, virtualization layers added later.
+#
+#   docker compose up -d
+#   curl http://localhost:7878/query --data-urlencode 'query=SELECT * WHERE { ?s ?p ?o } LIMIT 1'
+
+services:
+  oxigraph:
+    image: ghcr.io/oxigraph/oxigraph:0.5.8
+    container_name: eona-oxigraph
+    restart: unless-stopped
+    ports:
+      - "7878:7878"
+    command: ["serve", "--location=/data", "--bind=0.0.0.0:7878"]
+    volumes:
+      - oxigraph-data:/data
+    # Healthcheck disabled: oxigraph image is distroless (no /bin/sh, no wget/curl),
+    # so CMD-SHELL probes cannot execute. Liveness is verified externally for now
+    # (see test plan: curl http://localhost:7878/).
+    #
+    # TODO: when prod-style monitoring is needed, add a curl sidecar probing the
+    # service over the compose network. Sketch:
+    #
+    #   healthcheck-probe:
+    #     image: curlimages/curl:8.10.1
+    #     depends_on: [oxigraph]
+    #     restart: unless-stopped
+    #     entrypoint: ["sh", "-c"]
+    #     command:
+    #       - |
+    #         while true; do
+    #           curl -fsS http://oxigraph:7878/ >/dev/null || exit 1
+    #           sleep 30
+    #         done
+    #
+    # Or move the probe into the oxigraph service via a healthcheck that targets
+    # the sidecar's status, depending on orchestrator capability (K8s readiness
+    # probes are the cleaner long-term answer).
+    healthcheck:
+      disable: true
+
+volumes:
+  oxigraph-data:
