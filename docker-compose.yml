@@ -82,5 +82,23 @@ services:
       LISTEN_PORT: "8000"
       LOG_LEVEL: "INFO"
 
+  # Prez UI — Nuxt SPA built against the Prez API. Endpoint is baked at build
+  # time (Nuxt static generation), so the browser talks to Prez on the host
+  # port directly. Override the build arg if Prez is exposed elsewhere.
+  prez-ui:
+    build:
+      context: ./containers/prez-ui
+      args:
+        NUXT_PUBLIC_PREZ_API_ENDPOINT: "http://localhost:8000"
+        NUXT_PUBLIC_PREZ_AUTO_DETECT_HTML: "true"
+        NUXT_PUBLIC_PREZ_AUTO_DETECT_MARKDOWN: "true"
+    image: eona/prez-ui:dev
+    container_name: eona-prez-ui
+    restart: unless-stopped
+    depends_on:
+      - prez
+    ports:
+      - "3000:80"
+
 volumes:
   oxigraph-data:

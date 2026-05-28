@@ -10,7 +10,7 @@ WORKDIR /app
 COPY requirements.txt .
 RUN pip install -r requirements.txt
 
-COPY load.py .
+COPY load.py catalog.ttl ./
 
 USER nobody
 

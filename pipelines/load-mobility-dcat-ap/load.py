@@ -1,10 +1,15 @@
 """
 One-shot loader: fetch mobilityDCAT-AP RDF assets from GitHub and write them
-into Oxigraph named graphs.
+into Oxigraph named graphs, then rebuild the default graph as the union of
+those named graphs.
 
-Idempotent: each asset is written with HTTP PUT on the Graph Store Protocol,
-which replaces the target graph atomically. Re-running the container reloads
-the same content into the same graphs without producing duplicate triples.
+Why mirror to default: Prez 4.x queries the SPARQL default graph for its OGC
+Records endpoints. Data sitting only in named graphs is invisible to Prez.
+
+Idempotency: each asset is written with HTTP PUT on the Graph Store Protocol
+(atomic replace of the target graph). The default-graph rebuild drops the
+default graph and re-inserts the union — also idempotent. Re-running the
+container reloads identical content without producing duplicate triples.
 """
 
 from __future__ import annotations
@@ -31,9 +36,12 @@ HTTP_TIMEOUT_S = int(os.environ.get("HTTP_TIMEOUT_S", "60"))
 
 @dataclass(frozen=True)
 class Asset:
+    # source: remote URL relative to SOURCE_BASE, or local filesystem path
+    # (resolved against the script directory) if `local=True`.
     source_path: str
     graph_iri: str
     content_type: str
+    local: bool = False
 
 
 ASSETS: tuple[Asset, ...] = (
@@ -51,6 +59,14 @@ ASSETS: tuple[Asset, ...] = (
         source_path="drafts/latest/shaclShapes/mobilitydcat-ap-shacl-ranges.ttl",
         graph_iri="https://w3id.org/mobilitydcat-ap/shacl-ranges",
         content_type="text/turtle",
+    ),
+    # Catalog wrapper: declares a dcat:Catalog with dcterms:hasPart pointing at
+    # the three graphs above so Prez can list/route them via OGC Records.
+    Asset(
+        source_path="catalog.ttl",
+        graph_iri="https://vocab.eona-x.eu/catalog",
+        content_type="text/turtle",
+        local=True,
     ),
 )
 
@@ -75,6 +91,13 @@ def fetch(url: str) -> bytes:
     r = requests.get(url, timeout=HTTP_TIMEOUT_S)
     r.raise_for_status()
     return r.content
+
+
+def read_local(path: str) -> bytes:
+    full = os.path.join(os.path.dirname(os.path.abspath(__file__)), path)
+    LOG.info("read %s", full)
+    with open(full, "rb") as fh:
+        return fh.read()
 
 
 def put_graph(base: str, graph_iri: str, content_type: str, body: bytes) -> None:
@@ -105,6 +128,41 @@ def graph_size(base: str, graph_iri: str) -> int:
     return int(r.json()["results"]["bindings"][0]["n"]["value"])
 
 
+def default_graph_size(base: str) -> int:
+    q = "SELECT (COUNT(*) AS ?n) WHERE { ?s ?p ?o }"
+    r = requests.get(
+        f"{base}/query",
+        params={"query": q},
+        headers={"Accept": "application/sparql-results+json"},
+        timeout=HTTP_TIMEOUT_S,
+    )
+    r.raise_for_status()
+    return int(r.json()["results"]["bindings"][0]["n"]["value"])
+
+
+def sparql_update(base: str, update: str) -> None:
+    r = requests.post(
+        f"{base}/update",
+        data={"update": update},
+        timeout=HTTP_TIMEOUT_S,
+    )
+    if r.status_code not in (200, 204):
+        raise RuntimeError(
+            f"SPARQL UPDATE failed: {r.status_code} {r.text[:500]}"
+        )
+
+
+def rebuild_default_graph(base: str, graph_iris: tuple[str, ...]) -> None:
+    """
+    Drop the default graph, then copy every named graph's contents into it.
+    Idempotent: re-running yields the same union.
+    """
+    LOG.info("rebuilding default graph as union of %d named graphs", len(graph_iris))
+    sparql_update(base, "DROP SILENT DEFAULT")
+    for iri in graph_iris:
+        sparql_update(base, f"INSERT {{ ?s ?p ?o }} WHERE {{ GRAPH <{iri}> {{ ?s ?p ?o }} }}")
+
+
 def main() -> int:
     logging.basicConfig(
         level=os.environ.get("LOG_LEVEL", "INFO"),
@@ -114,10 +172,16 @@ def main() -> int:
     wait_for_oxigraph(OXIGRAPH_BASE, READY_TIMEOUT_S)
 
     for asset in ASSETS:
-        body = fetch(f"{SOURCE_BASE}/{asset.source_path}")
+        if asset.local:
+            body = read_local(asset.source_path)
+        else:
+            body = fetch(f"{SOURCE_BASE}/{asset.source_path}")
         put_graph(OXIGRAPH_BASE, asset.graph_iri, asset.content_type, body)
         count = graph_size(OXIGRAPH_BASE, asset.graph_iri)
         LOG.info("graph %s now holds %d triples", asset.graph_iri, count)
+
+    rebuild_default_graph(OXIGRAPH_BASE, tuple(a.graph_iri for a in ASSETS))
+    LOG.info("default graph now holds %d triples", default_graph_size(OXIGRAPH_BASE))
 
     LOG.info("loader done")
     return 0

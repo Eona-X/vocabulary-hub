@@ -1,0 +1,47 @@
+# Eona Vocabulary Hub catalog wrapper.
+#
+# Prez 4.x surfaces only entities reachable from a dcat:Catalog via dcterms:hasPart
+# (OGC Records model). This file declares the catalog and lists the loaded
+# mobilityDCAT-AP graphs as dcat:Resource members so Prez can list/route them.
+# Loaded into its own named graph so it does not pollute the source vocabularies.
+
+@prefix dcat: <http://www.w3.org/ns/dcat#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix vann: <http://purl.org/vocab/vann/> .
+@prefix eona: <https://vocab.eona-x.eu/> .
+@prefix mob: <https://w3id.org/mobilitydcat-ap/> .
+
+# Prefix bindings for Prez curie routing (URLs use <prefix>:<localname>).
+# Prez expects vann declarations on blank-node subjects, not the namespace IRI.
+[] vann:preferredNamespacePrefix "eona" ;
+    vann:preferredNamespaceUri "https://vocab.eona-x.eu/" .
+[] vann:preferredNamespacePrefix "mob" ;
+    vann:preferredNamespaceUri "https://w3id.org/mobilitydcat-ap/" .
+
+eona:catalog a dcat:Catalog ;
+    dcterms:identifier "eona" ;
+    dcterms:title "Eona Vocabulary Hub" ;
+    rdfs:label "Eona Vocabulary Hub" ;
+    dcterms:description "Catalog of vocabularies, ontologies, and SHACL shapes hosted by the Eona Vocabulary Hub." ;
+    dcterms:hasPart <https://w3id.org/mobilitydcat-ap> ,
+                    <https://w3id.org/mobilitydcat-ap/shacl> ,
+                    <https://w3id.org/mobilitydcat-ap/shacl-ranges> .
+
+<https://w3id.org/mobilitydcat-ap> a dcat:Resource ;
+    dcterms:identifier "mobilitydcat-ap" ;
+    dcterms:title "mobilityDCAT-AP ontology" ;
+    rdfs:label "mobilityDCAT-AP ontology" ;
+    dcterms:description "Application profile of DCAT-AP for mobility data (Eona-X mirror)." .
+
+<https://w3id.org/mobilitydcat-ap/shacl> a dcat:Resource ;
+    dcterms:identifier "mobilitydcat-ap-shacl" ;
+    dcterms:title "mobilityDCAT-AP SHACL shapes" ;
+    rdfs:label "mobilityDCAT-AP SHACL shapes" ;
+    dcterms:description "SHACL shapes constraining mobilityDCAT-AP datasets." .
+
+<https://w3id.org/mobilitydcat-ap/shacl-ranges> a dcat:Resource ;
+    dcterms:identifier "mobilitydcat-ap-shacl-ranges" ;
+    dcterms:title "mobilityDCAT-AP SHACL range shapes" ;
+    rdfs:label "mobilityDCAT-AP SHACL range shapes" ;
+    dcterms:description "Range/type SHACL shapes for mobilityDCAT-AP properties." .
